@@ -1,6 +1,7 @@
 ### General ###
 *.pptx
-fresh.bat
+*.bat
+*.xlsx
 
 ### R files ###
 .Rhistory
