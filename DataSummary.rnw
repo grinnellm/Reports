@@ -59,6 +59,7 @@ docPath <- file.path( "RegionalText", max(yrRange), regName,
 % TODO: Add a note re SOK removals/mortality not included in catch (search for SOK).
 % TODO: Add a table with weight- and/or length-at-age differences with respect to some reference period (i.e., 1980s).
 % TODO: Remove comment about egregia SOK excluded from product weight once egregia is included in the SOK table.
+% Show full time series (i.e., 1951+) in figures.
 
 % Begin the document
 \begin{document}
