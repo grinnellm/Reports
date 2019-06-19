@@ -1,0 +1,126 @@
+% Load packages
+\RequirePackage{fancyhdr}  % Make nice headers
+\RequirePackage{graphicx}  % Import pdfs for figures
+\RequirePackage{booktabs}  % Nice table formatting
+\RequirePackage{textcomp}  % Prevents two warnings in gensymb
+\RequirePackage{gensymb}  % Symbols for math and text
+\RequirePackage[top=2.5cm, bottom=2.5cm, left=3cm, right=3cm, headheight=14.5pt]{geometry}  % Margins
+\RequirePackage{lineno}  % Line numbers (drafts)
+\RequirePackage{etoolbox}  % Enable if/else commands
+\RequirePackage[labelsep=period]{caption}  % Caption formatting
+\RequirePackage{longtable}  % Long tables (multi-page)
+\RequirePackage[section]{placeins}  % Float barriers
+\RequirePackage{amsmath}  % Math facilities
+\RequirePackage{microtype}  % Better type handling
+\RequirePackage{url}  % URLs
+\RequirePackage[hidelinks]{hyperref}  % Better cross references
+\RequirePackage{listings}  % Code listings
+\RequirePackage{pdflscape}  % Landscape orientation
+\RequirePackage[authoryear]{natbib}  % Citation style
+\RequirePackage[titletoc, title]{appendix}  % Formatting appendices
+\RequirePackage[super]{nth}  % Numbers with superscipt `th' etc
+\RequirePackage{enumitem}
+\RequirePackage[controls={play, step, stop}, nomouse, buttonbg=1:0.5:0.2]{animate}  % Animate figures
+%\RequirePackage{everypage}  % For Draft?
+%\RequirePackage[draft]{xwatermark} % Draft
+%\RequirePackage[draft]{hyperref}  % Turn hypertext marks off
+
+% Update definitions
+\bibpunct{(}{)}{;}{a}{}{,}  % Punctuation for citations
+
+% General layout parameters for all pages:
+\renewcommand{\topfraction}{0.9}  % Max fraction of floats at top
+\renewcommand{\bottomfraction}{0.8}  % Max fraction of floats at bottom
+
+% Parameters for text pages (not float pages):
+\setcounter{topnumber}{2}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{4}  % 2 may work better
+\setcounter{dbltopnumber}{2}  % for 2-column pages
+\renewcommand{\dbltopfraction}{0.9}  % Fit big float above 2-col. text
+\renewcommand{\textfraction}{0.07}  % Allow minimal text w. figs
+
+% Parameters for float pages (not text pages):
+\renewcommand{\floatpagefraction}{0.85}  % Require fuller float pages
+\renewcommand{\dblfloatpagefraction}{0.7}  % Require fuller float pages
+
+% Better treatment of input (no extra trailing space)
+\newcommand{\inputsp}[1]{\input{#1}\unskip}
+
+% Vetter variable names (multi-letter identifier)
+\newcommand{\mli}[1]{\mathit{#1}}
+
+% Name appendix (for hyperref)
+\newcommand*{\Appendixautorefname}{Appendix}
+
+% Allow wide tables/figures to spill into both margins equally: \centerfloat
+\makeatletter
+\newcommand*{\centerfloat}{%
+  \parindent \z@
+  \leftskip \z@ \@plus 1fil \@minus \textwidth
+  \rightskip\leftskip
+  \parfillskip \z@skip}
+\makeatother
+
+% Set up hyperlinks
+\hypersetup{colorlinks,
+            linkcolor=black,
+            citecolor=black,
+            urlcolor=blue
+}
+
+% Set document options
+\pagestyle{fancy}
+\sloppy
+\lhead{} \chead{\runHead{}} \rhead{}
+
+% Make the title
+\title{\fishName{} preliminary data summary for\\\regionName{} \thisYr{}}
+
+% Authors
+\author{
+Jaclyn Cleary%
+\footnote{DFO Science, Pacific Biological Station (email: \href{mailto:Jaclyn.Cleary@dfo-mpo.gc.ca}{\texttt{Jaclyn.Cleary@dfo-mpo.gc.ca}}).}
+\and
+Matthew Grinnell%
+\footnote{DFO Science, Pacific Biological Station (email: \href{mailto:Matthew.Grinnell@dfo-mpo.gc.ca}{\texttt{Matthew.Grinnell@dfo-mpo.gc.ca}}).}
+}
+
+% Make the title available for the header
+\makeatletter
+\let\runtitle\@title
+\makeatother
+
+% Create running header from the title (disable the forced new line)
+\newcommand{\runHead}{\let\\=~\relax\runtitle}
+
+%%%%% Frontmatter %%%%%
+\def\frontmatter{%
+
+% Place the title
+\maketitle
+
+% Herring picture
+\begin{figure}[h]
+\centering
+\captionsetup{width=0.67\linewidth}
+\includegraphics[width=0.5\linewidth]{Document/HerringDFO.jpg}\\
+\caption*{\fishName{} (\scienceName{}). Image credit: \href{http://www.pac.dfo-mpo.gc.ca}{Fisheries and Oceans Canada}.}
+\end{figure}
+
+% Extra space
+\vspace{1cm}
+
+% Message
+\hrule
+\begin{description}
+\item[Disclaimer] This report contains preliminary data collected for \fishName{} in \thisYr{} in the \regionName{} \regionType{} stock assessment regions (SAR).
+These data may differ from data used and presented in the final stock assessment.
+\isSubset{}
+\end{description}
+\hrule
+
+% Extra space
+%\vspace{1cm}
+
+}% End of frontmatter
