@@ -8,12 +8,10 @@
 ### R files ###
 .Rhistory
 *.RData
-*.R
 *.Rproj
 
 ### LaTeX files ###
 *.tex
-*.rnw
 *.log
 *.bbl
 *.synctex.gz

@@ -1,0 +1,556 @@
+% Document class
+\documentclass[aspectratio=43]{beamer}  % 169, 1610, 149, 54, 43, or 32
+
+% Load packages
+\usepackage{booktabs}
+\usepackage{beamerthemesplit}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage{caption}
+\usepackage{natbib}
+\usepackage{multicol}
+% \usepackage{enumitem}
+\usepackage{xcolor}
+
+% Multi-letter identifier (i.e., multi-character variable
+\newcommand{\mli}[1]{\mathit{#1}}
+
+% Better treatment of input (no extra trailing space)
+\newcommand{\inputsp}[1]{\input{#1}\unskip}
+
+% Background row colours (put it before each table to make sure)
+\newcommand{\stripes}{\rowcolors{2}{lightgray}{}}
+
+% Choose a theme/style
+\usetheme{Darmstadt}  % http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+
+% Set transparency: complete
+\setbeamercovered{transparent=0}
+
+% Set indent for description environment
+\setbeamersize{description width=1.5cm}
+
+% No navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
+% Generate a footer: short title, short author, and slide number/total
+\setbeamertemplate{footline}{%
+  \begin{beamercolorbox}[colsep=1.5pt]{upper separation line foot}
+  \end{beamercolorbox}
+  \begin{beamercolorbox}[ht=2.5ex,dp=1.125ex,%
+    leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}%
+    \leavevmode{\usebeamerfont{title in head/foot}\insertshorttitle}%
+    \hfill%
+    {\usebeamerfont{author in head/foot}\usebeamercolor[fg]{author in head/foot}\insertshortauthor}%
+    \hfill%
+    {\usebeamerfont{author in head/foot}\usebeamercolor[fg]{author in head/foot}\insertframenumber~/~\inserttotalframenumber}%
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[colsep=1.5pt]{lower separation line foot}
+  \end{beamercolorbox}
+}
+
+% Blue hyperlinks
+\definecolor{links}{HTML}{2A1B81}
+\hypersetup{colorlinks,linkcolor=,urlcolor=links}
+
+% Change spacing between output chunk paragraphs
+\renewenvironment{knitrout}{\setlength{\topsep}{0mm}}{}
+
+% Small font for references
+\renewcommand*{\bibfont}{\scriptsize}
+
+% Decrease margins globally
+\setbeamersize{text margin left=1.5em, text margin right=1.5em}
+
+% % Reduce space between table columns
+% \setlength{\tabcolsep}{1pt}
+
+% Let it begin
+\begin{document}
+
+<<loadImage, echo=FALSE, warning=FALSE, message=FALSE, results='hide'>>=
+# Load packages
+require( knitr, quietly=TRUE )  # Dynamic documents
+require( tidyverse, quietly=TRUE )   # Hadleyverse
+require( scales )  # Axes etc
+require( viridis )  # Colours
+require( xtable )  # Tables
+# Default region to load some parameters
+regName <- "HG"
+# Set the path to the R output, including a trailing separator
+rPath <- file.path( "..", "DataSummaries", regName, .Platform$file.sep )
+# Load the R image
+load( file=file.path(rPath, paste("Image", regName, "RData", sep=".")) )
+# Load functions
+source( file=file.path("..", "DataSummaries", "Functions.R") )
+@
+
+% Load R variables, switches, etc
+\Sexpr{knit_child('Document/Variables.rnw')}
+
+% Variables for the cover page
+\title{\fishName{} preliminary data summary for \Sexpr{max(yrRange)}}
+\author[Cleary \& Grinnell]{\href{mailto:Jaclyn.Cleary@dfo-mpo.gc.ca}{Jaclyn Cleary} \and 
+\href{mailto:Matthew.Grinnell@dfo-mpo.gc.ca}{Matthew Grinnell}}
+\institute{DFO Science\\Pacific Biological Station}
+\date{\today}
+% TODO: Add emails as footnotes.
+
+%%% Title page
+\begin{frame}
+\titlepage
+\end{frame}
+
+%%% Table of contents
+\begin{frame}{Outline}  % [allowframebreaks]
+\tableofcontents
+\end{frame}
+
+\begin{frame}
+\begin{block}{Disclaimer}
+This presentation contains preliminary data collected for \fishName{} in \thisYr{} in the major stock assessment regions (SARs). These data may differ from data used and presented in the final stock assessment.
+\end{block}
+\begin{itemize}
+\item This presentation shows highlights from the annual preliminary data summary reports for each SAR.
+\item The full reports are available \href{https://github.com/grinnellm/Reports}{on GitHub}.
+\end{itemize}
+\vfill
+\begin{figure}
+\centering
+\captionsetup{width=0.5\linewidth}
+\includegraphics[width=0.5\linewidth]{Document/HerringDFO.jpg}\\
+\caption*{\fishName{} (\scienceName{}). Image credit: \href{http://www.pac.dfo-mpo.gc.ca}{Fisheries and Oceans Canada}.}
+\end{figure}
+\end{frame}
+
+%%% New section: Spawn index
+\section[Spawn index]{Spawn index}
+
+\begin{frame}
+\begin{itemize}
+\item For stock assessments, we use spawn index data from \Sexpr{paste(range(yrRange), collapse=" to ")}.
+\item \spawnIndex{}
+\item \qPeriods{}
+\end{itemize}
+\end{frame}
+
+%%% New section: Spawn index timeseries
+\subsection[Timeseries]{Timeseries}
+
+\begin{frame}[fragile]
+<<spawnTimeseries, out.width='\\linewidth', out.height='\\textheight', fig.width=6, fig.height=4, echo=FALSE>>=
+# Get the spawn index
+GetSpawnIndex <- function( SARs ) {
+  # Loop over regions
+  for( k in 1:length(SARs) ) {
+    # Get the region
+    SAR <- SARs[k]
+    # Set the path to the R output, including a trailing separator
+    rPath <- file.path( "..", "DataSummaries", SAR, .Platform$file.sep )
+    # Load the R image
+    load( file=file.path(rPath, paste("Image", SAR, "RData", sep=".")) )
+    # Wrangle
+    raw <- spawnYr %>%
+          mutate( Region=SAR ) %>%
+          select( Region, Year, Survey, TotalSI )
+    # If it's the first region
+    if( k == 1 ) {
+      # Start data frame
+      res <- raw
+    } else {  # End if it's the first region, otherwise
+      # Append to the data frame
+      res <- bind_rows( res, raw )
+    }  # End if it's not the first region
+  }  # End k loop over regions
+  # Set factor levels
+  res <- res %>%
+    mutate( Region=factor(Region, levels=SARs) )
+  # Return the data
+  return( res )
+}  # End GetSpawnIndex function
+
+# Get spawn index (major SARs only)
+spawnIndexMajor <- GetSpawnIndex( SARs=allRegions$major )
+
+# Plot total spawn index by year
+spawnIndexMajorPlot <- ggplot( data=spawnIndexMajor, aes(x=Year, y=TotalSI) ) +
+    geom_point( aes(shape=Survey) ) + 
+    geom_line( aes(group=Survey), size=0.2 ) +
+    labs( x=NULL, y=expression(paste("Spawn index (t"%*%10^3, ")", sep="")) )  +
+    scale_x_continuous( ) +
+    scale_y_continuous( labels=function(x) comma(x/1000) ) +
+    guides( shape=FALSE ) +
+    expand_limits( x=yrRange, y=0 ) +
+    myTheme +
+    facet_wrap( ~ Region, nrow=2, scales="free_y" )
+
+# Make the plot
+print( spawnIndexMajorPlot )
+@
+\end{frame}
+
+%%% New section: Spawn index distribution
+\subsection[Distribution in 2018]{Distribution in 2018}
+
+\begin{frame}
+\begin{columns}
+\begin{column}{0.25\textwidth}
+Haida Gwaii
+\end{column}
+\begin{column}{0.75\textwidth}
+\centering
+\includegraphics[height=\textheight]{../DataSummaries/HG/SpawnByLoc.pdf}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\begin{columns}
+\begin{column}{0.25\textwidth}
+Prince Rupert District
+\end{column}
+\begin{column}{0.75\textwidth}
+\centering
+\includegraphics[height=\textheight]{../DataSummaries/PRD/SpawnByLoc.pdf}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\begin{columns}
+\begin{column}{0.25\textwidth}
+Central Coast
+\end{column}
+\begin{column}{0.75\textwidth}
+\centering
+\includegraphics[height=\textheight]{../DataSummaries/CC/SpawnByLoc.pdf}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\begin{columns}
+\begin{column}{0.25\textwidth}
+Strait of Georgia
+\end{column}
+\begin{column}{0.75\textwidth}
+\centering
+\includegraphics[height=\textheight]{../DataSummaries/SoG/SpawnByLoc.pdf}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\begin{columns}
+\begin{column}{0.25\textwidth}
+West Coast of Vancouver Island
+\end{column}
+\begin{column}{0.75\textwidth}
+\centering
+\includegraphics[height=\textheight]{../DataSummaries/WCVI/SpawnByLoc.pdf}
+\end{column}
+\end{columns}
+\end{frame}
+
+%%% New section: biological data
+\section[Biological data]{Biological data}
+
+\begin{frame}
+\begin{itemize}
+\item For stock assessments, we use biological data from \Sexpr{paste(range(yrRange), collapse=" to ")}.
+\item \sampleSize{}
+\item \seineSamples{}
+\item \repSamples{}
+\item \plusGroup{}
+\end{itemize}
+\end{frame}
+
+%%% New subsection: proportion-at-age
+\subsection[Proportion-at-age]{Proportion-at-age}
+
+% TODO: Maybe just one panel with mean proportion-at-age for all 5 regions?
+\begin{frame}[fragile]
+<<propAge, out.width='\\linewidth', out.height='\\textheight', fig.width=6, fig.height=4, echo=FALSE>>=
+# Get the proportion-at-age
+GetPropAge <- function( SARs ) {
+  # Loop over regions
+  for( k in 1:length(SARs) ) {
+    # Get the region
+    SAR <- SARs[k]
+    # Set the path to the R output, including a trailing separator
+    rPath <- file.path( "..", "DataSummaries", SAR, .Platform$file.sep )
+    # Load the R image
+    load( file=file.path(rPath, paste("Image", SAR, "RData", sep=".")) )
+    # Wrangle
+    num <- numAgedYear %>%
+          mutate( Region=SAR ) %>%
+          select( Region, Year, Age, Proportion )
+    # Determine weighted mean and approximate CI age by year
+    qNum <- numAgedYear %>%
+      select( Year, Age, Proportion ) %>%
+      group_by( Year ) %>%
+      summarise( 
+        MeanAge=weighted.mean(x=Age, w=Proportion),
+        # CI is based on R code by Steve Martel
+        sBar=qnorm(1 - (1 - ciLevel) / 2) * 
+            sum(sqrt(Proportion * (1 - Proportion)) / sqrt(Age)),
+        Lower=exp(log(MeanAge) - log(sBar)), 
+        Upper=exp(log(MeanAge) + log(sBar)) ) %>%
+      ungroup( ) %>%
+      mutate( GroupID=ConsecutiveGroup(Year),
+              Region=SAR ) %>%
+      arrange( Year )
+    # If it's the first region
+    if( k == 1 ) {
+      # Start data frame
+      numRes <- num
+      qRes <- qNum
+    } else {  # End if it's the first region, otherwise
+      # Append to the data frame
+      numRes <- bind_rows( numRes, num )
+      qRes <- bind_rows( qRes, qNum )
+    }  # End if it's not the first region
+  }  # End k loop over regions
+  # Set factor levels
+  numRes <- numRes %>%
+    mutate( Region=factor(Region, levels=SARs) )
+  # Set factor levels
+  qRes <- qRes %>%
+    mutate( Region=factor(Region, levels=SARs) )
+  # Return the data
+  return( list(numRes=numRes, qRes=qRes) )
+}  # End GetPropAge function
+
+# Get proportion-at-age (major SARs only)
+propAgeMajor <- GetPropAge( SARs=allRegions$major )
+
+# Select number-at-age
+numMajor <- propAgeMajor$numRes
+
+# Select weighted number-at-age
+qMajor <- propAgeMajor$qRes
+
+# Plot proportion-at-age by year
+propAgeMajorPlot <- ggplot( data=numMajor, aes(x=Year)  ) +
+    geom_point( aes(y=Age, size=Proportion) ) +
+    geom_path( data=qMajor, aes(y=MeanAge, group=GroupID) ) +
+    geom_ribbon( data=qMajor, aes(ymin=Lower, ymax=Upper, group=GroupID), 
+        alpha=0.25 ) +
+    scale_size( range=c(0, 1) ) +
+    labs( x=NULL, y="Age" ) +
+    scale_y_continuous( breaks=pretty_breaks() ) +
+    expand_limits( x=yrRange ) +
+    myTheme +
+    facet_wrap( ~ Region, nrow=2 )
+
+# Make the plot
+print( propAgeMajorPlot )
+@
+\end{frame}
+
+%%% New subsection: weight-at-age
+\subsection[Weight-at-age]{Weight-at-age}
+
+% TODO: Maybe just one panel with age-3 for all 5 regions?
+\begin{frame}[fragile]
+<<weightAge, out.width='\\linewidth', out.height='\\textheight', fig.width=6, fig.height=4, echo=FALSE, warning=FALSE>>=
+# Get the weight-at-age
+GetWeightAge <- function( SARs ) {
+  # Loop over regions
+  for( k in 1:length(SARs) ) {
+    # Get the region
+    SAR <- SARs[k]
+    # Set the path to the R output, including a trailing separator
+    rPath <- file.path( "..", "DataSummaries", SAR, .Platform$file.sep )
+    # Load the R image
+    load( file=file.path(rPath, paste("Image", SAR, "RData", sep=".")) )
+    # Wrangle
+    raw <- muWeightAge %>%
+          mutate( Region=SAR ) %>%
+          select( Region, Year, Age, Weight, muWeight )
+    # If it's the first region
+    if( k == 1 ) {
+      # Start data frame
+      res <- raw
+    } else {  # End if it's the first region, otherwise
+      # Append to the data frame
+      res <- bind_rows( res, raw )
+    }  # End if it's not the first region
+  }  # End k loop over regions
+  # Set factor levels
+  res <- res %>%
+    mutate( Region=factor(Region, levels=SARs) )
+  # Return the data
+  return( res )
+}  # End GetPropAge function
+
+# Get weight-at-age (major SARs only)
+weightAgeMajor <- GetWeightAge( SARs=allRegions$major )
+
+# Plot weight-at-age by year
+weightAgeMajorPlot <- ggplot( data=weightAgeMajor ) + 
+    geom_line( aes(x=Year, y=muWeight, group=Age, colour=Age), size=0.5 ) +
+    scale_colour_viridis( discrete=TRUE ) +
+    labs( x=NULL, y="Weight-at-age (g)" ) +
+    expand_limits( x=yrRange ) +
+    myTheme +
+    facet_wrap( ~ Region, nrow=2 )
+
+# Make the plot
+print( weightAgeMajorPlot )
+@
+\end{frame}
+
+% New section: catch
+\section[Catch]{Catch}
+
+\begin{frame}
+\begin{itemize}
+\item For stock assessments, we use catch data from \Sexpr{paste(range(yrRange), collapse=" to ")}.
+\item \noSOK{}
+\item \legendGear{}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+<<catch, out.width='\\linewidth', out.height='\\textheight', fig.width=6, fig.height=4, echo=FALSE, warning=FALSE>>=
+# Get the catch
+GetCatch <- function( SARs ) {
+  # Loop over regions
+  for( k in 1:length(SARs) ) {
+    # Get the region
+    SAR <- SARs[k]
+    # Set the path to the R output, including a trailing separator
+    rPath <- file.path( "..", "DataSummaries", SAR, .Platform$file.sep )
+    # Load the R image
+    load( file=file.path(rPath, paste("Image", SAR, "RData", sep=".")) )
+    # Wrangle
+    raw <- catch %>%
+          select( Region, Gear, Year, Catch )
+    # If it's the first region
+    if( k == 1 ) {
+      # Start data frame
+      res <- raw
+    } else {  # End if it's the first region, otherwise
+      # Append to the data frame
+      res <- bind_rows( res, raw )
+    }  # End if it's not the first region
+  }  # End k loop over regions
+  # Set factor levels
+  res <- res %>%
+    mutate( Region=factor(Region, levels=SARs) )
+  # Return the data
+  return( res )
+}  # End GetCatch function
+
+# Get catch (major SARs only)
+catchMajor <- GetCatch( SARs=allRegions$major )
+
+# Plot catch by year and gear type (i.e., period)
+catchMajorPlot <- ggplot( data=catchMajor, aes(x=Year, y=Catch) ) + 
+    geom_bar( stat="identity", position="stack", aes(fill=Gear) ) +
+    labs( y=expression(paste("Catch (t"%*%10^3, ")", sep="")) )  +
+    scale_y_continuous( labels=function(x) comma(x/1000) ) +
+    scale_fill_viridis( discrete=TRUE ) +
+    expand_limits( x=yrRange, y=0 ) +
+    myTheme +
+    facet_wrap( ~ Region, nrow=2 )
+
+# Make the plot
+print( catchMajorPlot )
+@
+\end{frame}
+
+% New subsection: SOK
+\subsection[Spawn-on-kelp]{Spawn-on-kelp}
+
+\begin{frame}
+\begin{itemize}
+\item We show SOK harvest from \Sexpr{firstYrTab} to \thisYr{}.
+\item \spawnIndexTechReport{}
+\item \withPrivacy{}
+\end{itemize}
+\end{frame}
+
+% \begin{frame}[fragile]
+% <<sok, echo=FALSE, warning=FALSE, results='asis'>>=
+% # Get the spawn-on-kelp
+% GetSOK <- function( SARs ) {
+%   # Loop over regions
+%   for( k in 1:length(SARs) ) {
+%     # Get the region
+%     SAR <- SARs[k]
+%     # Set the path to the R output, including a trailing separator
+%     rPath <- file.path( "..", "DataSummaries", SAR, .Platform$file.sep )
+%     # Load the R image
+%     load( file=file.path(rPath, paste("Image", SAR, "RData", sep=".")) )
+%     # Wrangle
+%     raw <- harvestSOK %>%
+%       filter( Year >= firstYrTab ) %>%    
+%       mutate( Region=SAR ) %>%
+%       select( Region, Year, Harvest, Biomass ) %>%
+%       mutate( Harvest=format(Harvest, big.mark=",", digits=0, scientific=FALSE),
+%               Biomass=format(Biomass, big.mark=",", digits=0, scientific=FALSE) )
+%     # If it's the first region
+%     if( k == 1 ) {
+%       # Start data frame
+%       res <- raw
+%     } else {  # End if it's the first region, otherwise
+%       # Append to the data frame
+%       res <- bind_rows( res, raw )
+%     }  # End if it's not the first region
+%   }  # End k loop over regions
+%   # Set factor levels etc
+%   res <- res %>%
+%     mutate( Region=factor(Region, levels=SARs),
+%             Year=as.integer(Year) ) %>%
+%     arrange( Region, Year ) %>%
+%     filter( Harvest != "0" ) %>%
+%     rename( 'Harvest (lb)'=Harvest, 'Spawning biomass (t)'=Biomass ) %>%
+%     xtable( align=c("l", "l", "r", "r", "r") )
+%   # Return the data
+%   return( res )
+% }  # End GetSOK function
+% 
+% # Get spawn-on-kelp (major SARs only)
+% sokMajor <- GetSOK( SARs=allRegions$major )
+% 
+% # Print the table
+% print( sokMajor, booktabs=TRUE, include.rownames=FALSE )
+% @
+% \end{frame}
+
+\begin{frame}
+\begin{columns}
+\begin{column}{0.25\textwidth}
+Prince Rupert District
+\end{column}
+\begin{column}{0.75\textwidth}
+\centering
+% \stripes
+\begin{tabular}{rrr}
+\toprule
+\inputsp{../DataSummaries/PRD/HarvestSOK.tex}
+\end{tabular}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\begin{columns}
+\begin{column}{0.25\textwidth}
+Central Coast
+\end{column}
+\begin{column}{0.75\textwidth}
+\centering
+% \stripes
+\begin{tabular}{rrr}
+\toprule
+\inputsp{../DataSummaries/CC/HarvestSOK.tex}
+\end{tabular}
+\end{column}
+\end{columns}
+\end{frame}
+
+% Fin
+\end{document}
