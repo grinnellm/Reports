@@ -46,7 +46,7 @@ rPath <- file.path( "..", "DataSummaries", regName, .Platform$file.sep )
 # Load the R image
 load( file=file.path(rPath, paste("Image", regName, "RData", sep=".")) )
 # Set the path to the region-specific documents for LaTeX
-docPath <- file.path( "RegionalText", max(yrRange), regName,
+docPath <- file.path( "RegionalText", max(yrRange), regName, 
   .Platform$file.sep )
 @
 
