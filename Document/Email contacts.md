@@ -9,7 +9,7 @@ Use the email template `General observations.oft` in `C:\Grinnell unversioned\Ex
 The area contacts are:
 
 * **HG & A2W** Darren Chow and Peter Katinic
-* **PRD** Steven Groves and Corey Martens
+* **PRD** Steven Groves, Corey Martens, and Jennifer Gordon
 * **CC** Steven Groves and Bradley Koroluk
 * **SoG** Bryan Rusch and Amber Neuman
 * **WCVI & A27** Mike Spence and Ryan O'Connell
