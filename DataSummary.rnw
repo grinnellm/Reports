@@ -359,7 +359,11 @@ Units: metres (m), and metric tonnes (t).}
 \begin{figure}[ht]
 \centering
 \includegraphics[width=\linewidth]{BC.pdf}
-\caption{Boundaries for the \fishName{} stock assessment regions (SARs) in British Columbia: there are \Sexpr{length(allRegions$major)} major SARs (\Sexpr{PasteNicely(allRegions$major)}), and \Sexpr{length(allRegions$minor)} minor SARs (\Sexpr{PasteNicely(allRegions$minor)}; \autoref{tabRegions}).
+\caption{Boundaries for the \fishName{} stock assessment regions (SARs) in British Columbia.
+There are \Sexpr{length(allRegionNames$major)} major SARs:
+\Sexpr{PasteNicely(allRegionNames$major)}.
+There are \Sexpr{length(allRegionNames$minor)} minor SARs:
+\Sexpr{PasteNicely(allRegionNames$minor)}.
 Units: kilometres (km).}
 \label{figBC}
 \end{figure}

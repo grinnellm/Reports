@@ -7,6 +7,6 @@ In-season acoustic soundings are not used by stock assessment to inform the esti
 
 The following is a description of data collected for \fishName{} in \thisYr{} in the \regionName{} \regionType{} SAR (\autoref{figRegion}).
 Data collected outside the SAR boundary are not included in this summary, and are not used for the purposes of stock assessment.
-Although we summarise data at the scale of the SAR for stock assessments, we summarise data at finer spatial scales in this report: locations are nested within sections, sections are nested within statistical areas, and statistical areas are nested within SARs (\autoref{tabSpatialGroup}).
-\iftoggle{spatialGroup}{For the \regionName{} \regionType{} SAR, we use another level of spatial aggregation which we refer to as a `group'.}{\unskip}
+Although we summarise data at the scale of the SAR for stock assessments, we summarise data at finer spatial scales in this report: Locations are nested within Sections, Sections are nested within Statistical Areas, and Statistical Areas are nested within SARs (\autoref{tabSpatialGroup}).
+\iftoggle{spatialGroup}{For the \regionName{} \regionType{} SAR, we use another level of spatial aggregation which we refer to as a `Group'.}{\unskip}
 Note that we refer to `year' instead of `herring season' in this report; therefore \thisYr{} refers to the \Sexpr{thisSeason} \fishName{} season.
