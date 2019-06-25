@@ -12,7 +12,7 @@ The area contacts are:
 * **HG & A2W** Darren Chow and Peter Katinic
 * **PRD** Steven Groves, Corey Martens, and Jennifer Gordon
 * **CC** Steven Groves and Bradley Koroluk
-* **SoG** Bryan Rusch and Amber Neuman (may be in new positions?)
+* **SoG** Bryan Rusch and Amber Neuman (they are both in new positions, maybe try Peter Hall)
 * **WCVI & A27** Mike Spence and Ryan O'Connell
 
 ### Send an e-mail based on a template
