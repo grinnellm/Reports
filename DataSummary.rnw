@@ -40,7 +40,7 @@
 # Load packages
 require( knitr, quietly=TRUE )  # Dynamic documents
 # Select region(s)/folder(s): major (HG, PRD, CC, SoG, WCVI); or minor (A27, A2W)
-if( !exists('regName') )  regName <- "CC"
+if( !exists('regName') )  regName <- "PRD"
 # Set the path to the R output, including a trailing separator
 rPath <- file.path( "..", "DataSummaries", regName, .Platform$file.sep )
 # Load the R image
