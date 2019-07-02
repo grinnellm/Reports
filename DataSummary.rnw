@@ -40,7 +40,7 @@
 # Load packages
 require( knitr, quietly=TRUE )  # Dynamic documents
 # Select region(s)/folder(s): major (HG, PRD, CC, SoG, WCVI); or minor (A27, A2W)
-if( !exists('regName') )  regName <- "SoG"
+if( !exists('regName') )  regName <- "WCVI"
 # Set the path to the R output, including a trailing separator
 rPath <- file.path( "..", "DataSummaries", regName, .Platform$file.sep )
 # Load the R image
@@ -271,8 +271,7 @@ The following observations were reported by area DFO Resource Management staff, 
 
 \begin{table}[ht]
 \centering
-\caption{Observed mean length-at-age in millimetres (mm) of \fishName{} by sample type in \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR). 
-\plusGroup{}
+\caption{Observed mean length-at-age in millimetres (mm) of \fishName{} by sample type in \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR). \plusGroup{}
 \legendNear{}} 
 \begin{tabular}\Sexpr{ageTableAlign}
 \toprule
@@ -281,6 +280,70 @@ The following observations were reported by area DFO Resource Management staff, 
 \inputsp{\Sexpr{noquote(rPath)}DeltaLenAgeYr.tex}
 \end{tabular}
 \label{tabDeltaLenAgeYr}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\caption{Observed number-at-age of \fishName{} for nearshore samples from 
+2015 to 2019
+in the \regionName{} \regionType{} stock assessment region (SAR). 
+\plusGroup{}
+\legendNear{}} 
+\begin{tabular}\Sexpr{ageTableAlign}
+\toprule
+& \multicolumn{\Sexpr{length(ageRange)}}{c}{Number-at-age}\\
+\cmidrule{2-\Sexpr{length(ageRange)+1}}
+\inputsp{\Sexpr{noquote(rPath)}NearNum.tex}
+\end{tabular}
+\label{tabNearNum}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\caption{Observed proportion-at-age of \fishName{} for nearshore samples from 
+2015 to 2019
+in the \regionName{} \regionType{} stock assessment region (SAR). 
+\plusGroup{}
+\legendNear{}} 
+\begin{tabular}\Sexpr{ageTableAlign}
+\toprule
+& \multicolumn{\Sexpr{length(ageRange)}}{c}{Proportion-at-age}\\
+\cmidrule{2-\Sexpr{length(ageRange)+1}}
+\inputsp{\Sexpr{noquote(rPath)}NearProp.tex}
+\end{tabular}
+\label{tabNearProp}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\caption{Observed mean weight-at-age in grams (g) of \fishName{} for nearshore samples from 
+2015 to 2019
+in the \regionName{} \regionType{} stock assessment region (SAR). 
+\plusGroup{}
+\legendNear{}} 
+\begin{tabular}\Sexpr{ageTableAlign}
+\toprule
+& \multicolumn{\Sexpr{length(ageRange)}}{c}{Mean weight-at-age (g)}\\
+\cmidrule{2-\Sexpr{length(ageRange)+1}}
+\inputsp{\Sexpr{noquote(rPath)}NearWt.tex}
+\end{tabular}
+\label{tabNearWt}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\caption{Observed mean length-at-age in millimetres (mm) of \fishName{} for nearshore samples from 
+2015 to 2019
+in the \regionName{} \regionType{} stock assessment region (SAR). 
+\plusGroup{}
+\legendNear{}} 
+\begin{tabular}\Sexpr{ageTableAlign}
+\toprule
+& \multicolumn{\Sexpr{length(ageRange)}}{c}{Mean length-at-age (mm)}\\
+\cmidrule{2-\Sexpr{length(ageRange)+1}}
+\inputsp{\Sexpr{noquote(rPath)}NearLen.tex}
+\end{tabular}
+\label{tabNearLen}
 \end{table}
 }{\unskip}
 
