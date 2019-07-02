@@ -282,6 +282,7 @@ The following observations were reported by area DFO Resource Management staff, 
 \label{tabDeltaLenAgeYr}
 \end{table}
 
+% TODO: Need to cross-reference these 4 tables in the main text, and automate the years using 'yrsNearshore'
 \begin{table}[ht]
 \centering
 \caption{Observed number-at-age of \fishName{} for nearshore samples from 
