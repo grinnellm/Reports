@@ -284,11 +284,10 @@ The following observations were reported by area DFO Resource Management staff, 
 \label{tabDeltaLenAgeYr}
 \end{table}
 
-% TODO: Need automate the years using 'yrsNearshore'
 \begin{table}[ht]
 \centering
 \caption{Observed number-at-age of \fishName{} for nearshore samples from 
-2015 to 2019
+\Sexpr{paste(range(yrsNearshore$Year), collapse=" to ")}
 in the \regionName{} \regionType{} stock assessment region (SAR). 
 \plusGroup{}
 \legendNear{}} 
@@ -304,7 +303,7 @@ in the \regionName{} \regionType{} stock assessment region (SAR).
 \begin{table}[ht]
 \centering
 \caption{Observed proportion-at-age of \fishName{} for nearshore samples from 
-2015 to 2019
+\Sexpr{paste(range(yrsNearshore$Year), collapse=" to ")}
 in the \regionName{} \regionType{} stock assessment region (SAR). 
 \plusGroup{}
 \legendNear{}} 
@@ -319,8 +318,8 @@ in the \regionName{} \regionType{} stock assessment region (SAR).
 
 \begin{table}[ht]
 \centering
-\caption{Observed mean weight-at-age in grams (g) of \fishName{} for nearshore samples from 
-2015 to 2019
+\caption{Observed mean weight-at-age in grams (g) of \fishName{} for nearshore samples from
+\Sexpr{paste(range(yrsNearshore$Year), collapse=" to ")}
 in the \regionName{} \regionType{} stock assessment region (SAR). 
 \plusGroup{}
 \legendNear{}} 
@@ -336,7 +335,7 @@ in the \regionName{} \regionType{} stock assessment region (SAR).
 \begin{table}[ht]
 \centering
 \caption{Observed mean length-at-age in millimetres (mm) of \fishName{} for nearshore samples from 
-2015 to 2019
+\Sexpr{paste(range(yrsNearshore$Year), collapse=" to ")}
 in the \regionName{} \regionType{} stock assessment region (SAR). 
 \plusGroup{}
 \legendNear{}} 
@@ -511,8 +510,8 @@ Missing weight- and length-at-age values (i.e., years with no biological samples
 \begin{figure}[ht]
 \centering
 \includegraphics[width=\linewidth]{LengthAgeSample.pdf}
-\caption{Length-at-age in millimetres (mm) of \fishName{}
-from 2015 to 2019
+\caption{Length-at-age in millimetres (mm) of \fishName{} from
+\Sexpr{paste(range(yrsNearshore$Year), collapse=" to ")}
 in the \regionName{} \regionType{} stock assessment region (SAR) by sample type. 
 The outer edges of the boxes indicate the \nth{25} and \nth{75} percentiles, and the middle lines indicate the \nth{50} percentiles (i.e., medians).
 The whiskers extend to $1.5 \times \text{IQR}$, where IQR is the distance between the \nth{25} and \nth{75} percentiles, and dots indicate outliers.
@@ -525,8 +524,8 @@ The whiskers extend to $1.5 \times \text{IQR}$, where IQR is the distance betwee
 \begin{figure}[ht]
 \centering
 \includegraphics[width=\linewidth]{LengthAgeSampleSA.pdf}
-\caption{Length-at-age in millimetres (mm) of \fishName{}
-from 2015 to 2019
+\caption{Length-at-age in millimetres (mm) of \fishName{} from
+\Sexpr{paste(range(yrsNearshore$Year), collapse=" to ")}
 in the \regionName{} \regionType{} stock assessment region (SAR) by sample type and statistical area (SA). 
 The outer edges of the boxes indicate the \nth{25} and \nth{75} percentiles, and the middle lines indicate the \nth{50} percentiles (i.e., medians).
 The whiskers extend to $1.5 \times \text{IQR}$, where IQR is the distance between the \nth{25} and \nth{75} percentiles, and dots indicate outliers.
