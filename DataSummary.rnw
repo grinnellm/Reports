@@ -104,7 +104,9 @@ Total harvested spawn on kelp (SOK) in \thisYr{} in the \regionName{} \regionTyp
 
 In \thisYr{}, \Sexpr{nSampThisYr} \fishName{} biological samples were collected and processed for the \regionName{} \regionType{} SAR (\autoref{tabBioNum}, \autoref{tabBioTypeNum}), and a total of \Sexpr{numAgedThisYr} \fishName{} were aged in \thisYr{}. 
 \iftoggle{numPropWtAge}{Differences between biological data collected from two sampling protocols regarding the number-, proportion-, weight-, and length-at-age for \fishName{} in \thisYr{} in the \regionName{} \regionType{} SAR are shown in \autoref{tabDeltaNumAgeYr}, \autoref{tabDeltaPropAgeYr}, \autoref{tabDeltaWtAgeYr}, and \autoref{tabDeltaLenAgeYr}, respectively.
-The nearshore sampling program is a multi-year pilot study (using cast nets), therefore only biological data from the seine samples were used for the purposes of stock assessment.}{\unskip}
+The nearshore sampling program is a multi-year pilot study (using cast nets), therefore only biological data from the seine samples were used for the purposes of stock assessment.
+Summaries of data collected by the nearshore samping program are shown in \autoref{tabNearNum}, \autoref{tabNearProp}, \autoref{tabNearWt}, and \autoref{tabNearLen}.
+In addition, \autoref{figLengthAgeSample} and \autoref{figLengthAgeSampleSA} show differences in length-at-age between the two sampling protocols, and differences by Statistical Area, respectively.}{\unskip}
 \iftoggle{biosamples}{The locations in which the biological samples were collected are presented in \autoref{figBioLocations}.}{\unskip}
 \iftoggle{weightCatch}{Biological samples collected using seine gear shows that there is considerable variability in fish weight by year and sample type (\autoref{figWeightCatch}).}{\unskip}
 Included herein are biological summaries of observed proportion-, number-, weight-, and length-at-age (\autoref{figProportionAged}, \autoref{tabPropAgedYearTab}, and \autoref{figWtLenAge}, respectively).
@@ -282,7 +284,7 @@ The following observations were reported by area DFO Resource Management staff, 
 \label{tabDeltaLenAgeYr}
 \end{table}
 
-% TODO: Need to cross-reference these 4 tables in the main text, and automate the years using 'yrsNearshore'
+% TODO: Need automate the years using 'yrsNearshore'
 \begin{table}[ht]
 \centering
 \caption{Observed number-at-age of \fishName{} for nearshore samples from 
@@ -504,6 +506,36 @@ Missing weight- and length-at-age values (i.e., years with no biological samples
 \plusGroup{}}
 \label{figWtLenAge}
 \end{figure}
+
+\iftoggle{numPropWtAge}{
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{LengthAgeSample.pdf}
+\caption{Length-at-age in millimetres (mm) of \fishName{}
+from 2015 to 2019
+in the \regionName{} \regionType{} stock assessment region (SAR) by sample type. 
+The outer edges of the boxes indicate the \nth{25} and \nth{75} percentiles, and the middle lines indicate the \nth{50} percentiles (i.e., medians).
+The whiskers extend to $1.5 \times \text{IQR}$, where IQR is the distance between the \nth{25} and \nth{75} percentiles, and dots indicate outliers.
+\seineSamples{}
+\legendNear{}
+\plusGroup{}}
+\label{figLengthAgeSample}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{LengthAgeSampleSA.pdf}
+\caption{Length-at-age in millimetres (mm) of \fishName{}
+from 2015 to 2019
+in the \regionName{} \regionType{} stock assessment region (SAR) by sample type and statistical area (SA). 
+The outer edges of the boxes indicate the \nth{25} and \nth{75} percentiles, and the middle lines indicate the \nth{50} percentiles (i.e., medians).
+The whiskers extend to $1.5 \times \text{IQR}$, where IQR is the distance between the \nth{25} and \nth{75} percentiles, and dots indicate outliers.
+\seineSamples{}
+\legendNear{}
+\plusGroup{}}
+\label{figLengthAgeSampleSA}
+\end{figure}
+}{\unskip}
 
 \iftoggle{weightGroup}{
 \begin{figure}[ht]
