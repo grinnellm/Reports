@@ -40,7 +40,7 @@
 # Load packages
 require( knitr, quietly=TRUE )  # Dynamic documents
 # Select region(s)/folder(s): major (HG, PRD, CC, SoG, WCVI); or minor (A27, A2W)
-if( !exists('regName') )  regName <- "WCVI"
+if( !exists('regName') )  regName <- "PRD"
 # Set the path to the R output, including a trailing separator
 rPath <- file.path( "..", "DataSummaries", regName, .Platform$file.sep )
 # Load the R image
@@ -183,7 +183,7 @@ The following observations were reported by area DFO Resource Management staff, 
 \caption{Total landed commercial catch of \fishName{} in metric tonnes (t) by gear type in \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR).
 \legendGear{}
 \noSOK{}
-\withPrivacy{}}
+\withPrivacy{WP}}
 \begin{tabular}{lr}
 \toprule
 \inputsp{\Sexpr{noquote(rPath)}CatchCommUseYr.tex}
@@ -196,7 +196,7 @@ The following observations were reported by area DFO Resource Management staff, 
 \caption{Total harvested \fishName{} spawn on kelp (SOK) in pounds (lb), and the associated estimate of spawning biomass in metric tonnes (t) from \Sexpr{firstYrTab} to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR).
 \spawnIndexTechReport{}
 \Sexpr{ifelse(region=="CC", "Harvest does not include the 2,411 lbs of spawn on egregia in 2018.", "%")}
-\withPrivacy{}}
+\withPrivacy{WP}}
 \begin{tabular}{rrr}
 \toprule
 \inputsp{\Sexpr{noquote(rPath)}HarvestSOK.tex}
@@ -447,7 +447,8 @@ Units: kilometres (km).
 \includegraphics[width=\linewidth]{CatchGear.pdf}
 \caption{Time series of total landed catch in thousands of metric tonnes ($\text{t} \times 10^{3}$) of \fishName{} by gear type from \Sexpr{min(yrRange)} to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR).
 \legendGear{}
-\noSOK{}}
+\noSOK{}
+\withPrivacy{points}}
 \label{figCatchGear}
 \end{figure}
 
@@ -455,8 +456,9 @@ Units: kilometres (km).
 \begin{figure}[ht]
 \centering
 \includegraphics[width=\linewidth]{CatchStatArea.pdf}
-\caption{Time series of total landed catch in thousands of metric tonnes ($\text{t} \times 10^{3}$) of \fishName{} by Statistical Area (SA) from \Sexpr{firstYrFig} to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR).
-\darkThisYr{}}
+\caption{Time series of total landed catch in thousands of metric tonnes ($\text{t} \times 10^{3}$) of \fishName{} by Statistical Area (SA) from \Sexpr{min(yrRange)} to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR).
+\darkThisYr{}
+\withPrivacy{points}}
 \label{figCatchStatArea}
 \end{figure}
 }{\unskip}
