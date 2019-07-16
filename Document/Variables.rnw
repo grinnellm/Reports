@@ -49,7 +49,7 @@
 \newcommand{\legendGear}{Legend: `Other' represents the reduction, the food and bait, as well as the special use fishery; `RoeSN' represents the roe seine fishery; and `RoeGN' represents the roe gillnet fishery.}
 \newcommand{\darkThisYr}{The year \thisYr{} has a darker bar to facilitate interpretation.}
 \newcommand{\withPrivacy}[1]{Note: data may be withheld due to privacy concerns (#1).}
-\newcommand{\noSOK}{Data from the spawn-on-kelp (SOK) fishery is not included.}
+\newcommand{\noSOK}{Data from the spawn-on-kelp (SOK) fishery are not included.}
 \newcommand{\spawnIndexTechReport}{See the \href{https://github.com/grinnellm/HerringSpawnDocumentation/blob/master/SpawnIndexTechnicalReport.pdf}{draft spawn index techincal report} for calculations to convert SOK harvest to spawning biomass.}
 \newcommand{\missingSpawn}[1]{Missing spawn index values (#1) indicate incomplete spawn surveys.}
 \newcommand{\spawnTypes}{There are three types of spawn survey observations: observations of spawn taken from the surface usually at low tide, underwater observations of spawn on giant kelp, Macrocystis (\emph{Macrocystis} spp.), and underwater observations of spawn on other types of algae and the substrate, which we refer to as `understory.'}

@@ -448,7 +448,7 @@ Units: kilometres (km).
 \caption{Time series of total landed catch in thousands of metric tonnes ($\text{t} \times 10^{3}$) of \fishName{} by gear type from \Sexpr{min(yrRange)} to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR).
 \legendGear{}
 \noSOK{}
-\withPrivacy{points}}
+Note: symbols indicate years in which catch by gear type (i.e., \Sexpr{unique(catch$Gear)}) is withheld due to privacy concerns.}
 \label{figCatchGear}
 \end{figure}
 
@@ -458,7 +458,7 @@ Units: kilometres (km).
 \includegraphics[width=\linewidth]{CatchStatArea.pdf}
 \caption{Time series of total landed catch in thousands of metric tonnes ($\text{t} \times 10^{3}$) of \fishName{} by Statistical Area (SA) from \Sexpr{min(yrRange)} to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR).
 \darkThisYr{}
-\withPrivacy{points}}
+Note: symbols indicate years in which catch is withheld due to privacy concerns.}
 \label{figCatchStatArea}
 \end{figure}
 }{\unskip}
