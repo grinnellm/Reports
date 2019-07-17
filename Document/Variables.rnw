@@ -53,3 +53,4 @@
 \newcommand{\spawnIndexTechReport}{See the \href{https://github.com/grinnellm/HerringSpawnDocumentation/blob/master/SpawnIndexTechnicalReport.pdf}{draft spawn index techincal report} for calculations to convert SOK harvest to spawning biomass.}
 \newcommand{\missingSpawn}[1]{Missing spawn index values (#1) indicate incomplete spawn surveys.}
 \newcommand{\spawnTypes}{There are three types of spawn survey observations: observations of spawn taken from the surface usually at low tide, underwater observations of spawn on giant kelp, Macrocystis (\emph{Macrocystis} spp.), and underwater observations of spawn on other types of algae and the substrate, which we refer to as `understory.'}
+\newcommand{\pctChange}[1]{Percent change is $\delta_t=\frac{\alpha_t - \alpha_{t-1}}{\alpha_{t-1}}$ where $\alpha_t$ is the #1 in year $t$.}
