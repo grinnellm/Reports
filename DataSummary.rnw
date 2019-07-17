@@ -110,6 +110,7 @@ In addition, \autoref{figLengthAgeSample} and \autoref{figLengthAgeSampleSA} sho
 \iftoggle{biosamples}{The locations in which the biological samples were collected are presented in \autoref{figBioLocations}.}{\unskip}
 \iftoggle{weightCatch}{Biological samples collected using seine gear shows that there is considerable variability in fish weight by year and sample type (\autoref{figWeightCatch}).}{\unskip}
 Included herein are biological summaries of observed proportion-, number-, weight-, and length-at-age (\autoref{figProportionAged}, \autoref{tabPropAgedYearTab}, and \autoref{figWtLenAge}, respectively).
+We also show the percent change in weight and length for age-\Sexpr{ageShow} and age-\Sexpr{ageShow2} fish (\autoref{figWtLenAgeChange} \& \autoref{figWtLenAgeChange2}, respectively).
 \iftoggle{weightGroup}{Some Statistical Areas tend to have larger fish at a given age (\autoref{figWeightAgeGroup}, \autoref{tabWeightAgeGroupN}).}{\unskip}
 \seineSamples{}
 \repSamples{}
@@ -500,12 +501,30 @@ The black line is the mean age, and the shaded area is the approximate \Sexpr{ci
 \begin{figure}[ht]
 \centering
 \includegraphics[width=\linewidth]{WtLenAge.pdf}
-\caption{Time series of weight-at-age in grams (g; panel a) and length-at-age in milimetres (mm; panel b) for age-\Sexpr{ageShow} (circles) and \Sexpr{nRoll}-year running mean weight- and length-at-age (lines) for \fishName{} from \Sexpr{min(yrRange)} to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR). 
+\caption{Time series of weight-at-age in grams (g) and length-at-age in milimetres (mm) for age-\Sexpr{ageShow} (circles) and \Sexpr{nRoll}-year running mean weight- and length-at-age (lines) for \fishName{} from \Sexpr{min(yrRange)} to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR). 
 % Lines show \Sexpr{nRoll}-year running means for age-\Sexpr{min(ageRange)} to age-\Sexpr{max(ageRange)} fish (incrementing higher from the lowest line); the thick black line highlights age-\Sexpr{ageShow} fish.
 Missing weight- and length-at-age values (i.e., years with no biological samples) are imputed using one of two methods: missing values at the beginning of the time series are imputed by extending the first non-missing value backwards; other missing values are imputed as the mean of the previous \Sexpr{nRoll} years.
 \seineSamples{}
 \plusGroup{}}
 \label{figWtLenAge}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{WtLenAgeChange.pdf}
+\caption{Time series of percent change (\%) in weight and length for age-\Sexpr{ageShow} fish for \fishName{} from \Sexpr{min(yrRange)} to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR).
+\pctChange{weight and length of age-\Sexpr{ageShow} fish, respectively,}
+\seineSamples{}}
+\label{figWtLenAgeChange}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{WtLenAgeChange2.pdf}
+\caption{Time series of percent change (\%) in weight and length for age-\Sexpr{ageShow2} fish for \fishName{} from \Sexpr{min(yrRange)} to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR).
+\pctChange{weight and length of age-\Sexpr{ageShow2} fish, respectively,}
+\seineSamples{}}
+\label{figWtLenAgeChange2}
 \end{figure}
 
 \iftoggle{numPropWtAge}{
@@ -622,7 +641,7 @@ Note that spawn size and intensity varies; therefore the number of spawns is not
 \centering
 \includegraphics[width=\linewidth]{SpawnIndexChange.pdf}
 \caption{Time series of spawn index in thousands of metric tonnes ($\text{t} \times 10^{3}$) for \fishName{} from\Sexpr{min(yrRange)} to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR; panel a), and percent change (b).
-We calculate percent change as $\delta_t=\frac{I_t - I_{t-1}}{I_{t-1}}$ where $\mli{I}_t$ is the spawn index in year $t$.
+\pctChange{spawn index}
 %\trendLine{}
 \qPeriods{}
 \spawnIndex{}}
