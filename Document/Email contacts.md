@@ -9,11 +9,11 @@ Send a gentle reminder email a few days before the due date.
 
 The area contacts are:
 
-* **HG & A2W** Darren Chow and Peter Katinic
+* **HG & A2W** Patrick Fairweather
 * **PRD** Steven Groves, Corey Martens, and Jennifer Gordon
 * **CC** Steven Groves and Bradley Koroluk
-* **SoG** Bryan Rusch and Amber Neuman (they are both in new positions, maybe try Peter Hall)
-* **WCVI & A27** Mike Spence and Ryan O'Connell
+* **SoG** James Meldrum
+* **WCVI & A27** Mike Spence
 
 ### Send an e-mail based on a template
 
