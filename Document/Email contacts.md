@@ -15,10 +15,16 @@ The area contacts are:
 * **SoG** James Meldrum
 * **WCVI & A27** Mike Spence
 
-### Send an e-mail based on a template
+## Send an e-mail based on a template
 
 1. Select `New Items > More Items > Choose Form`.
 2. In the `Choose Form` dialog box, select `Look In` and click `User Templates in File System`.
 3. Click `Browse`, select the template, and click `Open`.
 4. Make any additions or revisions to the recipients in the To, Cc, or Bcc boxes and any changes to the subject and message body. Note that changes made aren’t saved to the template. If you use the `Save` command, this creates a draft of your message, but won’t update the template.
 5. Click `Send`.
+
+## Save updated templates
+
+1. Click `File` and then `Save As`.
+2. Select `Outlook Template (*.otf)` in "Save as type", and browse to the location (e.g., "C:\Grinnell unversioned\Exchange").
+3. Click `Save`.
