@@ -11,6 +11,7 @@
 *.Rproj
 
 ### LaTeX files ###
+*.aux
 *.log
 *.bbl
 *.out
