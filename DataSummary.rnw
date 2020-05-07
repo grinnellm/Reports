@@ -690,6 +690,7 @@ Note that depth is not corrected to the chart datum.
 \begin{figure}[ht]
 \centering
 % \animategraphics[width=\linewidth]{1}{\Sexpr{rPath}SpawnIndexAnimation}{1}{}
+% \animategraphics{1}{Temp}{1}{3}
 \caption{Animation of \fishName{} spawn survey locations and spawn index in metric tonnes (t) from \Sexpr{min(yrRange)} to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR; thick dashed lines), and associated Section\Sexpr{ifelse(length(unique(areas$Section))>1, "s", "")} (Sec; thin solid lines).
 \qPeriods{}
 \spawnIndex{}
