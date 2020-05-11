@@ -1,0 +1,46 @@
+---
+author: 
+  - Jaclyn Cleary^[DFO Science, Pacific Biological Station (Jaclyn.Cleary@dfo-mpo.gc.ca).]
+  - Matthew Grinnell^[DFO Science, Pacific Biological Station (Matthew.Grinnell@dfo-mpo.gc.ca).]
+date: "`r format(x = Sys.Date(), format = '%b %d, %Y')`"
+output: pdf_document
+params:
+  title: "Pacific Herring preliminary data summary for"
+  region: "Haida Gwaii"
+  year: 2020
+title: "`r paste(params$title, params$region, params$year)`"
+---
+
+```{r setup, include=FALSE}
+# Knitr options
+knitr::opts_chunk$set(echo = TRUE)
+# Select region(s)/folder(s): major (HG, PRD, CC, SoG, WCVI); or minor (A27, A2W)
+if( !exists('regName') )  regName <- "HG"
+# Set the path to the R output, including a trailing separator
+rPath <- file.path( "..", "DataSummaries", regName, .Platform$file.sep )
+# Load the R image
+load( file=file.path(rPath, paste("Image", regName, "RData", sep=".")) )
+# Set the path to the region-specific documents for LaTeX
+docPath <- file.path( "RegionalText", max(yrRange), regName, 
+  .Platform$file.sep )
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
