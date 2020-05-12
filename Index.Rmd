@@ -1,46 +1,150 @@
 ---
-author: 
-  - Jaclyn Cleary^[DFO Science, Pacific Biological Station (Jaclyn.Cleary@dfo-mpo.gc.ca).]
-  - Matthew Grinnell^[DFO Science, Pacific Biological Station (Matthew.Grinnell@dfo-mpo.gc.ca).]
+author: "Jaclyn Cleary^[DFO Science, Pacific Biological Station (Jaclyn.Cleary@dfo-mpo.gc.ca).] and Matthew Grinnell^[DFO Science, Pacific Biological Station (Matthew.Grinnell@dfo-mpo.gc.ca).]"
 date: "`r format(x = Sys.Date(), format = '%b %d, %Y')`"
-output: pdf_document
 params:
   title: "Pacific Herring preliminary data summary for"
-  region: "Haida Gwaii"
+  region: "Central Coast"
   year: 2020
 title: "`r paste(params$title, params$region, params$year)`"
+urlcolor: blue
+geometry: margin=3cm
+output:
+  pdf_document:
+    number_sections: true
+header-includes:
+  - \usepackage{etoolbox}
 ---
 
 ```{r setup, include=FALSE}
+# Packages
+require(knitr)
+require(tidyverse)
 # Knitr options
-knitr::opts_chunk$set(echo = TRUE)
+opts_chunk$set(
+  echo = TRUE,
+  fig.align = "center"
+)
+# Regions
+regions <- read_csv(
+  file =
+    "SAR, Region, RegionName, Major
+          1, HG, Haida Gwaii, TRUE
+          2, PRD, Prince Rupert District, TRUE
+          3, CC, Central Coast, TRUE
+          4, SoG, Strait of Georgia, TRUE
+          5, WCVI, West Coast of Vancouver Island, TRUE
+          6, A27, Area 27, FALSE
+          7, A2W, Area 2 West, FALSE",
+  col_types = cols("i", "c", "c", "l")
+)
 # Select region(s)/folder(s): major (HG, PRD, CC, SoG, WCVI); or minor (A27, A2W)
-if( !exists('regName') )  regName <- "HG"
+if (!exists("regName")) {
+  regName <- regions$Region[regions$RegionName == params$region]
+}
 # Set the path to the R output, including a trailing separator
-rPath <- file.path( "..", "DataSummaries", regName, .Platform$file.sep )
+rPath <- file.path("..", "DataSummaries", regName, .Platform$file.sep)
 # Load the R image
-load( file=file.path(rPath, paste("Image", regName, "RData", sep=".")) )
+load(file = file.path(rPath, paste("Image", regName, "RData", sep = ".")))
 # Set the path to the region-specific documents for LaTeX
-docPath <- file.path( "RegionalText", max(yrRange), regName, 
-  .Platform$file.sep )
+docPath <- file.path(
+  "RegionalText", params$year, regName, .Platform$file.sep # max(yrRange)
+)
 ```
 
-## R Markdown
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
+```{r, child='Document/Variables.rmd', include=FALSE}
 ```
 
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
+```{r checkYrs, echo=FALSE}
+# Warning if years are not the same
+if(max(yrRange)!=params$year)
+  warning("Year mismatch", call.=FALSE)
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+\begin{center}
+\begin{minipage}{0.45\linewidth}
+\includegraphics{Document/HerringDFO.jpg}
+\fishName{} (\scienceName{}). Image credit: \href{http://www.pac.dfo-mpo.gc.ca}{Fisheries and Oceans Canada}.
+\end{minipage}
+\end{center}
+
+\vspace{1cm}
+\hrule
+\begin{description}
+\item[Disclaimer] This report contains preliminary data collected for \fishName{} in \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR).
+These data may differ from data used and presented in the final stock assessment.
+\isSubset{}
+\end{description}
+\vspace{0.2cm}
+\hrule
+
+# Context
+
+`r knit_child("Document/Context.rmd")`
+
+# Data collection programs
+
+`r knit_child(paste0(docPath,"DataCollectionPrograms.rmd"))`
+
+<!-- Insert text for additional biosamples in CC StatArea 08, if required -->
+`r ifelse(regName=="CC", knit_child("Document/CC08.rnw"), "")`
+
+# Catch and biological samples
+
+In the 1950s and 1960s, the reduction fishery dominated \fishName{} catch;
+starting in the 1970s, catch has been predominantly from roe seine and gillnet fisheries.
+The reduction fishery is different from current fisheries in several ways.
+First, the reduction fishery caught \fishName{} of all ages, whereas current fisheries target spawning (i.e., mature) fish.
+Thus, reduction fisheries included age-1 fish which are not typically caught in current fisheries.
+Second, the reduction fishery has some uncertainty regarding the quantity and location of catch; in some cases this may affect our ability to allocate catch to a specific SAR.
+For the roe gillnet fishery, all \fishName{} catch has been validated by a dockside monitoring program since `r validCatch$RoeGN`;
+the catch validation program started in `r validCatch$RoeSN` for the roe seine fishery.
+Finally, the reduction fishery operated during the winter months, whereas roe fisheries typically target spawning fish between February and April.
+
+`r knit_child(paste0(docPath,"CatchAndBiologicalSamples.rmd"))`
+Landed commercial catch of \fishName{} by year and fishery is shown in \autoref{tabCatchCommUseYr} and \autoref{figCatchGear}.
+\iftoggle{catchStatArea}{In addition to annual catch variability, catch varies among Statistical Areas (\autoref{figCatchStatArea}).}{\unskip}
+Total harvested spawn on kelp (SOK) in \thisYr{} in the \regionName{} \regionType{} SAR is shown in \autoref{tabHarvestSOK}; we also calculate the estimated spawning biomass associated with SOK harvest.
+\spawnIndexTechReport{}
+<!-- Note that we do not account for SOK harvest removals in stock assessments. -->
+<!-- Currently, catch input to the stock assessment model does not include mortality from the commercial SOK fishery, nor any recreational or FSC fisheries. -->
+
+In \thisYr{}, `r nSampThisYr` \fishName{} biological samples were collected and processed for the \regionName{} \regionType{} SAR (\autoref{tabBioNum}, \autoref{tabBioTypeNum}), and a total of `r numAgedThisYr` \fishName{} were aged in \thisYr{}. 
+\iftoggle{numPropWtAge}{Differences between biological data collected from two sampling protocols regarding the number-, proportion-, weight-, and length-at-age for \fishName{} in \thisYr{} in the \regionName{} \regionType{} SAR are shown in \autoref{tabDeltaNumAgeYr}, \autoref{tabDeltaPropAgeYr}, \autoref{tabDeltaWtAgeYr}, and \autoref{tabDeltaLenAgeYr}, respectively.
+The nearshore sampling program is a multi-year pilot study (using cast nets), therefore only biological data from the seine samples were used for the purposes of stock assessment.
+Summaries of data collected by the nearshore samping program are shown in \autoref{tabNearNum}, \autoref{tabNearProp}, \autoref{tabNearWt}, and \autoref{tabNearLen}.
+In addition, \autoref{figLengthAgeSample} and \autoref{figLengthAgeSampleSA} show differences in length-at-age between the two sampling protocols, and differences by Statistical Area, respectively.}{\unskip}
+\iftoggle{biosamples}{The locations in which the biological samples were collected are presented in \autoref{figBioLocations}.}{\unskip}
+\iftoggle{weightCatch}{Biological samples collected using seine gear shows that there is considerable variability in fish weight by year and sample type (\autoref{figWeightCatch}).}{\unskip}
+Included herein are biological summaries of observed proportion-, number-, weight-, and length-at-age (\autoref{figProportionAged}, \autoref{tabPropAgedYearTab}, and \autoref{figWtLenAge}, respectively).
+We also show the percent change in weight and length for age-`r ageShow` and age-`r ageShow2` fish (\autoref{figWtLenAgeChange} \& \autoref{figWtLenAgeChange2}, respectively).
+\iftoggle{weightGroup}{Some Statistical Areas tend to have larger fish at a given age (\autoref{figWeightAgeGroup}, \autoref{tabWeightAgeGroupN}).}{\unskip}
+\seineSamples{}
+\repSamples{}
+
+# Spawn survey data
+
+\iftoggle{spawnByLoc}{\fishName{} spawn surveys were conducted at `r nSpawnLoc` individual location`r ifelse(nSpawnLoc>1, "s", "")` in \thisYr{} in the \regionName{} \regionType{} SAR (\autoref{tabSpawnByLoc}\iftoggle{spawnByLocXY}{, and \autoref{figSpawnByLoc}}{\unskip}).}
+{No spawn surveys were conducted in \thisYr{} in the \regionName{} \regionType{} SAR.}
+A summary of spawn from the last decade (`r unique(spawnDecade$Decade)`) is shown in \autoref{figSpawnDecade}.
+\autoref{figSpawnTiming} shows spawn start date by decade and `r ifelse(spawnTimingGroup, "Group", "Statistical Area")`.
+Spawn surveys are conducted to estimate the spawn length, width, number of egg layers, and substrate type, and these data are used to estimate the index of spawning biomass (i.e., the spawn index; \autoref{figSpawnIndexType}, \autoref{figSpawnTypeProp}, \autoref{figSpawnDimensions}, \autoref{figSpawnIndexPercent}, \autoref{tabSpawnYrTab}, and \autoref{figSpawnIndexChange}).
+We describe the calculations used to estimate the spawn index in the \href{https://github.com/grinnellm/HerringSpawnDocumentation/blob/master/SpawnIndexTechnicalReport.pdf}{draft spawn index techincal report}.
+\iftoggle{spawnDepth}{In addition, spawn surveys estimate spawn depth by Statistical Area, and Section (\autoref{figSpawnDepth}).}{\unskip}
+\spawnIndex{}
+Therefore, these data do not represent model estimates of spawning biomass, and are considered the minimum observed spawning biomass derived from egg counts.
+\qPeriods{}
+
+Some \fishName{} Sections contribute more than others to the total spawn index, and the percentage contributed by Section varies yearly (\autoref{figSpawnIndexPercent}b, \autoref{figSpawnPercentPanel}). 
+For example, in \thisYr{}, Section `r pSpawnThisYr$Section` contributed the most to the spawn index (`r pSpawnThisYr$Percent`%). 
+As with Sections, some `r spawnIndexGroupName$a`s contribute more than others to the total spawn index (\autoref{figSpawnIndexPercent}c, \autoref{figSpawnPercentGrid}).
+An animation shows the spawn index by spawn survey location from `r min(yrRange)` to \thisYr{} (\autoref{figSpawnIndexAnimation}).
+
+# General observations
+
+General observations provide context to the data summary report.
+The following observations were reported by area DFO Resource Management staff, and DFO Science staff:
+
+`r knit_child(paste0(docPath,"GeneralObservations.rmd"))`
+
+\clearpage
+# Tables
