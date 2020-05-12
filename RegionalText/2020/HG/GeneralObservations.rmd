@@ -17,6 +17,6 @@ Some samples appeared to have full stomachs.
 Most of the fish seemed to be fairly close to spawning.
 There were very few juvenile fish this year.
 
-\item Prevailing Northwest and Northeast winds kept water temperature between 6.2 and 6.4^\circ\text{C}.
+\item Prevailing Northwest and Northeast winds kept water temperature between 6.2 and $6.4^\circ\text{C}$.
 
 \end{itemize}
