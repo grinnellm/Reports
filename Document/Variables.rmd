@@ -1,0 +1,65 @@
+<!-- Get some values for all regions (from the saved R image) -->
+\newcommand{\regionName}{`r unique(areas$RegionName)`}
+\newcommand{\regionType}{`r regionType`}
+\newcommand{\firstYr}{`r min(yrRange)`}
+\newcommand{\thisYr}{`r max(yrRange)`}
+\newcommand{\fishName}{Pacific Herring}
+\newcommand{\scienceName}{\emph{Clupea pallasii}}
+
+<!-- Get some values for CC region (from the saved R image) -->
+\newcommand{\histYrs}{`r histYrs`}
+\newcommand{\histRat}{`r histRat`}
+\newcommand{\fixYrs}{`r fixYrs`}
+
+<!-- Note if there is only a subset of sections -->
+\newcommand{\isSubset}{`r ifelse(all(is.na(sectionSub)), "", paste("Note that this report contains data collected in a subset of the SAR; included sections are ", PasteNicely(sectionSub), ".", sep=""))`}
+
+<!-- Initialize switches; set to TRUE/FALSE in R based on the region -->
+<!-- Show biosample locations -->
+\newtoggle{biosamples}
+`r tfBiosamples`
+<!-- Show weight by catch type -->
+\newtoggle{weightCatch}
+`r tfWeightCatch`
+<!-- Show weight by group -->
+\newtoggle{weightGroup}
+`r tfWeightGroup`
+<!-- Show depth of spawn -->
+\newtoggle{spawnDepth}
+`r tfSpawnDepth`
+<!-- Show number-, proportion- and weight-at-age -->
+\newtoggle{numPropWtAge}
+`r tfNumPropWtAge`
+<!-- Show catch by stat area -->
+\newtoggle{catchStatArea}
+`r tfCatchStatArea`
+<!-- Show spawn locations -->
+\newtoggle{spawnByLoc}
+`r tfSpawnByLoc`
+<!-- Show spawn locations with X and Y -->
+\newtoggle{spawnByLocXY}
+`r tfSpawnByLocXY`
+<!-- Show table of stat areas, sections, and groups -->
+\newtoggle{spatialGroup}
+`r tfSpatialGroup`
+
+<!-- Location of the pdf figures (generated in R) -->
+\graphicspath{{\Sexpr{noquote(rPath)}}}
+
+<!-- Some common notes and comments -->
+\newcommand{\sampleSize}{Each sample is approximately 100 fish.}
+\newcommand{\seineSamples}{Biological summaries only include samples collected using seine nets (commercial and test) due to size-selectivity of other gear types such as gillnet.}
+\newcommand{\repSamples}{Only representative biological samples are included, where 'representative' indicates whether the \fishName{} sample in the set accurately reflects the larger \fishName{} school.}
+\newcommand{\plusGroup}{The age-`r max(ageRange)` class is a 'plus group' which includes fish ages `r max(ageRange)` and older.}
+\newcommand{\spawnIndex}{The 'spawn index' is not scaled by the spawn survey scaling parameter, $q$.}
+\newcommand{\trendLine}{The thick black line is a `r smLine` curve, and the shaded area is the `r ciLevel*100`\% confidence interval.}
+\newcommand{\qPeriods}{The spawn index has two distinct periods defined by the dominant survey method: surface surveys (`r qYrs$q1`), and dive surveys (`r qYrs$q2`).}
+\newcommand{\legendNear}{Legend: 'Nearshore' refers to samples collected using cast nets as part of a pilot study with First Nations.}
+\newcommand{\legendGear}{Legend: 'Other' represents the reduction, the food and bait, as well as the special use fishery; 'RoeSN' represents the roe seine fishery; and 'RoeGN' represents the roe gillnet fishery.}
+\newcommand{\darkThisYr}{The year \thisYr{} has a darker bar to facilitate interpretation.}
+\newcommand{\withPrivacy}[1]{Note: data may be withheld due to privacy concerns (#1).}
+\newcommand{\noSOK}{Data from the spawn-on-kelp (SOK) fishery are not included.}
+\newcommand{\spawnIndexTechReport}{See the \href{https://github.com/grinnellm/HerringSpawnDocumentation/blob/master/SpawnIndexTechnicalReport.pdf}{draft spawn index techincal report} for calculations to convert SOK harvest to spawning biomass.}
+\newcommand{\missingSpawn}[1]{Missing spawn index values (#1) indicate incomplete spawn surveys.}
+\newcommand{\spawnTypes}{There are three types of spawn survey observations: observations of spawn taken from the surface usually at low tide, underwater observations of spawn on giant kelp, Macrocystis (\emph{Macrocystis} spp.), and underwater observations of spawn on other types of algae and the substrate, which we refer to as `understory.'}
+\newcommand{\pctChange}[1]{Percent change is $\delta_t=\frac{\alpha_t - \alpha_{t-1}}{\alpha_{t-1}}$ where $\alpha_t$ is the #1 in year $t$.}

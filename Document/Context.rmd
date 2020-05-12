@@ -1,0 +1,12 @@
+\fishName{} (\scienceName{}) in British Columbia are assessed as `r length(allRegions$major)` major and `r length(allRegions$minor)` minor stock assessment regions (SARs), and data are collected and summarized on this scale (\autoref{tabRegions}, \autoref{figBC}).
+<!-- One difference between major and minor SARs is that only major SARs receive stock assessments. -->
+The \fishName{} data collection program includes fishery-dependent and -independent data from \firstYr{} to \thisYr{}.
+This includes annual time series of commercial catch data, biological samples (providing information on proportion-at-age and weight-at-age), and spawn index data conducted using a combination of surface and SCUBA surveys.
+In some areas, industry- and/or First Nations-operated in-season soundings programs are also conducted, and this information is used by resource managers, First Nations, and stakeholders to locate fish and identify areas of high and low \fishName{} biomass to plan harvesting activities.
+In-season acoustic soundings are not used by stock assessment to inform the estimation of spawning biomass.
+
+The following is a description of data collected for \fishName{} in \thisYr{} in the \regionName{} \regionType{} SAR (\autoref{figRegion}).
+Data collected outside the SAR boundary are not included in this summary, and are not used for the purposes of stock assessment.
+Although we summarise data at the scale of the SAR for stock assessments, we summarise data at finer spatial scales in this report: Locations are nested within Sections, Sections are nested within Statistical Areas, and Statistical Areas are nested within SARs (\autoref{tabSpatialGroup}).
+\iftoggle{spatialGroup}{For the \regionName{} \regionType{} SAR, we use another level of spatial aggregation which we refer to as a 'Group'.}{\unskip}
+Note that we refer to 'year' instead of 'herring season' in this report; therefore \thisYr{} refers to the `r thisSeason` \fishName{} season.
