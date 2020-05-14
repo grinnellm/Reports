@@ -1,0 +1,15 @@
+\iftoggle{spawnByLoc}{\fishName{} spawn surveys were conducted at `r nSpawnLoc` individual location`r ifelse(nSpawnLoc>1, "s", "")` in \thisYr{} in the \regionName{} \regionType{} SAR (\autoref{tabSpawnByLoc}\iftoggle{spawnByLocXY}{, and \autoref{figSpawnByLoc}}{\unskip}).}
+{No spawn surveys were conducted in \thisYr{} in the \regionName{} \regionType{} SAR.}
+A summary of spawn from the last decade (`r unique(spawnDecade$Decade)`) is shown in \autoref{figSpawnDecade}.
+\autoref{figSpawnTiming} shows spawn start date by decade and `r ifelse(spawnTimingGroup, "Group", "Statistical Area")`.
+Spawn surveys are conducted to estimate the spawn length, width, number of egg layers, and substrate type, and these data are used to estimate the index of spawning biomass (i.e., the spawn index; \autoref{figSpawnIndexType}, \autoref{figSpawnTypeProp}, \autoref{figSpawnDimensions}, \autoref{figSpawnIndexPercent}, \autoref{tabSpawnYrTab}, and \autoref{figSpawnIndexChange}).
+We describe the calculations used to estimate the spawn index in the \href{https://github.com/grinnellm/HerringSpawnDocumentation/blob/master/SpawnIndexTechnicalReport.pdf}{draft spawn index techincal report}.
+\iftoggle{spawnDepth}{In addition, spawn surveys estimate spawn depth by Statistical Area, and Section (\autoref{figSpawnDepth}).}{\unskip}
+\spawnIndex{}
+Therefore, these data do not represent model estimates of spawning biomass, and are considered the minimum observed spawning biomass derived from egg counts.
+\qPeriods{}
+
+Some \fishName{} Sections contribute more than others to the total spawn index, and the percentage contributed by Section varies yearly (\autoref{figSpawnIndexPercent}b, \autoref{figSpawnPercentPanel}). 
+For example, in \thisYr{}, Section `r pSpawnThisYr$Section` contributed the most to the spawn index (`r pSpawnThisYr$Percent`%). 
+As with Sections, some `r spawnIndexGroupName$a`s contribute more than others to the total spawn index (\autoref{figSpawnIndexPercent}c, \autoref{figSpawnPercentGrid}).
+An animation shows the spawn index by spawn survey location from `r min(yrRange)` to \thisYr{} (\autoref{figSpawnIndexAnimation}).

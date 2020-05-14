@@ -1,0 +1,4 @@
+General observations provide context to the data summary report.
+The following observations were reported by area DFO Resource Management staff, and DFO Science staff:
+
+`r knit_child(paste0(docPath, "05_GeneralObservations.rmd"))`

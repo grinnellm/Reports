@@ -43,9 +43,6 @@
 \newtoggle{spatialGroup}
 `r tfSpatialGroup`
 
-<!-- Location of the pdf figures (generated in R) -->
-\graphicspath{{\Sexpr{noquote(rPath)}}}
-
 <!-- Some common notes and comments -->
 \newcommand{\sampleSize}{Each sample is approximately 100 fish.}
 \newcommand{\seineSamples}{Biological summaries only include samples collected using seine nets (commercial and test) due to size-selectivity of other gear types such as gillnet.}

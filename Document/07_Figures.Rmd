@@ -1,0 +1,264 @@
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{`r noquote(file.path(rPath, "BC.png"))`}
+\caption{Boundaries for the \fishName{} stock assessment regions (SARs) in British Columbia.
+There are `r length(allRegionsLong$major)` major SARs:
+`r PasteNicely(allRegionsLong$major)`.
+There are `r length(allRegionsLong$minor)` minor SARs:
+`r PasteNicely(allRegionsLong$minor)`.
+Units: kilometres (km).}
+\label{figBC}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{`r noquote(file.path(rPath, "Region.png"))`}
+\caption{Boundaries for the \regionName{} \regionType{} stock assessment region (SAR; thick dashed lines), associated Statistical Areas (SA; thin solid lines), and associated Sections (thin dotted lines).
+Units: kilometres (km).
+`r spawnIndexGroupLegend`}
+\label{figRegion}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{`r noquote(file.path(rPath, "CatchGear.png"))`}
+\caption{Time series of total landed catch in thousands of metric tonnes ($\text{t} \times 10^{3}$) of \fishName{} by gear type from `r min(yrRange)` to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR).
+\legendGear{}
+\noSOK{}
+Note: symbols indicate years in which catch by gear type (i.e., `r unique(catch$Gear)`) is withheld due to privacy concerns.}
+\label{figCatchGear}
+\end{figure}
+
+<!-- \iftoggle{catchStatArea}{ -->
+<!-- \begin{figure}[ht] -->
+<!-- \centering -->
+<!-- \includegraphics[width=\linewidth]{`r noquote(file.path(rPath, "CatchStatArea.png"))`} -->
+<!-- \caption{Time series of total landed catch in thousands of metric tonnes ($\text{t} \times 10^{3}$) of \fishName{} by Statistical Area (SA) from `r min(yrRange)` to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR). -->
+<!-- \darkThisYr{} -->
+<!-- Note: symbols indicate years in which catch is withheld due to privacy concerns.} -->
+<!-- \label{figCatchStatArea} -->
+<!-- \end{figure} -->
+<!-- }{\unskip} -->
+
+<!-- \iftoggle{biosamples}{ -->
+<!-- \begin{figure}[ht] -->
+<!-- \centering -->
+<!-- \includegraphics[width=\linewidth]{`r noquote(file.path(rPath, "BioLocations.png"))`} -->
+<!-- \caption{Location and type of \fishName{} biological samples collected in \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR; thick dashed lines), and associated Section`r ifelse(length(unique(areas$Section))>1, "s", "")` (Sec; thin solid lines). -->
+<!-- Units: kilometres (km).} -->
+<!-- \label{figBioLocations} -->
+<!-- \end{figure} -->
+<!-- }{\unskip} -->
+
+<!-- \iftoggle{weightCatch}{ -->
+<!-- \begin{figure}[ht] -->
+<!-- \centering -->
+<!-- \includegraphics[width=\linewidth]{`r noquote(file.path(rPath, "WeightCatch.png"))`} -->
+<!-- \caption{Time series of weight in grams (g) of \fishName{} by sample type from `r firstYrTab` to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR) in Statistical Areas 14 and 17. -->
+<!-- The outer edges of the boxes indicate the \nth{25} and \nth{75} percentiles, and the middle lines indicate the \nth{50} percentiles (i.e., medians). -->
+<!-- The whiskers extend to $1.5 \times \text{IQR}$, where IQR is the distance between the \nth{25} and \nth{75} percentiles, and dots indicate outliers. -->
+<!-- Horizontal dashed lines indicate the mean weight-at-age for age-`r min(ageRange)` (lowest line) to age-`r max(ageRange)` (incrementing higher from age-`r min(ageRange)`) fish.  -->
+<!-- \seineSamples{} -->
+<!-- \plusGroup{}} -->
+<!-- \label{figWeightCatch} -->
+<!-- \end{figure} -->
+<!-- }{\unskip} -->
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{`r noquote(file.path(rPath, "ProportionAged.png"))`}
+\caption{Time series of observed proportion-at-age (a) and number aged in thousands (c) of \fishName{} from `r min(yrRange)` to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR).
+The black line is the mean age, and the shaded area is the approximate `r ciLevel*100`\% distribution.
+\seineSamples{}
+\plusGroup{}}
+\label{figProportionAged}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{`r noquote(file.path(rPath, "WtLenAge.png"))`}
+\caption{Time series of weight-at-age in grams (g) and length-at-age in milimetres (mm) for age-`r ageShow` (circles) and `r nRoll`-year running mean weight- and length-at-age (lines) for \fishName{} from `r min(yrRange)` to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR).
+<!-- Lines show `r nRoll`-year running means for age-`r min(ageRange)` to age-`r max(ageRange)` fish (incrementing higher from the lowest line); the thick black line highlights age-`r ageShow` fish. -->
+Missing weight- and length-at-age values (i.e., years with no biological samples) are imputed using one of two methods: missing values at the beginning of the time series are imputed by extending the first non-missing value backwards; other missing values are imputed as the mean of the previous `r nRoll` years.
+\seineSamples{}
+\plusGroup{}}
+\label{figWtLenAge}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{`r noquote(file.path(rPath, "WtLenAgeChange.png"))`}
+\caption{Time series of percent change (\%) in weight and length for age-`r ageShow` fish for \fishName{} from `r min(yrRange)` to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR).
+\pctChange{weight and length of age-`r ageShow` fish, respectively,}
+\seineSamples{}}
+\label{figWtLenAgeChange}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{`r noquote(file.path(rPath, "WtLenAgeChange2.png"))`}
+\caption{Time series of percent change (\%) in weight and length for age-`r ageShow2` fish for \fishName{} from `r min(yrRange)` to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR).
+\pctChange{weight and length of age-`r ageShow2` fish, respectively,}
+\seineSamples{}}
+\label{figWtLenAgeChange2}
+\end{figure}
+
+<!-- \iftoggle{numPropWtAge}{ -->
+<!-- \begin{figure}[ht] -->
+<!-- \centering -->
+<!-- \includegraphics[width=\linewidth]{`r noquote(file.path(rPath, "LengthAgeSample.png"))`} -->
+<!-- \caption{Length-at-age in millimetres (mm) of \fishName{} from -->
+<!-- `r paste(range(yrsNearshore), collapse=" to ")` -->
+<!-- in the \regionName{} \regionType{} stock assessment region (SAR) by sample type. -->
+<!-- The outer edges of the boxes indicate the \nth{25} and \nth{75} percentiles, and the middle lines indicate the \nth{50} percentiles (i.e., medians). -->
+<!-- The whiskers extend to $1.5 \times \text{IQR}$, where IQR is the distance between the \nth{25} and \nth{75} percentiles, and dots indicate outliers. -->
+<!-- \seineSamples{} -->
+<!-- \legendNear{} -->
+<!-- \plusGroup{}} -->
+<!-- \label{figLengthAgeSample} -->
+<!-- \end{figure} -->
+
+<!-- \begin{figure}[ht] -->
+<!-- \centering -->
+<!-- \includegraphics[width=\linewidth]`r noquote(file.path(rPath, "LengthAgeSampleSA.png"))`} -->
+<!-- \caption{Length-at-age in millimetres (mm) of \fishName{} from -->
+<!-- `r paste(range(yrsNearshore), collapse=" to ")` -->
+<!-- in the \regionName{} \regionType{} stock assessment region (SAR) by sample type and statistical area (SA).  -->
+<!-- The outer edges of the boxes indicate the \nth{25} and \nth{75} percentiles, and the middle lines indicate the \nth{50} percentiles (i.e., medians). -->
+<!-- The whiskers extend to $1.5 \times \text{IQR}$, where IQR is the distance between the \nth{25} and \nth{75} percentiles, and dots indicate outliers. -->
+<!-- \seineSamples{} -->
+<!-- \legendNear{} -->
+<!-- \plusGroup{}} -->
+<!-- \label{figLengthAgeSampleSA} -->
+<!-- \end{figure} -->
+<!-- }{\unskip} -->
+
+<!-- \iftoggle{weightGroup}{ -->
+<!-- \begin{figure}[ht] -->
+<!-- \centering -->
+<!-- \includegraphics[width=\linewidth]{`r noquote(file.path(rPath, "WeightAgeGroup.png"))`} -->
+<!-- \caption{Weight-at-age in grams (g) of \fishName{} in the \regionName{} \regionType{} stock assessment region (SAR) by Group from the most recent decade (`r wtAgeYrRanges$recent`), and the previous decade (`r wtAgeYrRanges$previous`).  -->
+<!-- The outer edges of the boxes indicate the \nth{25} and \nth{75} percentiles, and the middle lines indicate the \nth{50} percentiles (i.e., medians). -->
+<!-- The whiskers extend to $1.5 \times \text{IQR}$, where IQR is the distance between the \nth{25} and \nth{75} percentiles, and dots indicate outliers. -->
+<!-- Sample sizes are given in \autoref{tabWeightAgeGroupN}. -->
+<!-- \seineSamples{} -->
+<!-- \plusGroup{} -->
+<!-- `r spawnIndexGroupLegend`} -->
+<!-- \label{figWeightAgeGroup} -->
+<!-- \end{figure} -->
+<!-- }{\unskip} -->
+
+<!-- \iftoggle{spawnByLoc}{ -->
+<!-- \iftoggle{spawnByLocXY}{ -->
+<!-- \begin{figure}[ht] -->
+<!-- \centering -->
+<!-- \includegraphics[width=\linewidth]{`r noquote(file.path(rPath, "SpawnByLoc.png"))`} -->
+<!-- \caption{\fishName{} spawn survey location`r ifelse(nrow(spawnByLoc)>1, "s", "")`, and spawn index in metric tonnes (t) in \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR; thick dashed lines), and associated Section`r ifelse(length(unique(areas$Section))>1, "s", "")` (Sec; thin solid lines). -->
+<!-- \spawnIndex{} -->
+<!-- \missingSpawn{grey circles} -->
+<!-- Units: kilometres (km).} -->
+<!-- \label{figSpawnByLoc} -->
+<!-- \end{figure} -->
+<!-- }{} -->
+<!-- }{\unskip} -->
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{`r noquote(file.path(rPath, "SpawnDecade.png"))`}
+\caption{\fishName{} spawn survey location`r ifelse(nrow(spawnByLoc)>1, "s", "")`, mean spawn index in metric tonnes (t), and spawn frequency from `r unique(spawnDecade$Decade)` in the \regionName{} \regionType{} stock assessment region (SAR; thick dashed lines), and associated Section`r ifelse(length(unique(areas$Section))>1, "s", "")` (Sec; thin solid lines).
+\spawnIndex{}
+\missingSpawn{grey circles}
+%Note that the mean excludes years when no spawn was reported.
+Units: kilometres (km).}
+\label{figSpawnDecade}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{`r noquote(file.path(rPath, "SpawnTiming.png"))`}
+\caption{\fishName{} spawn start date by decade and `r ifelse(spawnTimingGroup, "Group", "Statistical Area")`.
+Grey shaded regions indicate March 1$^\text{st}$ to March 31$^\text{st}$.
+Note that spawn size and intensity varies; therefore the number of spawns is not directly proportional to spawn extent or biomass.
+`r ifelse(spawnTimingGroup, spawnIndexGroupLegend, "")`}
+\label{figSpawnTiming}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{`r noquote(file.path(rPath, "SpawnIndexType.png"))`}
+\caption{Time series of spawn index in thousands of metric tonnes ($\text{t} \times 10^{3}$) by type for \fishName{} from `r min(yrRange)` to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR).
+<!-- \trendLine{} -->
+\spawnTypes{}
+\qPeriods{}}
+\label{figSpawnIndexType}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{`r noquote(file.path(rPath, "SpawnTypeProp.png"))`}
+\caption{Time series of proportion of spawn index by surface and dive surveys for \fishName{} from `r min(yrRange)` to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR).
+\qPeriods{}}
+\label{figSpawnTypeProp}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{`r noquote(file.path(rPath, "SpawnDimensions.png"))`}
+\caption{Time series of total spawn length in thousands of metres ($\text{m} \times 10^{3}$; panel a), mean spawn width in metres (b), and mean number of egg layers (c) for \fishName{} from `r min(yrRange)` to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR).
+<!-- \trendLine{} -->
+\qPeriods{}}
+\label{figSpawnDimensions}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{`r noquote(file.path(rPath, "SpawnIndexPercent.png"))`}
+\caption{Time series of spawn index in thousands of metric tonnes ($\text{t} \times 10^{3}$) for \fishName{} from `r min(yrRange)` to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR; panel a), as well as percent contributed by `r spawnIndexGroupName$b`, and Section (b, \& c, respectively).
+<!-- \trendLine{} -->
+\qPeriods{}
+\spawnIndex{}
+`r spawnIndexGroupLegend`}
+\label{figSpawnIndexPercent}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{`r noquote(file.path(rPath, "SpawnIndexChange.png"))`}
+\caption{Time series of spawn index in thousands of metric tonnes ($\text{t} \times 10^{3}$) for \fishName{} from `r min(yrRange)` to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR; panel a), and percent change (b).
+\pctChange{spawn index}
+<!-- \trendLine{} -->
+\qPeriods{}
+\spawnIndex{}}
+\label{figSpawnIndexChange}
+\end{figure}
+
+<!-- \iftoggle{spawnDepth}{ -->
+<!-- \begin{figure}[ht] -->
+<!-- \centering -->
+<!-- \includegraphics[width=\linewidth]{`r noquote(file.path(rPath, "SpawnDepthSASec.png"))`} -->
+<!-- \caption{Time series of maximum spawn depth in metres (m) for \fishName{} from `r firstYrFig` to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR) by Statistical Area (SA; panel a), and Section (b). -->
+<!-- Note that depth is not corrected to the chart datum. -->
+<!-- \qPeriods{}} -->
+<!-- \label{figSpawnDepth} -->
+<!-- \end{figure} -->
+<!-- }{\unskip} -->
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{`r noquote(file.path(rPath, "SpawnPercentPanel.png"))`}
+\caption{Time series of percent of spawn index by Section for \fishName{} from `r min(yrRange)` to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR).
+\darkThisYr{}
+\qPeriods{}
+\spawnIndex{}}
+\label{figSpawnPercentPanel}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{`r noquote(file.path(rPath, "SpawnPercentGrid.png"))`}
+\caption{Time series of percent of spawn index by `r spawnIndexGroupName$b` and Section for \fishName{} from `r min(yrRange)` to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR).
+\qPeriods{}
+\spawnIndex{}
+`r spawnIndexGroupLegend`}
+\label{figSpawnPercentGrid}
+\end{figure}
