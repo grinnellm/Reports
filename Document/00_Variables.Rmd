@@ -14,6 +14,9 @@
 <!-- Note if there is only a subset of sections -->
 \newcommand{\isSubset}{`r ifelse(all(is.na(sectionSub)), "", paste("Note that this report contains data collected in a subset of the SAR; included sections are ", PasteNicely(sectionSub), ".", sep=""))`}
 
+<!-- Better treatment of input (no extra trailing space) -->
+\newcommand{\inputsp}[1]{\input{#1}\unskip}
+
 <!-- Initialize switches; set to TRUE/FALSE in R based on the region -->
 <!-- Show biosample locations -->
 \newtoggle{biosamples}

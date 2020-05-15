@@ -3,7 +3,7 @@
 \caption{\fishName{} stock assessment regions (SARs) in British Columbia.} 
 \begin{tabular}{lll}
 \toprule
-\inputsp{\Sexpr{noquote(rPath)}Regions.tex}
+\inputsp{`r noquote(file.path(rPath, "Regions.tex"))`}
 \end{tabular}
 \label{tabRegions}
 \end{table}
@@ -11,21 +11,21 @@
 \FloatBarrier
 \begin{longtable}{\iftoggle{spatialGroup}{lrrl}{lrr}}
 \caption{Statistical Areas\iftoggle{spatialGroup}{, Sections, and Groups}{ and Sections} for \fishName{} in the \regionName{} \regionType{} stock assessment region (SAR).
-\Sexpr{spawnIndexGroupLegend}}\\
+`r spawnIndexGroupLegend`}\\
 \toprule
-\Sexpr{noquote(namesSpatialGroup)}\\
+`r noquote(namesSpatialGroup)`\\
 \midrule
 \endfirsthead
 \toprule
 \multicolumn{\iftoggle{spatialGroup}{4}{3}}{c}{\emph{\tablename\ \thetable{} continued}}\\
-\Sexpr{noquote(namesSpatialGroup)}\\
+`r noquote(namesSpatialGroup)`\\
 \midrule
 \endhead
 \bottomrule
 \endfoot
 \bottomrule
 \endlastfoot
-\inputsp{\Sexpr{noquote(rPath)}SpatialGroup.tex}%
+\inputsp{`r noquote(file.path(rPath, "SpatialGroup.tex"))`}%
 \label{tabSpatialGroup}
 \end{longtable}
 \FloatBarrier
@@ -38,33 +38,33 @@
 \withPrivacy{WP}}
 \begin{tabular}{lr}
 \toprule
-\inputsp{\Sexpr{noquote(rPath)}CatchCommUseYr.tex}
+\inputsp{`r noquote(file.path(rPath, "CatchCommUseYr.tex"))`}
 \end{tabular}
 \label{tabCatchCommUseYr}
 \end{table}
 
 \begin{table}[ht]
 \centering
-\caption{Total harvested \fishName{} spawn on kelp (SOK) in pounds (lb), and the associated estimate of spawning biomass in metric tonnes (t) from \Sexpr{firstYrTab} to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR).
+\caption{Total harvested \fishName{} spawn on kelp (SOK) in pounds (lb), and the associated estimate of spawning biomass in metric tonnes (t) from `r firstYrTab` to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR).
 \spawnIndexTechReport{}
-\Sexpr{ifelse(region=="CC", "Harvest does not include the 2,411 lbs of spawn on egregia in 2018.", "%")}
+`r ifelse(region=="CC", "Harvest does not include the 2,411 lbs of spawn on egregia in 2018.", "%")`
 \withPrivacy{WP}}
 \begin{tabular}{rrr}
 \toprule
-\inputsp{\Sexpr{noquote(rPath)}HarvestSOK.tex}
+\inputsp{`r noquote(file.path(rPath, "HarvestSOK.tex"))`}
 \end{tabular}
 \label{tabHarvestSOK}
 \end{table}
 
 \begin{table}[ht]
 \centering
-\caption{Number of \fishName{} biological samples processed from \Sexpr{firstYrTab} to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR).
+\caption{Number of \fishName{} biological samples processed from `r firstYrTab` to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR).
 \sampleSize{}} 
 \begin{tabular}{rrrr}
 \toprule
 & \multicolumn{3}{c}{Number of samples}\\
 \cmidrule{2-4}
-\inputsp{\Sexpr{noquote(rPath)}BioNum.tex}
+\inputsp{`r noquote(file.path(rPath, "BioNum.tex"))`}
 \end{tabular}
 \label{tabBioNum}
 \end{table}
@@ -75,196 +75,196 @@
 \sampleSize{}} 
 \begin{tabular}{lllr}
 \toprule
-\inputsp{\Sexpr{noquote(rPath)}BioTypeNum.tex}
+\inputsp{`r noquote(file.path(rPath, "BioTypeNum.tex"))`}
 \end{tabular}
 \label{tabBioTypeNum}
 \end{table}
 
-\iftoggle{numPropWtAge}{
-\begin{table}[ht]
-\centering
-\caption{Observed number-at-age of \fishName{} by sample type in \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR). 
-\plusGroup{}
-\legendNear{}} 
-\begin{tabular}\Sexpr{ageTableAlign}
-\toprule
-& \multicolumn{\Sexpr{length(ageRange)}}{c}{Number-at-age}\\
-\cmidrule{2-\Sexpr{length(ageRange)+1}}
-\inputsp{\Sexpr{noquote(rPath)}DeltaNumAgeYr.tex}
-\end{tabular}
-\label{tabDeltaNumAgeYr}
-\end{table}
+<!-- \iftoggle{numPropWtAge}{ -->
+<!-- \begin{table}[ht] -->
+<!-- \centering -->
+<!-- \caption{Observed number-at-age of \fishName{} by sample type in \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR).  -->
+<!-- \plusGroup{} -->
+<!-- \legendNear{}}  -->
+<!-- \begin{tabular}\Sexpr{ageTableAlign} -->
+<!-- \toprule -->
+<!-- & \multicolumn{\Sexpr{length(ageRange)}}{c}{Number-at-age}\\ -->
+<!-- \cmidrule{2-\Sexpr{length(ageRange)+1}} -->
+<!-- \inputsp{\Sexpr{noquote(rPath)}DeltaNumAgeYr.tex} -->
+<!-- \end{tabular} -->
+<!-- \label{tabDeltaNumAgeYr} -->
+<!-- \end{table} -->
 
-\begin{table}[ht]
-\centering
-\caption{Observed proportion-at-age of \fishName{} by sample type in \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR). 
-\plusGroup{}
-\legendNear{}} 
-\begin{tabular}\Sexpr{ageTableAlign}
-\toprule
-& \multicolumn{\Sexpr{length(ageRange)}}{c}{Proportion-at-age}\\
-\cmidrule{2-\Sexpr{length(ageRange)+1}}
-\inputsp{\Sexpr{noquote(rPath)}DeltaPropAgeYr.tex}
-\end{tabular}
-\label{tabDeltaPropAgeYr}
-\end{table}
+<!-- \begin{table}[ht] -->
+<!-- \centering -->
+<!-- \caption{Observed proportion-at-age of \fishName{} by sample type in \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR).  -->
+<!-- \plusGroup{} -->
+<!-- \legendNear{}}  -->
+<!-- \begin{tabular}\Sexpr{ageTableAlign} -->
+<!-- \toprule -->
+<!-- & \multicolumn{\Sexpr{length(ageRange)}}{c}{Proportion-at-age}\\ -->
+<!-- \cmidrule{2-\Sexpr{length(ageRange)+1}} -->
+<!-- \inputsp{\Sexpr{noquote(rPath)}DeltaPropAgeYr.tex} -->
+<!-- \end{tabular} -->
+<!-- \label{tabDeltaPropAgeYr} -->
+<!-- \end{table} -->
 
-\begin{table}[ht]
-\centering
-\caption{Observed mean weight-at-age in grams (g) of \fishName{} by sample type in \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR). 
-\plusGroup{}
-\legendNear{}} 
-\begin{tabular}\Sexpr{ageTableAlign}
-\toprule
-& \multicolumn{\Sexpr{length(ageRange)}}{c}{Mean weight-at-age (g)}\\
-\cmidrule{2-\Sexpr{length(ageRange)+1}}
-\inputsp{\Sexpr{noquote(rPath)}DeltaWtAgeYr.tex}
-\end{tabular}
-\label{tabDeltaWtAgeYr}
-\end{table}
+<!-- \begin{table}[ht] -->
+<!-- \centering -->
+<!-- \caption{Observed mean weight-at-age in grams (g) of \fishName{} by sample type in \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR).  -->
+<!-- \plusGroup{} -->
+<!-- \legendNear{}}  -->
+<!-- \begin{tabular}\Sexpr{ageTableAlign} -->
+<!-- \toprule -->
+<!-- & \multicolumn{\Sexpr{length(ageRange)}}{c}{Mean weight-at-age (g)}\\ -->
+<!-- \cmidrule{2-\Sexpr{length(ageRange)+1}} -->
+<!-- \inputsp{\Sexpr{noquote(rPath)}DeltaWtAgeYr.tex} -->
+<!-- \end{tabular} -->
+<!-- \label{tabDeltaWtAgeYr} -->
+<!-- \end{table} -->
 
-\begin{table}[ht]
-\centering
-\caption{Observed mean length-at-age in millimetres (mm) of \fishName{} by sample type in \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR). \plusGroup{}
-\legendNear{}} 
-\begin{tabular}\Sexpr{ageTableAlign}
-\toprule
-& \multicolumn{\Sexpr{length(ageRange)}}{c}{Mean length-at-age (mm)}\\
-\cmidrule{2-\Sexpr{length(ageRange)+1}}
-\inputsp{\Sexpr{noquote(rPath)}DeltaLenAgeYr.tex}
-\end{tabular}
-\label{tabDeltaLenAgeYr}
-\end{table}
+<!-- \begin{table}[ht] -->
+<!-- \centering -->
+<!-- \caption{Observed mean length-at-age in millimetres (mm) of \fishName{} by sample type in \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR). \plusGroup{} -->
+<!-- \legendNear{}}  -->
+<!-- \begin{tabular}\Sexpr{ageTableAlign} -->
+<!-- \toprule -->
+<!-- & \multicolumn{\Sexpr{length(ageRange)}}{c}{Mean length-at-age (mm)}\\ -->
+<!-- \cmidrule{2-\Sexpr{length(ageRange)+1}} -->
+<!-- \inputsp{\Sexpr{noquote(rPath)}DeltaLenAgeYr.tex} -->
+<!-- \end{tabular} -->
+<!-- \label{tabDeltaLenAgeYr} -->
+<!-- \end{table} -->
 
-\begin{table}[ht]
-\centering
-\caption{Observed number-at-age of \fishName{} for nearshore samples from 
-\Sexpr{paste(range(yrsNearshore), collapse=" to ")}
-in the \regionName{} \regionType{} stock assessment region (SAR). 
-\plusGroup{}
-\legendNear{}} 
-\begin{tabular}\Sexpr{ageTableAlign}
-\toprule
-& \multicolumn{\Sexpr{length(ageRange)}}{c}{Number-at-age}\\
-\cmidrule{2-\Sexpr{length(ageRange)+1}}
-\inputsp{\Sexpr{noquote(rPath)}NearNum.tex}
-\end{tabular}
-\label{tabNearNum}
-\end{table}
+<!-- \begin{table}[ht] -->
+<!-- \centering -->
+<!-- \caption{Observed number-at-age of \fishName{} for nearshore samples from  -->
+<!-- \Sexpr{paste(range(yrsNearshore), collapse=" to ")} -->
+<!-- in the \regionName{} \regionType{} stock assessment region (SAR).  -->
+<!-- \plusGroup{} -->
+<!-- \legendNear{}}  -->
+<!-- \begin{tabular}\Sexpr{ageTableAlign} -->
+<!-- \toprule -->
+<!-- & \multicolumn{\Sexpr{length(ageRange)}}{c}{Number-at-age}\\ -->
+<!-- \cmidrule{2-\Sexpr{length(ageRange)+1}} -->
+<!-- \inputsp{\Sexpr{noquote(rPath)}NearNum.tex} -->
+<!-- \end{tabular} -->
+<!-- \label{tabNearNum} -->
+<!-- \end{table} -->
 
-\begin{table}[ht]
-\centering
-\caption{Observed proportion-at-age of \fishName{} for nearshore samples from 
-\Sexpr{paste(range(yrsNearshore), collapse=" to ")}
-in the \regionName{} \regionType{} stock assessment region (SAR). 
-\plusGroup{}
-\legendNear{}} 
-\begin{tabular}\Sexpr{ageTableAlign}
-\toprule
-& \multicolumn{\Sexpr{length(ageRange)}}{c}{Proportion-at-age}\\
-\cmidrule{2-\Sexpr{length(ageRange)+1}}
-\inputsp{\Sexpr{noquote(rPath)}NearProp.tex}
-\end{tabular}
-\label{tabNearProp}
-\end{table}
+<!-- \begin{table}[ht] -->
+<!-- \centering -->
+<!-- \caption{Observed proportion-at-age of \fishName{} for nearshore samples from  -->
+<!-- \Sexpr{paste(range(yrsNearshore), collapse=" to ")} -->
+<!-- in the \regionName{} \regionType{} stock assessment region (SAR).  -->
+<!-- \plusGroup{} -->
+<!-- \legendNear{}}  -->
+<!-- \begin{tabular}\Sexpr{ageTableAlign} -->
+<!-- \toprule -->
+<!-- & \multicolumn{\Sexpr{length(ageRange)}}{c}{Proportion-at-age}\\ -->
+<!-- \cmidrule{2-\Sexpr{length(ageRange)+1}} -->
+<!-- \inputsp{\Sexpr{noquote(rPath)}NearProp.tex} -->
+<!-- \end{tabular} -->
+<!-- \label{tabNearProp} -->
+<!-- \end{table} -->
 
-\begin{table}[ht]
-\centering
-\caption{Observed mean weight-at-age in grams (g) of \fishName{} for nearshore samples from
-\Sexpr{paste(range(yrsNearshore), collapse=" to ")}
-in the \regionName{} \regionType{} stock assessment region (SAR). 
-\plusGroup{}
-\legendNear{}} 
-\begin{tabular}\Sexpr{ageTableAlign}
-\toprule
-& \multicolumn{\Sexpr{length(ageRange)}}{c}{Mean weight-at-age (g)}\\
-\cmidrule{2-\Sexpr{length(ageRange)+1}}
-\inputsp{\Sexpr{noquote(rPath)}NearWt.tex}
-\end{tabular}
-\label{tabNearWt}
-\end{table}
+<!-- \begin{table}[ht] -->
+<!-- \centering -->
+<!-- \caption{Observed mean weight-at-age in grams (g) of \fishName{} for nearshore samples from -->
+<!-- \Sexpr{paste(range(yrsNearshore), collapse=" to ")} -->
+<!-- in the \regionName{} \regionType{} stock assessment region (SAR).  -->
+<!-- \plusGroup{} -->
+<!-- \legendNear{}}  -->
+<!-- \begin{tabular}\Sexpr{ageTableAlign} -->
+<!-- \toprule -->
+<!-- & \multicolumn{\Sexpr{length(ageRange)}}{c}{Mean weight-at-age (g)}\\ -->
+<!-- \cmidrule{2-\Sexpr{length(ageRange)+1}} -->
+<!-- \inputsp{\Sexpr{noquote(rPath)}NearWt.tex} -->
+<!-- \end{tabular} -->
+<!-- \label{tabNearWt} -->
+<!-- \end{table} -->
 
-\begin{table}[ht]
-\centering
-\caption{Observed mean length-at-age in millimetres (mm) of \fishName{} for nearshore samples from 
-\Sexpr{paste(range(yrsNearshore), collapse=" to ")}
-in the \regionName{} \regionType{} stock assessment region (SAR). 
-\plusGroup{}
-\legendNear{}} 
-\begin{tabular}\Sexpr{ageTableAlign}
-\toprule
-& \multicolumn{\Sexpr{length(ageRange)}}{c}{Mean length-at-age (mm)}\\
-\cmidrule{2-\Sexpr{length(ageRange)+1}}
-\inputsp{\Sexpr{noquote(rPath)}NearLen.tex}
-\end{tabular}
-\label{tabNearLen}
-\end{table}
-}{\unskip}
+<!-- \begin{table}[ht] -->
+<!-- \centering -->
+<!-- \caption{Observed mean length-at-age in millimetres (mm) of \fishName{} for nearshore samples from  -->
+<!-- \Sexpr{paste(range(yrsNearshore), collapse=" to ")} -->
+<!-- in the \regionName{} \regionType{} stock assessment region (SAR).  -->
+<!-- \plusGroup{} -->
+<!-- \legendNear{}}  -->
+<!-- \begin{tabular}\Sexpr{ageTableAlign} -->
+<!-- \toprule -->
+<!-- & \multicolumn{\Sexpr{length(ageRange)}}{c}{Mean length-at-age (mm)}\\ -->
+<!-- \cmidrule{2-\Sexpr{length(ageRange)+1}} -->
+<!-- \inputsp{\Sexpr{noquote(rPath)}NearLen.tex} -->
+<!-- \end{tabular} -->
+<!-- \label{tabNearLen} -->
+<!-- \end{table} -->
+<!-- }{\unskip} -->
 
 \begin{table}[ht]
 \centering
 \caption{Observed proportion-at-age for \fishName{} from \Sexpr{firstYrTab} to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR). 
 \plusGroup{}} 
-\begin{tabular}\Sexpr{ageTableAlign}
+\begin{tabular}`r ageTableAlign`
 \toprule
-& \multicolumn{\Sexpr{length(ageRange)}}{c}{Proportion-at-age}\\
-\cmidrule{2-\Sexpr{length(ageRange)+1}}
-\inputsp{\Sexpr{noquote(rPath)}PropAgedYearTab.tex}
+& \multicolumn{`r length(ageRange)`}{c}{Proportion-at-age}\\
+\cmidrule{2-`r length(ageRange)+1`}
+\inputsp{`r noquote(file.path(rPath, "PropAgedYearTab.tex"))`}
 \end{tabular}
 \label{tabPropAgedYearTab}
 \end{table}
 
-\iftoggle{weightGroup}{
-\begin{table}[ht]
-\centering
-\caption{Sample size for \fishName{} weight-at-age analysis in \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR) by Group from the most recent decade (\Sexpr{wtAgeYrRanges$recent}), and the previous decade (\Sexpr{wtAgeYrRanges$previous}), as displayed in \autoref{figWeightAgeGroup}. 
-\seineSamples{}
-\plusGroup{}
-\Sexpr{spawnIndexGroupLegend}}
-\begin{tabular}{lrrr}
-\toprule
-& & \multicolumn{2}{c}{Sample size}\\
-\cmidrule{3-4}
-\inputsp{\Sexpr{noquote(rPath)}WeightAgeGroupN.tex}
-\end{tabular}
-\label{tabWeightAgeGroupN}
-\end{table}
-}{\unskip}
+<!-- \iftoggle{weightGroup}{ -->
+<!-- \begin{table}[ht] -->
+<!-- \centering -->
+<!-- \caption{Sample size for \fishName{} weight-at-age analysis in \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR) by Group from the most recent decade (\Sexpr{wtAgeYrRanges$recent}), and the previous decade (\Sexpr{wtAgeYrRanges$previous}), as displayed in \autoref{figWeightAgeGroup}.  -->
+<!-- \seineSamples{} -->
+<!-- \plusGroup{} -->
+<!-- \Sexpr{spawnIndexGroupLegend}} -->
+<!-- \begin{tabular}{lrrr} -->
+<!-- \toprule -->
+<!-- & & \multicolumn{2}{c}{Sample size}\\ -->
+<!-- \cmidrule{3-4} -->
+<!-- \inputsp{\Sexpr{noquote(rPath)}WeightAgeGroupN.tex} -->
+<!-- \end{tabular} -->
+<!-- \label{tabWeightAgeGroupN} -->
+<!-- \end{table} -->
+<!-- }{\unskip} -->
 
-\iftoggle{spawnByLoc}{
-\FloatBarrier
-\begin{longtable}{rrllr}
-\caption{\fishName{} spawn survey location\Sexpr{ifelse(nrow(spawnByLoc)>1, "s", "")}, start date, and spawn index in metric tonnes (t) in \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR).
-\spawnIndex{}
-\missingSpawn{NAs}}\\
-\toprule
-\Sexpr{noquote(namesSpawnLoc)}\\ 
-\midrule
-\endfirsthead
-\toprule
-\multicolumn{5}{c}{\emph{\tablename\ \thetable{} continued}}\\
-\Sexpr{noquote(namesSpawnLoc)}\\ 
-\midrule
-\endhead
-\bottomrule
-\endfoot
-\bottomrule
-\endlastfoot
-\inputsp{\Sexpr{noquote(rPath)}SpawnByLoc.tex}%
-\label{tabSpawnByLoc}
-\end{longtable}
-\FloatBarrier
-}{\unskip}
+<!-- \iftoggle{spawnByLoc}{ -->
+<!-- \FloatBarrier -->
+<!-- \begin{longtable}{rrllr} -->
+<!-- \caption{\fishName{} spawn survey location\Sexpr{ifelse(nrow(spawnByLoc)>1, "s", "")}, start date, and spawn index in metric tonnes (t) in \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR). -->
+<!-- \spawnIndex{} -->
+<!-- \missingSpawn{NAs}}\\ -->
+<!-- \toprule -->
+<!-- \Sexpr{noquote(namesSpawnLoc)}\\  -->
+<!-- \midrule -->
+<!-- \endfirsthead -->
+<!-- \toprule -->
+<!-- \multicolumn{5}{c}{\emph{\tablename\ \thetable{} continued}}\\ -->
+<!-- \Sexpr{noquote(namesSpawnLoc)}\\  -->
+<!-- \midrule -->
+<!-- \endhead -->
+<!-- \bottomrule -->
+<!-- \endfoot -->
+<!-- \bottomrule -->
+<!-- \endlastfoot -->
+<!-- \inputsp{\Sexpr{noquote(rPath)}SpawnByLoc.tex}% -->
+<!-- \label{tabSpawnByLoc} -->
+<!-- \end{longtable} -->
+<!-- \FloatBarrier -->
+<!-- }{\unskip} -->
 
 \begin{table}[ht]
 \centerfloat
-\caption{Summary of \fishName{} spawn survey data from \Sexpr{firstYrTab} to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR). 
+\caption{Summary of \fishName{} spawn survey data from `r firstYrTab` to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR). 
 \qPeriods{}
 \spawnIndex{}
 Units: metres (m), and metric tonnes (t).}
 \begin{tabular}{rrrrr}
 \toprule
-\inputsp{\Sexpr{noquote(rPath)}SpawnYrTab.tex}
+\inputsp{`r noquote(file.path(rPath, "SpawnYrTab.tex"))`}
 \end{tabular}
 \label{tabSpawnYrTab}
 \end{table}

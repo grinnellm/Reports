@@ -15,6 +15,8 @@ header-includes:
   - \usepackage{etoolbox}
   - \usepackage{nth}
   - \usepackage{animate}
+  - \usepackage{booktabs}
+  - \usepackage{placeins}
 ---
 
 ```{r setup, include=FALSE}
@@ -106,6 +108,8 @@ These data may differ from data used and presented in the final stock assessment
 \clearpage
 
 # Tables
+
+`r knit_child("Document/06_Tables.Rmd")`
 
 \clearpage
 
