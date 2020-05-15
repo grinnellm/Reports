@@ -17,6 +17,7 @@ header-includes:
   - \usepackage{animate}
   - \usepackage{booktabs}
   - \usepackage{placeins}
+  - \usepackage{longtable}
 ---
 
 ```{r setup, include=FALSE}
