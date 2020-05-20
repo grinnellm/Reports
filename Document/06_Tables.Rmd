@@ -8,27 +8,27 @@
 \label{tabRegions}
 \end{table}
 
-\FloatBarrier
-\begin{longtable}{\iftoggle{spatialGroup}{lrrl}{lrr}}
-\caption{Statistical Areas\iftoggle{spatialGroup}{, Sections, and Groups}{ and Sections} for \fishName{} in the \regionName{} \regionType{} stock assessment region (SAR).
-`r spawnIndexGroupLegend`}\\
-\toprule
-`r noquote(namesSpatialGroup)`\\
-\midrule
-\endfirsthead
-\toprule
-\multicolumn{\iftoggle{spatialGroup}{4}{3}}{c}{\emph{\tablename\ \thetable{} continued}}\\
-`r noquote(namesSpatialGroup)`\\
-\midrule
-\endhead
-\bottomrule
-\endfoot
-\bottomrule
-\endlastfoot
-\inputsp{`r noquote(file.path(rPath, "SpatialGroup.tex"))`}%
-\label{tabSpatialGroup}
-\end{longtable}
-\FloatBarrier
+<!-- \FloatBarrier -->
+<!-- \begin{longtable}{\iftoggle{spatialGroup}{lrrl}{lrr}} -->
+<!-- \caption{Statistical Areas\iftoggle{spatialGroup}{, Sections, and Groups}{ and Sections} for \fishName{} in the \regionName{} \regionType{} stock assessment region (SAR). -->
+<!-- `r spawnIndexGroupLegend`}\\ -->
+<!-- \toprule -->
+<!-- `r noquote(namesSpatialGroup)`\\ -->
+<!-- \midrule -->
+<!-- \endfirsthead -->
+<!-- \toprule -->
+<!-- \multicolumn{\iftoggle{spatialGroup}{4}{3}}{c}{\emph{\tablename\ \thetable{} continued}}\\ -->
+<!-- `r noquote(namesSpatialGroup)`\\ -->
+<!-- \midrule -->
+<!-- \endhead -->
+<!-- \bottomrule -->
+<!-- \endfoot -->
+<!-- \bottomrule -->
+<!-- \endlastfoot -->
+<!-- \inputsp{`r noquote(file.path(rPath, "SpatialGroup.tex"))`}% -->
+<!-- \label{tabSpatialGroup} -->
+<!-- \end{longtable} -->
+<!-- \FloatBarrier -->
 
 \begin{table}[ht]
 \centering
@@ -203,7 +203,7 @@
 
 \begin{table}[ht]
 \centering
-\caption{Observed proportion-at-age for \fishName{} from \Sexpr{firstYrTab} to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR). 
+\caption{Observed proportion-at-age for \fishName{} from `r firstYrTab` to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR). 
 \plusGroup{}} 
 \begin{tabular}`r ageTableAlign`
 \toprule
@@ -256,15 +256,15 @@
 <!-- \FloatBarrier -->
 <!-- }{\unskip} -->
 
-\begin{table}[ht]
-\centerfloat
-\caption{Summary of \fishName{} spawn survey data from `r firstYrTab` to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR). 
-\qPeriods{}
-\spawnIndex{}
-Units: metres (m), and metric tonnes (t).}
-\begin{tabular}{rrrrr}
-\toprule
-\inputsp{`r noquote(file.path(rPath, "SpawnYrTab.tex"))`}
-\end{tabular}
-\label{tabSpawnYrTab}
-\end{table}
+<!-- \begin{table}[ht] -->
+<!-- \centerfloat -->
+<!-- \caption{Summary of \fishName{} spawn survey data from `r firstYrTab` to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR).  -->
+<!-- \qPeriods{} -->
+<!-- \spawnIndex{} -->
+<!-- Units: metres (m), and metric tonnes (t).} -->
+<!-- \begin{tabular}{rrrrr} -->
+<!-- \toprule -->
+<!-- \inputsp{`r noquote(file.path(rPath, "SpawnYrTab.tex"))`} -->
+<!-- \end{tabular} -->
+<!-- \label{tabSpawnYrTab} -->
+<!-- \end{table} -->

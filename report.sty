@@ -1,0 +1,11 @@
+% Better treatment of input (no extra trailing space)
+\newcommand{\inputsp}[1]{\input{#1}\unskip}
+
+% Allow wide tables/figures to spill into both margins equally: \centerfloat
+\makeatletter
+\newcommand*{\centerfloat}{%
+  \parindent \z@
+  \leftskip \z@ \@plus 1fil \@minus \textwidth
+  \rightskip\leftskip
+  \parfillskip \z@skip}
+\makeatother

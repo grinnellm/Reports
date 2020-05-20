@@ -18,6 +18,7 @@ header-includes:
   - \usepackage{booktabs}
   - \usepackage{placeins}
   - \usepackage{longtable}
+  - \usepackage{report}
 ---
 
 ```{r setup, include=FALSE}
