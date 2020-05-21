@@ -53,12 +53,13 @@ docPath <- file.path( "RegionalText", max(yrRange), regName,
 % Load R variables, switches, etc
 \Sexpr{knit_child('Document/Variables.rnw')}
 
-% TODO: Wording in text and captions for 'tabBioNum' and 'tabBioTypeNum' re showing 'Representative' biological samples only (once the R script is updated). Use the command '\repSamples' below. This could also include the figure 'BioLocations.pdf' (Note that this creates issues with WCVI because of the cast-net biosamples, which are not representative, but are included in the data summary.)
-% TODO: Active voice.
-% TODO: Once the JS summary is sent/done, move text from 'Context.rnw' to this file.
-% TODO: Add a note re SOK removals/mortality not included in catch (search for SOK).
-% TODO: Add a table with weight- and/or length-at-age differences with respect to some reference period (i.e., 1980s).
-% TODO: Remove comment about egregia SOK excluded from product weight once egregia is included in the SOK table.
+% TODOs:
+% Wording in text and captions for 'tabBioNum' and 'tabBioTypeNum' re showing 'Representative' biological samples only (once the R script is updated). Use the command '\repSamples' below. This could also include the figure 'BioLocations.pdf' (Note that this creates issues with WCVI because of the cast-net biosamples, which are not representative, but are included in the data summary.)
+% Active voice.
+% Once the JS summary is sent/done, move text from 'Context.rnw' to this file.
+% Add a note re SOK removals/mortality not included in catch (search for SOK).
+% Add a table with weight- and/or length-at-age differences with respect to some reference period (i.e., 1980s).
+% Remove comment about egregia SOK excluded from product weight once egregia is included in the SOK table.
 % Show full time series (i.e., 1951+) in figures.
 
 % Begin the document
@@ -691,11 +692,11 @@ Note that depth is not corrected to the chart datum.
 \centering
 % \animategraphics[width=\linewidth]{1}{\Sexpr{rPath}SpawnIndexAnimation}{1}{}
 \animategraphics[width=\linewidth]{1}{TempImages/Temp}{1}{3}
-\caption{Animation of \fishName{} spawn survey locations and spawn index in metric tonnes (t) from \Sexpr{min(yrRange)} to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR; thick dashed lines), and associated Section\Sexpr{ifelse(length(unique(areas$Section))>1, "s", "")} (Sec; thin solid lines).
+\caption{Animation of \fishName{} spawn index in metric tonnes (t) by Location from \Sexpr{min(yrRange)} to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR; thick dashed lines), and associated Section\Sexpr{ifelse(length(unique(areas$Section))>1, "s", "")} (Sec; thin solid lines).
 \qPeriods{}
 \spawnIndex{}
 \missingSpawn{grey circles}
-The inset shows total spawn index by year.
+Inset shows total spawn index by year.
 Units: kilometres (km).}
 \label{figSpawnIndexAnimation}
 \end{figure}
