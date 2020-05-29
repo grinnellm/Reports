@@ -695,7 +695,7 @@ Note that depth is not corrected to the chart datum.
 \qPeriods{}
 \spawnIndex{}
 \missingSpawn{grey circles}
-Inset shows total spawn index by year.
+Inset shows time series of total spawn index by year.
 Units: kilometres (km).}
 \label{figSpawnIndexAnimation}
 \end{figure}
