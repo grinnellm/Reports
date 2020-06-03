@@ -54,3 +54,19 @@
 \newcommand{\missingSpawn}[1]{Missing spawn index values (#1) indicate incomplete spawn surveys.}
 \newcommand{\spawnTypes}{There are three types of spawn survey observations: observations of spawn taken from the surface usually at low tide, underwater observations of spawn on giant kelp, Macrocystis (\emph{Macrocystis} spp.), and underwater observations of spawn on other types of algae and the substrate, which we refer to as `understory.'}
 \newcommand{\pctChange}[1]{Percent change is $\delta_t=\frac{\alpha_t - \alpha_{t-1}}{\alpha_{t-1}}$ where $\alpha_t$ is the #1 in year $t$.}
+
+% COVID-19 comment
+\newcommand{\covid}{\section{COVID-19}
+The COVID-19 pandemic affected the collection and analysis of Pacific Herring data throughout British Columbia (BC) this year.
+In addition, fewer DFO staff were able to be in the field this year.
+Because the pandemic started impacting BC during the field program season, SARs with later spawns were affected more than SARs with earlier spawns.
+For example, spawn was surveyed by surface surveys instead of underwater dive surveys in Prince Rupert District and Haida Gwaii.\par
+Although Pacific Herring biosamples were collected as usual, the analysis of biosample data has been delayed in all SARs.
+This is particularly true for age data, which are analysed at the sclerochronology lab at the Pacific Biological Station (PBS).
+This lab has not been operational since March \nth{16}, when most PBS staff were required to work from home.
+Thus, the COVID-19 pandemic delayed the analysis of age data for Pacific Herring and many other species.
+To address this backlog in an efficient manner, fisheries managers and senior science staff at DFO are working on a priority list for species data to analyse in the sclerochronology lab.
+Unfortunately, it may not be possible to have all the Pacific Herring age data analysed in time for stock assessments.\par
+The COVID-19 pandemic has also affected our ability assess Pacific Hering stocks.
+Although we hope to assess Pacific Hering stocks as usual, we may not be able to develop formal stock assessments for each major SAR this year.
+Again, Fisheries managers and senior science staff are working on a priority list for the assessment of Pacific Herring SARs.}
