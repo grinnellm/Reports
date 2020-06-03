@@ -56,18 +56,17 @@
 \newcommand{\pctChange}[1]{Percent change is $\delta_t=\frac{\alpha_t - \alpha_{t-1}}{\alpha_{t-1}}$ where $\alpha_t$ is the #1 in year $t$.}
 
 % COVID-19 comment
-\newcommand{\covid}{\section{COVID-19}
-The COVID-19 pandemic affected British Columbia (BC) in many ways, including our ability to collect and analyse Pacific Herring data this year.
-In addition, the pandemic affected fishing opportunities, and reduced our ability to be in the field.
-Because the pandemic and the associated response in BC changed rapidly during the Pacific Herring field program season, SARs with later spawns were affected more than SARs with earlier spawns.
+\newcommand{\covid}{\section{COVID-19 pandemic}
+The COVID-19 pandemic has affected British Columbia (BC) in many ways this year, including our ability to collect and analyse Pacific Herring data.
+Because the pandemic and associated provincial response changed rapidly during the Pacific Herring field program season, stock assessment regions (SARs) with later spawns were affected more than SARs with earlier spawns.
 For example, spawns were surveyed by surface surveys instead of underwater dive surveys in Prince Rupert District and Haida Gwaii.\par
-Although Pacific Herring biosamples were collected as usual, the analysis of biosample data has been delayed in all SARs.
+Although Pacific Herring biosamples were collected as usual, the analysis of biosample data has been delayed for all SARs.
 This is particularly true for age data, which are analysed at the sclerochronology lab at the Pacific Biological Station (PBS).
-This lab has not been operational since March \nth{16}, when most PBS staff were required to work from home.
+This lab has been inoperative since March \nth{16}, when most PBS staff were required to work from home.
 Thus, the COVID-19 pandemic delayed the analysis of age data for Pacific Herring and many other species.
-To address this backlog in an efficient manner, fisheries managers and senior science staff at DFO are working on a priority list for species data to analyse in the sclerochronology lab.
-Unfortunately, it may not be possible to have all the Pacific Herring age data analysed in time for stock assessments.\par
-The COVID-19 pandemic also affects our ability assess Pacific Hering stocks.
+To address this backlog efficiently, senior science staff and fisheries managers at DFO are prioritizing species to analyse when the sclerochronology lab restarts.
+Unfortunately, it may not be possible to analyse all the Pacific Herring age data in time for stock assessments this year.\par
+The COVID-19 pandemic has also affected our ability to assess Pacific Hering stocks.
 Although we hope to assess Pacific Hering stocks as usual, we may not be able to develop formal stock assessments for each major SAR this year.
-Again, Fisheries managers and senior science staff are working on a priority list for the assessment of Pacific Herring SARs.
+Again, senior science staff and fisheries managers are prioritizing Pacific Herring SARs for stock assessments.
 We appreciate your patience and understanding as we continue to work from home in these uncertain and fast-changing times.}
