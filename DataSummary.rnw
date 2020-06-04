@@ -127,7 +127,7 @@ We also show the percent change in weight and length for age-\Sexpr{ageShow} and
 A summary of spawn from the last decade (\Sexpr{unique(spawnDecade$Decade)}) is shown in \autoref{figSpawnDecade}.
 \autoref{figSpawnTiming} shows spawn start date by decade and \Sexpr{ifelse(spawnTimingGroup, "Group", "Statistical Area")}.
 Spawn surveys are conducted to estimate the spawn length, width, number of egg layers, and substrate type, and these data are used to estimate the index of spawning biomass (i.e., the spawn index; \autoref{figSpawnIndexType}, \autoref{figSpawnTypeProp}, \autoref{figSpawnDimensions}, \autoref{figSpawnIndexPercent}, \autoref{tabSpawnYrTab}, and \autoref{figSpawnIndexChange}).
-We describe the calculations used to estimate the spawn index in the \href{https://github.com/grinnellm/HerringSpawnDocumentation/blob/master/SpawnIndexTechnicalReport.pdf}{draft spawn index techincal report}.
+\spawnIndexTechReport{}
 \iftoggle{spawnDepth}{In addition, spawn surveys estimate spawn depth by Statistical Area, and Section (\autoref{figSpawnDepth}).}{\unskip}
 \spawnIndex{}
 Therefore, these data do not represent model estimates of spawning biomass, and are considered the minimum observed spawning biomass derived from egg counts.
