@@ -69,6 +69,6 @@ This resulted in delayed Pacific Herring ages for 2020, and many other species.
 To address this backlog efficiently, senior science staff and fisheries managers at DFO are prioritizing species to analyse in the sclerochronology lab.
 Unfortunately, it may not be possible to analyse all the Pacific Herring age data in time for stock assessments this year.
 Note that although age data are not required for Pacific Herring stock assessments, they are an important component.\par
-Because there is a delay in the analysis of biosample data, this version of the report has some missing tables and figures, and/or missing 2020 data in tables and figures.
+Due to the delay in the analysis of biological data, some tables and figures showing biological data have been omitted from this version of the report.
 We will update data summary reports with biological data for 2020, including age data, when available.
 We appreciate your patience and understanding as we continue to work from home in these uncertain and changing times.}
