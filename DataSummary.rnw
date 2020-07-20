@@ -40,7 +40,7 @@
 # Load packages
 require( knitr, quietly=TRUE )  # Dynamic documents
 # Select region(s)/folder(s): major (HG, PRD, CC, SoG, WCVI); or minor (A27, A2W)
-if( !exists('regName') )  regName <- "A2W"
+if( !exists('regName') )  regName <- "PRD"
 # Set the path to the R output, including a trailing separator
 rPath <- file.path( "..", "DataSummaries", regName, .Platform$file.sep )
 # Load the R image
@@ -693,7 +693,7 @@ Note that depth is not corrected to the chart datum.
 
 \begin{figure}[ht]
 \centering
-\animategraphics[width=\linewidth]{1}{\Sexpr{rPath}SpawnIndexAnimation}{1}{}
+\animategraphics[width=\linewidth]{1}{\Sexpr{rPath}SpawnIndexAnimation}{0}{}
 \caption{Animation of \fishName{} spawn index in metric tonnes (t) by Location from \Sexpr{min(yrRange)} to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR; thick dashed lines), and associated Section\Sexpr{ifelse(length(unique(areas$Section))>1, "s", "")} (Sec; thin solid lines).
 \qPeriods{}
 \spawnIndex{}
