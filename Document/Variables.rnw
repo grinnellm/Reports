@@ -70,5 +70,5 @@ Unfortunately, it may not be possible to analyse all the Pacific Herring age dat
 Note that although age data are not required for Pacific Herring stock assessments, they are an important component.\par
 Due to the delay in the analysis of biological data, some tables and figures showing biological data have been omitted from this version of the report.
 Other tables and figures are included, but they do not have biological data for 2020.
-We will update data summary reports with biological data for 2020 when available.
+We will update data summary reports with 2020 biological data when available.
 We appreciate your patience and understanding as we continue to work from home in these uncertain and changing times.}
