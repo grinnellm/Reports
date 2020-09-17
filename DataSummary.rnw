@@ -40,7 +40,7 @@
 # Load packages
 require( knitr, quietly=TRUE )  # Dynamic documents
 # Select region(s)/folder(s): major (HG, PRD, CC, SoG, WCVI); or minor (A27, A2W)
-if( !exists('regName') )  regName <- "PRD"
+if( !exists('regName') )  regName <- "CC"
 # Set the path to the R output, including a trailing separator
 rPath <- file.path( "..", "DataSummaries", regName, .Platform$file.sep )
 # Load the R image
@@ -106,8 +106,7 @@ Total harvested spawn on kelp (SOK) in \thisYr{} in the \regionName{} \regionTyp
 % Note that we do not account for SOK harvest removals in stock assessments. OR
 % Currently, catch input to the stock assessment model does not include mortality from the commercial SOK fishery, nor any recreational or FSC fisheries.
 
-% TODO: Add this back when biosamples are available
-% In \thisYr{}, \Sexpr{nSampThisYr} \fishName{} biological samples were collected and processed for the \regionName{} \regionType{} SAR (\autoref{tabBioNum}, \autoref{tabBioTypeNum}), and a total of \Sexpr{numAgedThisYr} \fishName{} were aged in \thisYr{}.
+In \thisYr{}, \Sexpr{nSampThisYr} \fishName{} biological samples were collected and processed for the \regionName{} \regionType{} SAR (\autoref{tabBioNum}, \autoref{tabBioTypeNum}), and a total of \Sexpr{numAgedThisYr} \fishName{} were aged in \thisYr{}.
 \iftoggle{numPropWtAge}{Differences between biological data collected from two sampling protocols regarding the number-, proportion-, weight-, and length-at-age for \fishName{} in \thisYr{} in the \regionName{} \regionType{} SAR are shown in \autoref{tabDeltaNumAgeYr}, \autoref{tabDeltaPropAgeYr}, \autoref{tabDeltaWtAgeYr}, and \autoref{tabDeltaLenAgeYr}, respectively.
 The nearshore sampling program is a multi-year pilot study (using cast nets), therefore only biological data from the seine samples were used for the purposes of stock assessment.
 Summaries of data collected by the nearshore sampling program are shown in \autoref{tabNearNum}, \autoref{tabNearProp}, \autoref{tabNearWt}, and \autoref{tabNearLen}.
@@ -213,8 +212,7 @@ The following observations were reported by area DFO Resource Management staff, 
 \begin{table}[ht]
 \centering
 \caption{Number of \fishName{} biological samples processed from \Sexpr{firstYrTab} to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR).
-\sampleSize{}
-\lateBio{}} 
+\sampleSize{}} 
 \begin{tabular}{rrrr}
 \toprule
 & \multicolumn{3}{c}{Number of samples}\\
@@ -227,8 +225,7 @@ The following observations were reported by area DFO Resource Management staff, 
 \begin{table}[ht]
 \centering
 \caption{Number and type of \fishName{} biological samples processed in \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR). 
-\sampleSize{}
-\lateBio{}} 
+\sampleSize{}} 
 \begin{tabular}{lllr}
 \toprule
 \inputsp{\Sexpr{noquote(rPath)}BioTypeNum.tex}
@@ -241,8 +238,7 @@ The following observations were reported by area DFO Resource Management staff, 
 \centering
 \caption{Observed number-at-age of \fishName{} by sample type in \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR). 
 \plusGroup{}
-\legendNear{}
-\lateBio{}} 
+\legendNear{}} 
 \begin{tabular}\Sexpr{ageTableAlign}
 \toprule
 & \multicolumn{\Sexpr{length(ageRange)}}{c}{Number-at-age}\\
@@ -256,8 +252,7 @@ The following observations were reported by area DFO Resource Management staff, 
 \centering
 \caption{Observed proportion-at-age of \fishName{} by sample type in \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR). 
 \plusGroup{}
-\legendNear{}
-\lateBio{}} 
+\legendNear{}} 
 \begin{tabular}\Sexpr{ageTableAlign}
 \toprule
 & \multicolumn{\Sexpr{length(ageRange)}}{c}{Proportion-at-age}\\
@@ -271,8 +266,7 @@ The following observations were reported by area DFO Resource Management staff, 
 \centering
 \caption{Observed mean weight-at-age in grams (g) of \fishName{} by sample type in \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR). 
 \plusGroup{}
-\legendNear{}
-\lateBio{}} 
+\legendNear{}} 
 \begin{tabular}\Sexpr{ageTableAlign}
 \toprule
 & \multicolumn{\Sexpr{length(ageRange)}}{c}{Mean weight-at-age (g)}\\
@@ -285,8 +279,7 @@ The following observations were reported by area DFO Resource Management staff, 
 \begin{table}[ht]
 \centering
 \caption{Observed mean length-at-age in millimetres (mm) of \fishName{} by sample type in \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR). \plusGroup{}
-\legendNear{}
-\lateBio{}} 
+\legendNear{}} 
 \begin{tabular}\Sexpr{ageTableAlign}
 \toprule
 & \multicolumn{\Sexpr{length(ageRange)}}{c}{Mean length-at-age (mm)}\\
@@ -302,8 +295,7 @@ The following observations were reported by area DFO Resource Management staff, 
 \Sexpr{paste(range(yrsNearshore), collapse=" to ")}
 in the \regionName{} \regionType{} stock assessment region (SAR). 
 \plusGroup{}
-\legendNear{}
-\lateBio{}} 
+\legendNear{}} 
 \begin{tabular}\Sexpr{ageTableAlign}
 \toprule
 & \multicolumn{\Sexpr{length(ageRange)}}{c}{Number-at-age}\\
@@ -319,8 +311,7 @@ in the \regionName{} \regionType{} stock assessment region (SAR).
 \Sexpr{paste(range(yrsNearshore), collapse=" to ")}
 in the \regionName{} \regionType{} stock assessment region (SAR). 
 \plusGroup{}
-\legendNear{}
-\lateBio{}} 
+\legendNear{}} 
 \begin{tabular}\Sexpr{ageTableAlign}
 \toprule
 & \multicolumn{\Sexpr{length(ageRange)}}{c}{Proportion-at-age}\\
@@ -336,8 +327,7 @@ in the \regionName{} \regionType{} stock assessment region (SAR).
 \Sexpr{paste(range(yrsNearshore), collapse=" to ")}
 in the \regionName{} \regionType{} stock assessment region (SAR). 
 \plusGroup{}
-\legendNear{}
-\lateBio{}} 
+\legendNear{}} 
 \begin{tabular}\Sexpr{ageTableAlign}
 \toprule
 & \multicolumn{\Sexpr{length(ageRange)}}{c}{Mean weight-at-age (g)}\\
@@ -353,8 +343,7 @@ in the \regionName{} \regionType{} stock assessment region (SAR).
 \Sexpr{paste(range(yrsNearshore), collapse=" to ")}
 in the \regionName{} \regionType{} stock assessment region (SAR). 
 \plusGroup{}
-\legendNear{}
-\lateBio{}} 
+\legendNear{}} 
 \begin{tabular}\Sexpr{ageTableAlign}
 \toprule
 & \multicolumn{\Sexpr{length(ageRange)}}{c}{Mean length-at-age (mm)}\\
@@ -368,8 +357,7 @@ in the \regionName{} \regionType{} stock assessment region (SAR).
 \begin{table}[ht]
 \centering
 \caption{Observed proportion-at-age for \fishName{} from \Sexpr{firstYrTab} to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR). 
-\plusGroup{}
-\lateBio{}} 
+\plusGroup{}} 
 \begin{tabular}\Sexpr{ageTableAlign}
 \toprule
 & \multicolumn{\Sexpr{length(ageRange)}}{c}{Proportion-at-age}\\
