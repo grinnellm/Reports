@@ -64,10 +64,7 @@ Although Pacific Herring biological samples were collected as usual, the pandemi
 This delay is most notable for age data which are analysed at the sclerochronology lab at the Pacific Biological Station.
 This lab closed on March \nth{16}, and resumed limited ageing analysis on July \nth{6}.
 This has resulted in delayed provision of age data for Pacific Herring and many other species.
-To address this backlog efficiently, senior science staff and fisheries managers at DFO are prioritizing species to analyse in the sclerochronology lab.
-Unfortunately, it may not be possible to analyse all the Pacific Herring age data in time for stock assessments this year.
-Note that although age data are not required for Pacific Herring stock assessments, they are an important component.\par
-Due to the delay in the analysis of biological data, some tables and figures showing biological data have been omitted from this version of the report.
-Other tables and figures are included, but they do not have biological data for 2020.
-We will update data summary reports with 2020 biological data when available.
+To address this backlog efficiently, senior science staff and fisheries managers at DFO prioritized species to analyse in the sclerochronology lab.\par
+We now have biological data for Pacific Herring in 2020.
+This updated version of the report contains biological data that was absent from the previous version.
 We appreciate your patience and understanding as we continue to work from home in these uncertain and changing times.}
