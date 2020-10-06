@@ -46,7 +46,7 @@
 \newcommand{\trendLine}{The thick black line is a \Sexpr{smLine} curve, and the shaded area is the \Sexpr{ciLevel*100}\% confidence interval.}
 \newcommand{\qPeriods}{The spawn index has two distinct periods defined by the dominant survey method: surface surveys (\Sexpr{qYrs$q1}), and dive surveys (\Sexpr{qYrs$q2}).}
 \newcommand{\legendNear}{Legend: `Nearshore' refers to samples collected using cast nets as part of a pilot study with First Nations.}
-\newcommand{\legendGear}{Legend: `Other' represents the reduction, the food and bait, as well as the special use fishery; `RoeSN' represents the roe seine fishery; and `RoeGN' represents the roe gillnet fishery.}
+\newcommand{\legendGear}{Legend: `Other' represents the reduction (\Sexpr{min(yrRange)} to 1970 only), the food and bait, as well as the special use fishery; `RoeSN' represents the roe seine fishery; and `RoeGN' represents the roe gillnet fishery.}
 \newcommand{\darkThisYr}{The year \thisYr{} has a darker bar to facilitate interpretation.}
 \newcommand{\withPrivacy}[1]{Note: data may be withheld due to privacy concerns (#1).}
 \newcommand{\noSOK}{Data from the spawn-on-kelp (SOK) fishery are not included.}
