@@ -665,7 +665,7 @@ Note that spawn size and intensity varies; therefore the number of spawns is not
 \centering
 \includegraphics[width=\linewidth]{SpawnDepthSASec.png}
 \caption{Time series of maximum spawn depth in metres (m) for \fishName{} from \Sexpr{firstYrFig} to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR) by Statistical Area (SA; panel a), and Section (b).
-Note that depth is not corrected to the chart datum.
+Note that depth is not corrected to chart datum.
 \qPeriods{}}
 \label{figSpawnDepth}
 \end{figure}
