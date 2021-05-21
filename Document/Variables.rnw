@@ -33,6 +33,8 @@
 \Sexpr{tfSpawnByLocXY}
 \newtoggle{spatialGroup}  % Show table of stat areas, sections, and groups
 \Sexpr{tfSpatialGroup}
+\newtoggle{specialRegion} % Is this a special region
+\Sexpr{tfSpecialRegion}
 
 % Location of the pdf figures (generated in R)
 \graphicspath{{\Sexpr{noquote(rPath)}}}
@@ -68,3 +70,4 @@ To address this backlog efficiently, senior science staff and fisheries managers
 We now have biological data for Pacific Herring in 2020.
 This updated version of the report contains biological data that was absent from the previous version.
 We appreciate your patience and understanding as we continue to work from home in these uncertain and changing times.}
+\newcommand{\specialRegion}{Note that special SARs are unofficial SARs; they are excluded in regular monitoring and analyses.}
