@@ -646,6 +646,7 @@ Note that spawn size and intensity varies; therefore the number of spawns is not
 \caption{Time series of spawn index in thousands of metric tonnes ($\text{t} \times 10^{3}$) for \fishName{} from \Sexpr{min(yrRange)} to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR; panel a), as well as percent contributed by \Sexpr{spawnIndexGroupName$b}, and Section (b, \& c, respectively). 
 %\trendLine{}
 \qPeriods{}
+\spawnSurfDive{}
 \spawnIndex{}
 \Sexpr{spawnIndexGroupLegend}}
 \label{figSpawnIndexPercent}
@@ -658,7 +659,8 @@ Note that spawn size and intensity varies; therefore the number of spawns is not
 \pctChange{spawn index}
 %\trendLine{}
 \qPeriods{}
-\spawnIndex{}}
+\spawnIndex{}
+\spawnSurfDive{}}
 \label{figSpawnIndexChange}
 \end{figure}
 

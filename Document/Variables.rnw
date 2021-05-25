@@ -56,6 +56,7 @@
 \newcommand{\missingSpawn}[1]{Missing spawn index values (#1) indicate incomplete spawn surveys.}
 \newcommand{\spawnTypes}{There are three types of spawn survey observations: observations of spawn taken from the surface usually at low tide, underwater observations of spawn on giant kelp, Macrocystis (\emph{Macrocystis} spp.), and underwater observations of spawn on other types of algae and the substrate, which we refer to as `understory.'}
 \newcommand{\pctChange}[1]{Percent change is $\delta_t=\frac{\alpha_t - \alpha_{t-1}}{\alpha_{t-1}}$ where $\alpha_t$ is the #1 in year $t$.}
+\newcommand{\spawnSurfDive}{Note that spawn surveys in the dive survey period (\Sexpr{qYrs$q2}) are a combination of surface and dive surveys (Figures \ref{figSpawnIndexType} and \ref{figSpawnTypeProp}).}
 \newcommand{\covid}{\section{COVID-19 pandemic}
 The COVID-19 pandemic impacted our ability to collect and analyse Pacific Herring data throughout British Columbia in 2020.
 The pandemic and associated provincial response changed rapidly during the Pacific Herring field program season.
