@@ -23,5 +23,8 @@ ModelSummary*.pdf
 DataSummary.tex
 TempImages
 
+## Temp files ###
+DataSummary-concordance.tex
+
 ### Miscelaneous ###
 .Rproj.user
