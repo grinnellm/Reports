@@ -155,7 +155,7 @@ The following observations were reported by area DFO Resource Management staff, 
 \begin{table}[ht]
 \centering
 \caption{\fishName{} stock assessment regions (SARs) in British Columbia.
-\specialRegion{}} 
+\iftoggle{specialRegion}{\specialRegion{}}{\unskip}} 
 \begin{tabular}{lll}
 \toprule
 \inputsp{\Sexpr{noquote(rPath)}Regions.tex}
@@ -166,6 +166,8 @@ The following observations were reported by area DFO Resource Management staff, 
 \FloatBarrier
 \begin{longtable}{\iftoggle{spatialGroup}{lrrl}{lrr}}
 \caption{Statistical Areas\iftoggle{spatialGroup}{, Sections, and Groups}{ and Sections} for \fishName{} in the \regionName{} \regionType{} stock assessment region (SAR).
+\iftoggle{specialRegion}{\specialRegion{}}{\unskip}
+\sectionsJS{}
 \Sexpr{spawnIndexGroupLegend}}\\
 \toprule
 \Sexpr{noquote(namesSpatialGroup)}\\
