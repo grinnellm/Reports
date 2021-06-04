@@ -60,7 +60,7 @@ reportExt <- "rnw"
 
 # Region names: data summaries
 if( reportFN == "DataSummary" )
-  regionNames <- c( "HG", "PRD", "CC", "SoG", "WCVI", "A27", "A2W" )
+  regionNames <- c( "HG", "PRD", "CC", "SoG", "WCVI", "A27", "A2W", "A10" )
 
 # Region names: model summaries
 if( reportFN == "ModelSummary" )
