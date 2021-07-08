@@ -657,7 +657,7 @@ Note that spawn size and intensity varies; therefore the number of spawns is not
 \begin{figure}[ht]
 \centering
 \includegraphics[width=\linewidth]{SpawnIndexChange.png}
-\caption{Time series of spawn index in thousands of metric tonnes ($\text{t} \times 10^{3}$) for \fishName{} from\Sexpr{min(yrRange)} to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR; panel a), and percent change (b).
+\caption{Time series of spawn index in thousands of metric tonnes ($\text{t} \times 10^{3}$) for \fishName{} from \Sexpr{min(yrRange)} to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR; panel a), and percent change (b).
 \pctChange{spawn index}
 %\trendLine{}
 \qPeriods{}
