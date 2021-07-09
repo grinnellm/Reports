@@ -92,7 +92,7 @@ docPath <- file.path( max(yrRange), regName, .Platform$file.sep )
 
 % Bring in custom text for catch and biological samples
 The total landed commercial catch of Pacific herring from all fisheries in \thisYr{} in the \regionName{} \regionType{} was \Sexpr{format(tCatchThisYr, big.mark=",", digits=0, scientific=FALSE)}\,t, which is \Sexpr{tCatchDir} last year (\autoref{figCatchGear}, \autoref{tabCatch}).
-The total harvested spawn on kelp (SOK) in \thisYr{} in the \regionName{} \regionType{} was \Sexpr{format(tSoKThisYr$Harvest, big.mark=",", digits=0, scientific=FALSE)}\,lb (\autoref{tabHarvestSOK}). 
+The total harvested spawn-on-kelp (SOK) in \thisYr{} in the \regionName{} \regionType{} was \Sexpr{format(tSoKThisYr$Harvest, big.mark=",", digits=0, scientific=FALSE)}\,lb (\autoref{tabHarvestSOK}). 
 
 In \thisYr{}, \Sexpr{nSampThisYr} Pacific herring biological samples were collected and processed for the \regionName{} \regionType{} (\autoref{tabBioNum}), and a total of \Sexpr{numAgedThisYr} Pacific herring were aged in \thisYr{}. 
 \iftoggle{numPropWtAge}{There are differences between biological data collected from two sampling protocols regarding the number-, proportion-, and weight-at-age for Pacific herring in \thisYr{} in the \regionName{} \regionType{} (\autoref{tabDeltaNumAgeYr}, \autoref{tabDeltaPropAgeYr}, and \autoref{tabDeltaWtAgeYr}, respectively).
@@ -324,7 +324,7 @@ Year & Gear1 & Gear2 & Gear3 & SoG\\
 
 \FloatBarrier
 \begin{longtable}{rrr}
-\caption{Total harvested Pacific herring spawn on kelp (SOK) in pounds (lb) from \Sexpr{firstYrTab} to \thisYr{} in the \regionName{} \regionType{}.
+\caption{Total harvested Pacific herring spawn-on-kelp (SOK) in pounds (lb) from \Sexpr{firstYrTab} to \thisYr{} in the \regionName{} \regionType{}.
 \SoG{}}\\
 \toprule
 Year & Harvest (lb) & SoG\\ 

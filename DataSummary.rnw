@@ -102,7 +102,7 @@ Finally, the reduction fishery operated during the winter months, whereas roe fi
 \inputsp{\Sexpr{noquote(docPath)}CatchAndBiologicalSamples.tex}
 Landed commercial catch of \fishName{} by year and fishery is shown in \autoref{tabCatchCommUseYr} and \autoref{figCatchGear}.
 \iftoggle{catchStatArea}{In addition to annual catch variability, catch varies among Statistical Areas (\autoref{figCatchStatArea}).}{\unskip}
-Total harvested spawn on kelp (SOK) in \thisYr{} in the \regionName{} \regionType{} SAR is shown in \autoref{tabHarvestSOK}; we also calculate the estimated spawning biomass associated with SOK harvest.
+Total harvested spawn-on-kelp (SOK) in \thisYr{} in the \regionName{} \regionType{} SAR is shown in \autoref{tabHarvestSOK}; we also calculate the estimated spawning biomass associated with SOK harvest.
 \spawnIndexTechReport{}
 % Note that we do not account for SOK harvest removals in stock assessments. OR
 % Currently, catch input to the stock assessment model does not include mortality from the commercial SOK fishery, nor any recreational or FSC fisheries.
@@ -202,7 +202,7 @@ The following observations were reported by area DFO Resource Management staff, 
 
 \begin{table}[ht]
 \centering
-\caption{Total harvested \fishName{} spawn on kelp (SOK) in pounds (lb), and the associated estimate of spawning biomass in metric tonnes (t) from \Sexpr{firstYrTab} to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR).
+\caption{Total harvested \fishName{} spawn-on-kelp (SOK) in pounds (lb), and the associated estimate of spawning biomass in metric tonnes (t) from \Sexpr{firstYrTab} to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR).
 \spawnIndexTechReport{}
 \Sexpr{ifelse(region=="CC", "Harvest does not include the 2,411 lbs of spawn on egregia in 2018.", "%")}
 \withPrivacy{WP}}
@@ -457,6 +457,7 @@ Units: kilometres (km).
 \caption{Time series of total landed catch in thousands of metric tonnes ($\text{t} \times 10^{3}$) of \fishName{} by gear type from \Sexpr{min(yrRange)} to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR).
 \legendGear{}
 \noSOK{}
+If present, bottom panel shows catch since \Sexpr{firstYrFig} in more detail.
 Note: symbols indicate years in which catch by gear type (i.e., \Sexpr{unique(catch$Gear)}) is withheld due to privacy concerns.}
 \label{figCatchGear}
 \end{figure}

@@ -228,7 +228,7 @@ Line and shaded area indicate the median and \Sexpr{ciLevel*100}\% credible inte
 Panel (d): posterior estimate of spawning biomass ($\mli{SB}_{t}$) for each year $t$ in thousands of metric tonnes ($\text{t} \times 10^{3}$).
 Line and shaded area indicate median and \Sexpr{ciLevel*100}\% credible interval, respectively.
 Also shown is unfished biomass ($\mli{SB}_0$) at far left, and projected spawning biomass assuming no fishing ($\mli{SB}_{\Sexpr{max(yrRange)+1}}$) at the far right: circles with vertical lines indicate medians and \Sexpr{ciLevel*100}\% credible intervals, respectively.
-Time series of vertical lines indicates commercial catch, excluding spawn on kelp (SOK).}
+Time series of vertical lines indicates commercial catch, excluding spawn-on-kelp (SOK).}
 \label{figStoryboardAM1}
 \end{figure}
 
