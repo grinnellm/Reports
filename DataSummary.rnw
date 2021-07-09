@@ -41,7 +41,7 @@
 require( knitr, quietly=TRUE )  # Dynamic documents
 # Select region(s)/folder(s): major (HG, PRD, CC, SoG, WCVI); minor (A27, A2W);
 # special (A10, JS); or all (All)
-if( !exists('regName') )  regName <- "CC"
+if( !exists('regName') )  regName <- "A2W"
 # Set the path to the R output, including a trailing separator
 rPath <- file.path( "..", "DataSummaries", regName, .Platform$file.sep )
 # Load the R image
@@ -457,7 +457,7 @@ Units: kilometres (km).
 \caption{Time series of total landed catch in thousands of metric tonnes ($\text{t} \times 10^{3}$) of \fishName{} by gear type from \Sexpr{min(yrRange)} to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR).
 \legendGear{}
 \noSOK{}
-If present, bottom panel shows catch since \Sexpr{firstYrFig} in more detail.
+\iftoggle{showCatchZoom}{Bottom panel shows catch since \Sexpr{firstYrFig} in more detail.}{\unskip}
 Note: symbols indicate years in which catch by gear type (i.e., \Sexpr{unique(catch$Gear)}) is withheld due to privacy concerns.}
 \label{figCatchGear}
 \end{figure}
