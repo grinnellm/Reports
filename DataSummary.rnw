@@ -41,7 +41,7 @@
 require( knitr, quietly=TRUE )  # Dynamic documents
 # Select region(s)/folder(s): major (HG, PRD, CC, SoG, WCVI); minor (A27, A2W);
 # special (A10, JS); or all (All)
-if( !exists('regName') )  regName <- "A27"
+if( !exists('regName') )  regName <- "SoG"
 # Set the path to the R output, including a trailing separator
 rPath <- file.path( "..", "DataSummaries", regName, .Platform$file.sep )
 # Load the R image
@@ -500,7 +500,7 @@ Horizontal dashed lines indicate the mean weight-at-age for age-\Sexpr{min(ageRa
 \begin{figure}[ht]
 \centering
 \includegraphics[width=\linewidth]{ProportionAged.png}
-\caption{Time series of observed proportion-at-age (a) and number aged in thousands (c) of \fishName{} from \Sexpr{min(yrRange)} to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR). 
+\caption{Time series of observed proportion-at-age (a) and number aged in thousands (b) of \fishName{} from \Sexpr{min(yrRange)} to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR). 
 The black line is the mean age, and the shaded area is the approximate \Sexpr{ciLevel*100}\% distribution. 
 \seineSamples{}
 \plusGroup{}}
