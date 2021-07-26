@@ -41,7 +41,7 @@
 require( knitr, quietly=TRUE )  # Dynamic documents
 # Select region(s)/folder(s): major (HG, PRD, CC, SoG, WCVI); minor (A27, A2W);
 # special (A10, JS); or all (All)
-if( !exists('regName') )  regName <- "A2W"
+if( !exists('regName') )  regName <- "A27"
 # Set the path to the R output, including a trailing separator
 rPath <- file.path( "..", "DataSummaries", regName, .Platform$file.sep )
 # Load the R image
@@ -706,7 +706,10 @@ Note that depth is not corrected to chart datum.
 \spawnIndex{}
 \missingSpawn{grey circles}
 Inset tracks time series of total spawn index.
-Units: kilometres (km).}
+Units: kilometres (km).
+To view the animation,
+download the PDF, open it with Adobe, enable JavaScript, and
+click the ``play'' button.}
 \label{figSpawnIndexAnimation}
 \end{figure}
 
