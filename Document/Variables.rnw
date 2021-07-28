@@ -16,6 +16,8 @@
 \newcommand{\isSubset}{\Sexpr{ifelse(all(is.na(sectionSub)), "", paste("Note that this report contains data collected in a subset of the SAR; included sections are ", PasteNicely(sectionSub), ".", sep=""))}}
 
 % Initialize switches; set to TRUE/FALSE in R based on conditions in the region
+\newtoggle{major}  % Is it a major SAR?
+\Sexpr{tfMajor}
 \newtoggle{biosamples}  % Show biosample locations
 \Sexpr{tfBiosamples}
 \newtoggle{weightCatch}  % Show weight by catch type
