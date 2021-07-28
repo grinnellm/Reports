@@ -41,7 +41,7 @@
 require( knitr, quietly=TRUE )  # Dynamic documents
 # Select region(s)/folder(s): major (HG, PRD, CC, SoG, WCVI); minor (A27, A2W);
 # special (A10, JS); or all (All)
-if( !exists('regName') )  regName <- "WCVI"
+if( !exists('regName') )  regName <- "HG"
 # Set the path to the R output, including a trailing separator
 rPath <- file.path( "..", "DataSummaries", regName, .Platform$file.sep )
 # Load the R image
@@ -115,7 +115,7 @@ In addition, \autoref{figLengthAgeSample} and \autoref{figLengthAgeSampleSA} sho
 \iftoggle{biosamples}{The locations in which the biological samples were collected are presented in \autoref{figBioLocations}.}{\unskip}
 \iftoggle{weightCatch}{Biological samples collected using seine gear shows that there is considerable variability in fish weight by year and sample type (\autoref{figWeightCatch}).}{\unskip}
 Included herein are biological summaries of observed proportion-, number-, weight-, and length-at-age (\autoref{figProportionAged}, \autoref{tabPropAgedYearTab}, and \autoref{figWtLenAge}, respectively).
-We also show the percent change in weight and length for age-\Sexpr{ageShow} and age-\Sexpr{ageShow2} fish (\autoref{figWtLenAgeChange} \& \autoref{figWtLenAgeChange2}, respectively).
+\iftoggle{major}{We also show the percent change in weight and length for age-\Sexpr{ageShow} and age-\Sexpr{ageShow2} fish (\autoref{figWtLenAgeChange} \& \autoref{figWtLenAgeChange2}, respectively).}{\unskip}
 \iftoggle{weightGroup}{Some Statistical Areas tend to have larger fish at a given age (\autoref{figWeightAgeGroup}, \autoref{tabWeightAgeGroupN}).}{\unskip}
 \seineSamples{}
 \repSamples{}
@@ -510,14 +510,17 @@ The black line is the mean age, and the shaded area is the approximate \Sexpr{ci
 \begin{figure}[ht]
 \centering
 \includegraphics[width=\linewidth]{WtLenAge.png}
-\caption{Time series of weight-at-age in grams (g) and length-at-age in milimetres (mm) for age-\Sexpr{ageShow} (circles) and \Sexpr{nRoll}-year running mean weight- and length-at-age (lines) for \fishName{} from \Sexpr{min(yrRange)} to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR). 
-% Lines show \Sexpr{nRoll}-year running means for age-\Sexpr{min(ageRange)} to age-\Sexpr{max(ageRange)} fish (incrementing higher from the lowest line); the thick black line highlights age-\Sexpr{ageShow} fish.
-Missing weight- and length-at-age values (i.e., years with no biological samples) are imputed using one of two methods: missing values at the beginning of the time series are imputed by extending the first non-missing value backwards; other missing values are imputed as the mean of the previous \Sexpr{nRoll} years.
+\caption{\iftoggle{major}
+{Time series of weight-at-age in grams (g) and length-at-age in milimetres (mm) for age-\Sexpr{ageShow} (circles) and \Sexpr{nRoll}-year running mean weight- and length-at-age (lines) for \fishName{} from \Sexpr{min(yrRange)} to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR). 
+Missing weight- and length-at-age values (i.e., years with no biological samples) are imputed using one of two methods: missing values at the beginning of the time series are imputed by extending the first non-missing value backwards; other missing values are imputed as the mean of the previous \Sexpr{nRoll} years.}
+{Time series of weight-at-age in grams (g) and length-at-age in milimetres (mm) for \fishName{} from \Sexpr{min(yrRange)} to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR).
+Age-\Sexpr{ageShow} fish are indicated by circles.}
 \seineSamples{}
 \plusGroup{}}
 \label{figWtLenAge}
 \end{figure}
 
+\iftoggle{major}{
 \begin{figure}[ht]
 \centering
 \includegraphics[width=\linewidth]{WtLenAgeChange.png}
@@ -526,7 +529,9 @@ Missing weight- and length-at-age values (i.e., years with no biological samples
 \seineSamples{}}
 \label{figWtLenAgeChange}
 \end{figure}
+}{\unskip}
 
+\iftoggle{major}{
 \begin{figure}[ht]
 \centering
 \includegraphics[width=\linewidth]{WtLenAgeChange2.png}
@@ -535,6 +540,7 @@ Missing weight- and length-at-age values (i.e., years with no biological samples
 \seineSamples{}}
 \label{figWtLenAgeChange2}
 \end{figure}
+}{\unskip}
 
 \iftoggle{numPropWtAge}{
 \begin{figure}[ht]
