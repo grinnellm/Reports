@@ -10,8 +10,8 @@ Send a gentle reminder email a few days before the due date.
 The area contacts are:
 
 * **HG & A2W** Patrick Fairweather
-* **PRD** Corey Martens and Jennifer Gordon
-* **CC** Bradley Koroluk
+* **PRD** Corey Martens, Jennifer Gordon, and Jennifer Butts
+* **CC** Bradley Koroluk and Justinas Savickas
 * **SoG** James Meldrum
 * **WCVI & A27** Eamon Miyagi
 
