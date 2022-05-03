@@ -11,7 +11,7 @@ The area contacts are:
 
 * **HG & A2W** Patrick Fairweather
 * **PRD** Corey Martens, Jennifer Gordon, and Jennifer Butts
-* **CC** Bradley Koroluk and Justinas Savickas
+* **CC** Justinas Savickas
 * **SoG** James Meldrum
 * **WCVI & A27** Eamon Miyagi
 
