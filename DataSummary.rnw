@@ -41,7 +41,7 @@
 require( knitr, quietly=TRUE )  # Dynamic documents
 # Select region(s)/folder(s): major (HG, PRD, CC, SoG, WCVI); minor (A27, A2W);
 # special (A10, JS); or all (All)
-if( !exists('regName') )  regName <- "A10"
+if( !exists('regName') )  regName <- "SoG"
 # Set the path to the R output, including a trailing separator
 rPath <- file.path( "..", "DataSummaries", regName, .Platform$file.sep )
 # Load the R image
@@ -414,7 +414,7 @@ in the \regionName{} \regionType{} stock assessment region (SAR).
 }{\unskip}
 
 \begin{table}[ht]
-\centerfloat
+\centering % \centerfloat
 \caption{Summary of \fishName{} spawn survey data from \Sexpr{firstYrTab} to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR). 
 \qPeriods{}
 \spawnIndex{}
