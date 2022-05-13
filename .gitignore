@@ -28,4 +28,7 @@ DataSummary-concordance.tex
 
 ### Miscelaneous ###
 .Rproj.user
-DataSummary.A10.2021.pdf
+DataSummary.A10.*.pdf
+
+# Omit for now
+/2022
