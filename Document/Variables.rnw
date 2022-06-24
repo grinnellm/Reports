@@ -63,8 +63,8 @@
 \newcommand{\pctChange}[1]{Percent change is $\delta_t=\frac{\alpha_t - \alpha_{t-1}}{\alpha_{t-1}}$ where $\alpha_t$ is the #1 in year $t$.}
 \newcommand{\spawnSurfDive}{Note that spawn surveys in the dive survey period (\Sexpr{qYrs$q2}) are a combination of surface and dive surveys (Figures \ref{figSpawnIndexType} and \ref{figSpawnTypeProp}).}
 \newcommand{\covid}{\section{COVID-19 pandemic}
-Compared to 2020, the COVID-19 pandemic had fewer impacts to Pacific Herring data collection and analysis in 2021.
-Spawn surveys proceeded as usual in most areas in 2021, with dive surveys in all major areas except Haida Gwaii.
-Haida Gwaii would normally have a dive survey, but had surface surveys in 2021 due to COVID-19.
-The collection and analysis of biological data was not affected by the COVID-19 pandemic in 2021.}
+Compared to 2020 and 2021,
+the COVID-19 pandemic had fewer impacts to Pacific Herring data collection and analysis in 2022.
+Spawn surveys proceeded as usual in most areas in 2022.
+The collection and analysis of biological data was not affected by the COVID-19 pandemic in 2022.}
 \newcommand{\specialRegion}{Note that special SARs are unofficial SARs; they are excluded in regular monitoring and analyses.}
