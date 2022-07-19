@@ -22,7 +22,6 @@
 # This is just a convenience (i.e., I'm lazy) script to make multiple summary 
 # reports: make a copy of the report knitr file named by the region and year,
 # compile the PDF, and then remove the temporary files.
-#
 
 ##### Housekeeping #####
 
