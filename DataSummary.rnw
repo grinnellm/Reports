@@ -41,7 +41,7 @@
 require( knitr, quietly=TRUE )  # Dynamic documents
 # Select region(s)/folder(s): major (HG, PRD, CC, SoG, WCVI); minor (A27, A2W);
 # special (A10, JS); or all (All)
-if( !exists('regName') )  regName <- "A27"
+if( !exists('regName') )  regName <- "CC"
 # Set the path to the R output, including a trailing separator
 rPath <- file.path( "..", "DataSummaries", regName, .Platform$file.sep )
 # Load the R image
@@ -216,11 +216,12 @@ The following observations were reported by area DFO Resource Management staff, 
 \begin{table}[ht]
 \centering
 \caption{Number of \fishName{} biological samples processed from \Sexpr{firstYrTab} to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR).
-\sampleSize{}} 
-\begin{tabular}{rrrr}
+\sampleSize{}
+\noteNear{}}
+\begin{tabular}{rrrrr}
 \toprule
-& \multicolumn{3}{c}{Number of samples}\\
-\cmidrule{2-4}
+& \multicolumn{4}{c}{Number of samples}\\
+\cmidrule{2-5}
 \inputsp{\Sexpr{noquote(rPath)}BioNum.tex}
 \end{tabular}
 \label{tabBioNum}
