@@ -52,7 +52,8 @@ docPath <- file.path( "RegionalText", max(yrRange), regName,
 @
 
 % Load R variables, switches, etc
-\Sexpr{knit_child('Document/Variables.rnw')}
+<<vars, child = 'Document/Variables.rnw'>>=
+@
 
 % TODOs:
 % Wording in text and captions for 'tabBioNum' and 'tabBioTypeNum' re showing 'Representative' biological samples only (once the R script is updated). Use the command '\repSamples' below. This could also include the figure 'BioLocations.pdf' (Note that this creates issues with WCVI because of the cast-net biosamples, which are not representative, but are included in the data summary.)
