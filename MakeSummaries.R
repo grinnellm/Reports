@@ -82,6 +82,9 @@ MakeReports <- function( regs ) {
     # Get the last year
     # TODO: For model summaries, this should come from the model output
     lastYr <- max( yrRange )
+    # Create the 'year' folder if it doesn't exist
+    if (!as.character(lastYr) %in% list.files())
+      dir.create(path = as.character(lastYr))
     # Output file name: report, region, and year (i.e., last year of data)
     outFN <- paste( reportFN, regName, lastYr, sep="." )
     # Copy the report to specify the region and date (year)
