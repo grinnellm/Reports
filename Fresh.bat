@@ -19,7 +19,6 @@ del DataSummary.pdf
 del Presentation.pdf
 del Presentation.tex
 del .Rhistory
-del *knitr.*
 rmdir /S /Q knitr-cache
 rmdir /S /Q figure
 rmdir /S /Q cache
