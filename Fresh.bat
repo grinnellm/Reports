@@ -14,8 +14,11 @@ del *.toc
 del *.vrb
 del *-concordance.tex
 del *.synctex.gz*
+del DataSummary-knitr.rnw
 del DataSummary.tex
+del DataSummary-knitr.tex
 del DataSummary.pdf
+del DataSummary-knitr.pdf
 del Presentation.pdf
 del Presentation.tex
 del .Rhistory
