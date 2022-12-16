@@ -78,13 +78,14 @@ MakeReports <- function( regs ) {
     # Update progress message
     cat( regName, ", ", sep="" ) 
     # Load the R image
-    load( file=file.path("..", "DataSummaries", regName, paste("Image", regName, "RData", sep=".")) )
+    load( file=file.path("..", "DataSummaries",
+                         regName, paste("Image", regName, "RData", sep=".")) )
     # Get the last year
     # TODO: For model summaries, this should come from the model output
     lastYr <- max( yrRange )
     # Create the 'year' folder if it doesn't exist
-    if (!as.character(lastYr) %in% list.files())
-      dir.create(path = as.character(lastYr))
+    if (!as.character(lastYr) %in% list.files("Summaries"))
+      dir.create(path = file.path("Summaries", as.character(lastYr)))
     # Output file name: report, region, and year (i.e., last year of data)
     outFN <- paste( reportFN, regName, lastYr, sep="." )
     # Copy the report to specify the region and date (year)
@@ -94,7 +95,7 @@ MakeReports <- function( regs ) {
     knit2pdf( input=paste(outFN, reportExt, sep="."), quiet=TRUE )
     # Make a copy in the [year] sub-folder
     file.copy( from=paste(outFN, "pdf", sep="."), 
-               to=file.path(lastYr, paste(outFN, "pdf", sep=".")),
+               to=file.path("Summaries", lastYr, paste(outFN, "pdf", sep=".")),
                overwrite=TRUE )
     # Get the intermediary file names
     tempFNs <- list.files( pattern=outFN )
