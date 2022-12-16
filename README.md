@@ -12,8 +12,8 @@ Figures and tables in these reports are generated in the
 Read the [wiki](https://github.com/grinnellm/DataSummaries/wiki)
 for more information.
 
-## Viewing final reports
+## final reports
 
 Final reports are stored in 
 [annual folders](https://github.com/grinnellm/Reports/tree/master/Summaries);
-open the folder to view or download PDF reports.
+open the annual folder to view or download reports.
