@@ -12,7 +12,7 @@ Figures and tables in these reports are generated in the
 Read the [wiki](https://github.com/grinnellm/DataSummaries/wiki)
 for more information.
 
-## final reports
+## Final reports
 
 Final reports are stored in 
 [annual folders](https://github.com/grinnellm/Reports/tree/master/Summaries);
