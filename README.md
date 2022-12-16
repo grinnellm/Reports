@@ -15,5 +15,5 @@ for more information.
 ## Viewing final reports
 
 Final reports are stored in 
-[annual folders](https://github.com/grinnellm/Reports/Summaries);
+[annual folders](https://github.com/grinnellm/Reports/tree/master/Summaries);
 open the folder to view or download PDF reports.
