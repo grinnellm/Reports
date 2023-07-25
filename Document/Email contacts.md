@@ -10,7 +10,7 @@ Send a gentle reminder email a few days before the due date.
 The area contacts are:
 
 * **HG & A2W** Patrick Fairweather
-* **PRD** Corey Martens, Jennifer Gordon, and Jennifer Butts
+* **PRD** Corey Martens (Amanda Beckett)
 * **CC** Justinas Savickas
 * **SoG** James Meldrum
 * **WCVI & A27** Eamon Miyagi
