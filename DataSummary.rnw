@@ -94,10 +94,10 @@ docPath <- file.path( "RegionalText", max(yrRange), regName,
 In the 1950s and 1960s, the reduction fishery dominated \fishName{} catch; starting in the 1970s, catch has been predominantly from roe seine and gillnet fisheries.
 The reduction fishery is different from current fisheries in several ways.
 First, the reduction fishery caught \fishName{} of all ages, whereas current fisheries target spawning (i.e., mature) fish.
-Thus, reduction fisheries included age-1 fish which are not typically caught in current fisheries.
-Second, the reduction fishery has some uncertainty regarding the quantity and location of catch; in some cases this may affect our ability to allocate catch to a specific SAR.
+Thus, reduction fisheries included an unknown number of age-1 fish which are not typically caught in current fisheries.
+Second, the reduction fishery has some uncertainty regarding the quantity and location of catch; however catches have been resolved to SAR and Statistical Area using fish slips as best as possible.
 For the roe gillnet fishery, all \fishName{} catch has been validated by a dockside monitoring program since \Sexpr{validCatch$RoeGN}; the catch validation program started in \Sexpr{validCatch$RoeSN} for the roe seine fishery.
-Finally, the reduction fishery operated during the winter months, whereas roe fisheries typically target spawning fish between February and April.
+Finally, the reduction fishery operated during the summer and winter months, whereas roe fisheries typically target spawning fish between February and April.
 
 % Bring in custom text for catch and biological samples
 \inputsp{\Sexpr{noquote(docPath)}CatchAndBiologicalSamples.tex}
@@ -653,7 +653,7 @@ Note that spawn size and intensity varies; therefore the number of spawns is not
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=\linewidth]{SpawnIndexPercent.png}
+\includegraphics[width=0.95\linewidth]{SpawnIndexPercent.png}
 \caption{Time series of spawn index in thousands of metric tonnes ($\text{t} \times 10^{3}$) for \fishName{} from \Sexpr{min(yrRange)} to \thisYr{} in the \regionName{} \regionType{} stock assessment region (SAR; panel a), as well as percent contributed by \Sexpr{spawnIndexGroupName$b}, and Section (b, \& c, respectively). 
 %\trendLine{}
 \qPeriods{}
