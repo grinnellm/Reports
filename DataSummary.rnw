@@ -119,7 +119,7 @@ Total harvested spawn-on-kelp (SOK) in \thisYr{} in the \regionName{} \regionTyp
 % Note that we do not account for SOK harvest removals in stock assessments. OR
 % Currently, catch input to the stock assessment model does not include mortality from the commercial SOK fishery, nor any recreational or FSC fisheries.
 
-In \thisYr{}, \Sexpr{nSampThisYr} \fishName{} biological samples were collected and processed for the \regionName{} \regionType{} SAR (\autoref{tabBioNum}, \autoref{tabBioTypeNum}), and a total of \Sexpr{numAgedThisYr} \fishName{} were aged in \thisYr{}.
+In \thisYr{}, \Sexpr{nSampThisYr} \fishName{} biological samples were collected and processed for the \regionName{} \regionType{} SAR (\autoref{tabBioNum}, \autoref{tabBioTypeNum}).
 \iftoggle{numPropWtAge}{Differences between biological data collected from two sampling protocols regarding the number-, proportion-, weight-, and length-at-age for \fishName{} in \thisYr{} in the \regionName{} \regionType{} SAR are shown in \autoref{tabDeltaNumAgeYr}, \autoref{tabDeltaPropAgeYr}, \autoref{tabDeltaWtAgeYr}, and \autoref{tabDeltaLenAgeYr}, respectively.
 The nearshore sampling program is a multi-year pilot study (using cast nets), therefore only biological data from the seine samples were used for the purposes of stock assessment.
 Summaries of data collected by the nearshore sampling program are shown in \autoref{tabNearNum}, \autoref{tabNearProp}, \autoref{tabNearWt}, and \autoref{tabNearLen}.
