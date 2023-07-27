@@ -1,22 +1,35 @@
-### General ###
+# General
+*.docx
+*.xlsx
 *.pptx
 *.xlsx
 *.zip
 *.7z
 
-### R files ###
+# History files
 .Rhistory
-*.RData
+.Rapp.history
+
+# Session data files
+.RData
+*.DRData
+.RDataTmp
+
+# User-specific files
+.Ruserdata
+
+# RStudio files
+.Rproj.user/
 *.Rproj
 
-### LaTeX files ###
+# LaTeX
 *.aux
 *.log
 *.bbl
 *.out
 *.synctex.gz
 
-### Temporary (for this year) ###
+# Temporary (for this year)
 DataSummary.pdf
 DataSummary-knitr.pdf
 DataSummaryJS.pdf
@@ -26,16 +39,11 @@ DataSummary-knitr.tex
 TempImages
 DataSummary-knitr.rnw
 
-### Omit this year until PDFs are final
+# Omit this year until PDFs are final
 2024/
 
 ## Temp files ###
 DataSummary-concordance.tex
 
-### Miscelaneous ###
-.Rproj.user
+# Area 10 (special)
 DataSummary.A10.*.pdf
-
-# MS Office
-*.docx
-*.xlsx
