@@ -70,9 +70,6 @@ docPath <- file.path( "RegionalText", max(yrRange), regName,
 % Add the title etc
 \frontmatter
 
-% Blurb re COVID-19
-\covid
-
 % Context section
 \section{Context}
 
