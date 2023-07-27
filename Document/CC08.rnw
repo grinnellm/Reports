@@ -1,8 +1,21 @@
 \subsection{Biological samples in Statistical Area 08}
 
-In the \regionName{} \regionType{} SAR, \fishName{} in Statistical Area (SA) 08 tend to be smaller than fish in other areas.
-In addition, fewer biological samples are typically collected from SA 08 compared to the other areas.
-For example, between \histYrs{}, on average $\sim\histRat{}\%$ of biological samples came from SA 08.
-In \fixYrs{}, additional resources were available to collect biological samples in SA 08, which consequently received more sampling effort than previous years, compared to the other areas.
-In order to avoid using non-representative biological data in the \regionName{} stock assessment model, biological samples from SA 08 in \fixYrs{} are weighted by the average historic proportion of samples in that area (i.e., $\sim\histRat{}\%$).
-Biological data presented in this report (e.g., proportion-at-age, weight-at-age) reflect these weights, and are considered to be representative of the \regionName{} \regionType{} SAR.
+In the \regionName{} \regionType{} SAR,
+\fishName{} in Statistical Area (SA) 08
+tend to be smaller than fish in other areas.
+In addition, fewer biological samples are typically collected
+from SA 08 compared to the other areas.
+For example, between \histYrs{}, on average $\sim\histRat{}\%$
+of biological samples came from SA 08.
+In \fixYrs{}, additional resources were available
+to collect biological samples in SA 08,
+which consequently received more sampling effort than previous years,
+compared to the other areas.
+In order to avoid using non-representative biological data
+in the \regionName{} stock assessment model,
+biological samples from SA 08 in \fixYrs{} are weighted
+by the average historic proportion of samples in that area
+(i.e., $\sim\histRat{}\%$).
+Biological data presented in this report
+(e.g., proportion-at-age, weight-at-age) reflect these weights,
+and are considered to be representative of the \regionName{} \regionType{} SAR.
