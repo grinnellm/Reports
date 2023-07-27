@@ -152,7 +152,8 @@ An animation shows the spawn index by spawn survey location from \Sexpr{min(yrRa
 \section{General observations}
 
 General observations provide context to the data summary report.
-The following observations were reported by area DFO Resource Management staff, and DFO Science staff:
+The following observations were reported by area DFO Resource Management staff
+and DFO Science staff:
 
 % Bring in custom text, usually a bullet list
 \inputsp{\Sexpr{noquote(docPath)}GeneralObservations.tex}
