@@ -64,3 +64,9 @@
 \newcommand{\pctChange}[1]{Percent change is $\delta_t=\frac{\alpha_t - \alpha_{t-1}}{\alpha_{t-1}}$ where $\alpha_t$ is the #1 in year $t$.}
 \newcommand{\spawnSurfDive}{Note that spawn surveys in the dive survey period (\Sexpr{qYrs$q2}) are a combination of surface and dive surveys (Figures \ref{figSpawnIndexType} and \ref{figSpawnTypeProp}).}
 \newcommand{\specialRegion}{Note that special SARs are unofficial SARs; they are excluded in regular monitoring and analyses.}
+\newcommand{\boxplot}{The outer edges of the boxes indicate
+the \nth{25} and \nth{75} percentiles, and
+the middle lines indicate the \nth{50} percentiles (i.e., medians).
+The whiskers extend to $1.5 \times \text{IQR}$,
+where IQR is the distance between the \nth{25} and \nth{75} percentiles, and
+dots indicate outliers.}

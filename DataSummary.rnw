@@ -41,7 +41,7 @@
 require( knitr, quietly=TRUE )  # Dynamic documents
 # Select region(s)/folder(s): major (HG, PRD, CC, SoG, WCVI); minor (A27, A2W);
 # special (A10, JS); or all (All)
-if( !exists('regName') )  regName <- "HG"
+if( !exists('regName') )  regName <- "CC"
 # Set the path to the R output, including a trailing separator
 rPath <- file.path( "..", "DataSummaries", regName, .Platform$file.sep )
 # Load the R image
@@ -584,11 +584,7 @@ Units: kilometres (km).}
 from \Sexpr{firstYrTab} to \thisYr{}
 in the \regionName{} \regionType{} stock assessment region (SAR)
 in Statistical Areas 14 and 17.
-The outer edges of the boxes indicate the \nth{25} and \nth{75} percentiles,
-and the middle lines indicate the \nth{50} percentiles (i.e., medians).
-The whiskers extend to $1.5 \times \text{IQR}$,
-where IQR is the distance between the \nth{25} and \nth{75} percentiles, and
-dots indicate outliers.
+\boxplot{}
 Horizontal dashed lines indicate the mean weight-at-age
 for age-\Sexpr{min(ageRange)} (lowest line) to age-\Sexpr{max(ageRange)}
 (incrementing higher from age-\Sexpr{min(ageRange)}) fish. 
@@ -672,11 +668,7 @@ in the \regionName{} \regionType{} stock assessment region (SAR).
 \caption{Length-at-age in millimetres (mm) of \fishName{} from
 \Sexpr{paste(range(yrsNearshore), collapse=" to ")}
 in the \regionName{} \regionType{} stock assessment region (SAR) by sample type. 
-The outer edges of the boxes indicate the \nth{25} and \nth{75} percentiles,
-and the middle lines indicate the \nth{50} percentiles (i.e., medians).
-The whiskers extend to $1.5 \times \text{IQR}$,
-where IQR is the distance between the \nth{25} and \nth{75} percentiles, and
-dots indicate outliers.
+\boxplot{}
 \seineSamples{}
 \legendNear{}
 \plusGroup{}}
@@ -690,11 +682,7 @@ dots indicate outliers.
 \Sexpr{paste(range(yrsNearshore), collapse=" to ")}
 in the \regionName{} \regionType{} stock assessment region (SAR)
 by sample type and statistical area (SA). 
-The outer edges of the boxes indicate the \nth{25} and \nth{75} percentiles,
-and the middle lines indicate the \nth{50} percentiles (i.e., medians).
-The whiskers extend to $1.5 \times \text{IQR}$,
-where IQR is the distance between the \nth{25} and \nth{75} percentiles,
-and dots indicate outliers.
+\boxplot{}
 \seineSamples{}
 \legendNear{}
 \plusGroup{}}
@@ -710,11 +698,7 @@ and dots indicate outliers.
 in the \regionName{} \regionType{} stock assessment region (SAR) by Group
 from the most recent decade (\Sexpr{wtAgeYrRanges$recent}), and
 the previous decade (\Sexpr{wtAgeYrRanges$previous}). 
-The outer edges of the boxes indicate the \nth{25} and \nth{75} percentiles,
-and the middle lines indicate the \nth{50} percentiles (i.e., medians).
-The whiskers extend to $1.5 \times \text{IQR}$,
-where IQR is the distance between the \nth{25} and \nth{75} percentiles,
-and dots indicate outliers.
+\boxplot{}
 Sample sizes are given in \autoref{tabWeightAgeGroupN}.
 \seineSamples{}
 \plusGroup{}
