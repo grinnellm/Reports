@@ -720,6 +720,7 @@ associated Section\Sexpr{ifelse(length(unique(areas$Section))>1, "s", "")}
 (Sec; thin solid lines).
 \spawnIndex{}
 \missingSpawn{grey circles}
+Inset tracks the total spawn index.
 Units: kilometres (km).}
 \label{figSpawnByLoc}
 \end{figure}
