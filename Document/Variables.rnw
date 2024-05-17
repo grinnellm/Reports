@@ -40,6 +40,8 @@
 \Sexpr{tfSpecialRegion}
 \newtoggle{showCatchZoom} % Show zoom area for catch
 \Sexpr{tfShowCatchZoom}
+\newtoggle{showCatchIC} % Show incidental catch
+\Sexpr{tfShowCatchIC}
 
 % Location of the pdf figures (generated in R)
 \graphicspath{{\Sexpr{noquote(rPath)}}}

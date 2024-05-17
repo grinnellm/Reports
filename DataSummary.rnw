@@ -41,13 +41,15 @@
 require( knitr, quietly=TRUE )  # Dynamic documents
 # Select region(s)/folder(s): major (HG, PRD, CC, SoG, WCVI); minor (A27, A2W);
 # special (A10, JS); or all (All)
-if( !exists('regName') )  regName <- "HG"
+if( !exists('regName') )  regName <- "CC"
 # Set the path to the R output, including a trailing separator
 rPath <- file.path( "..", "DataSummaries", regName, .Platform$file.sep )
 # Load the R image
 load( file=file.path(rPath, paste("Image", regName, "RData", sep=".")) )
 # Set the path to the region-specific documents for LaTeX
 docPath <- file.path( "RegionalText", max(yrRange), regName, 
+  .Platform$file.sep )
+docPathTemp <- file.path( "RegionalText", max(yrRange) + 1, regName, 
   .Platform$file.sep )
 @
 
@@ -119,6 +121,8 @@ we also calculate the estimated spawning biomass associated with SOK harvest.
 \spawnIndexTechReport{}
 % Note that we do not account for SOK harvest removals in stock assessments. OR
 % Currently, catch input to the stock assessment model does not include mortality from the commercial SOK fishery, nor any recreational or FSC fisheries.
+\iftoggle{showCatchIC}{Incidental mortality from fisheries and aquaculture
+activities is shown in \autoref{figShowCatchIC}.}{\unskip}
 
 In \thisYr{}, \Sexpr{nSampThisYr} \fishName{} biological samples were
 collected and processed for the \regionName{} \regionType{} SAR
@@ -193,6 +197,16 @@ than others to the total spawn index
 (\autoref{figSpawnIndexPercent}c, \autoref{figSpawnPercentGrid}).
 An animation shows the spawn index by spawn survey location
 from \Sexpr{min(yrRange)} to \thisYr{} (\autoref{figSpawnIndexAnimation}).
+
+% First Nations observations
+\section{First Nations observations}
+
+The following observations were contributed by
+representatives of First Nations communities.
+
+% Bring in custom text
+\inputsp{\Sexpr{noquote(docPathTemp)}FirstNationsObservations.tex}
+% TODO: Switch back to `docPath` and remove variable `docPathTemp`
 
 % General observations section
 \section{General observations}
@@ -559,6 +573,19 @@ Note: symbols indicate years in which catch by gear type (i.e., \Sexpr{unique(ca
 \darkThisYr{}
 Note: symbols indicate years in which catch is withheld due to privacy concerns.}
 \label{figCatchStatArea}
+\end{figure}
+}{\unskip}
+
+\iftoggle{showCatchIC}{
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{CatchIC.png}
+\caption{Incidental \fishName{} mortality
+in aquaculture activities in thousands of fish from
+\Sexpr{min(yrsIC)} to \Sexpr{max(yrsIC)} in the
+\regionName{} \regionType{} stock assessment region (SAR).
+Note: figure may include data outside SAR boundaries.}
+\label{figShowCatchIC}
 \end{figure}
 }{\unskip}
 
