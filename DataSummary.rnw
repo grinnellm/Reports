@@ -203,6 +203,8 @@ from \Sexpr{min(yrRange)} to \thisYr{} (\autoref{figSpawnIndexAnimation}).
 
 The following observations were contributed by
 representatives of First Nations communities.
+In some cases we edit responses for clarity and brevity,
+but we do not change the intent or substance.
 
 % Bring in custom text
 \inputsp{\Sexpr{noquote(docPathTemp)}FirstNationsObservations.tex}

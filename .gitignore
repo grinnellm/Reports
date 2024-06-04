@@ -29,7 +29,7 @@
 *.out
 *.synctex.gz
 
-# Temporary (for this year)
+# Temporary files (for this year)
 DataSummary.pdf
 DataSummary-knitr.pdf
 DataSummaryJS.pdf
