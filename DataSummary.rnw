@@ -203,8 +203,9 @@ from \Sexpr{min(yrRange)} to \thisYr{} (\autoref{figSpawnIndexAnimation}).
 
 The following observations were contributed by
 representatives of First Nations communities.
-In some cases we edit responses for clarity and brevity,
-but we do not change the intent or substance.
+These observations provide context and perspectives to this data report.
+In some cases we make minor edits for clarity and brevity,
+but we do not change the intent or substance of responses.
 
 % Bring in custom text
 \inputsp{\Sexpr{noquote(docPathTemp)}FirstNationsObservations.tex}
@@ -213,9 +214,9 @@ but we do not change the intent or substance.
 % General observations section
 \section{General observations}
 
-General observations provide context to the data summary report.
-The following observations were reported by area DFO Resource Management staff
-and DFO Science staff:
+The following observations were reported by 
+DFO Resource Management staff and DFO Science staff.
+These observations provide additional context to this data report.
 
 % Bring in custom text, usually a bullet list
 \inputsp{\Sexpr{noquote(docPath)}GeneralObservations.tex}
