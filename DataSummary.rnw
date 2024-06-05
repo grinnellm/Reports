@@ -49,8 +49,6 @@ load( file=file.path(rPath, paste("Image", regName, "RData", sep=".")) )
 # Set the path to the region-specific documents for LaTeX
 docPath <- file.path( "RegionalText", max(yrRange), regName, 
   .Platform$file.sep )
-docPathTemp <- file.path( "RegionalText", max(yrRange) + 1, regName, 
-  .Platform$file.sep )
 @
 
 % Load R variables, switches, etc
@@ -208,8 +206,7 @@ In some cases we make minor edits for clarity and brevity,
 but we do not change the intent or substance of responses.
 
 % Bring in custom text
-\inputsp{\Sexpr{noquote(docPathTemp)}FirstNationsObservations.tex}
-% TODO: Switch back to `docPath` and remove variable `docPathTemp`
+\inputsp{\Sexpr{noquote(docPath)}FirstNationsObservations.tex}
 
 % General observations section
 \section{General observations}
