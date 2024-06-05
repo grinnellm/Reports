@@ -58,7 +58,6 @@ docPath <- file.path( "RegionalText", max(yrRange), regName,
 % TODOs:
 % Wording in text and captions for 'tabBioNum' and 'tabBioTypeNum' re showing 'Representative' biological samples only (once the R script is updated). Use the command '\repSamples' below. This could also include the figure 'BioLocations.pdf' (Note that this creates issues with WCVI because of the cast-net biosamples, which are not representative, but are included in the data summary.)
 % Active voice.
-% Once the JS summary is sent/done, move text from 'Context.rnw' to this file.
 % Add a note re SOK removals/mortality not included in catch (search for SOK).
 % Add a table with weight- and/or length-at-age differences with respect to some reference period (i.e., 1980s).
 % Remove comment about egregia SOK excluded from product weight once egregia is included in the SOK table.
@@ -73,8 +72,42 @@ docPath <- file.path( "RegionalText", max(yrRange), regName,
 % Context section
 \section{Context}
 
-% Bring in stock text for context, with an update form \theFollowing
-\Sexpr{knit_child('Document/Context.rnw')}
+\fishName{} (\scienceName{}) in British Columbia are assessed as
+\Sexpr{length(allRegions$major)} major and
+\Sexpr{length(allRegions$minor)} minor
+stock assessment regions (SARs), and
+data are collected and summarized on this scale
+(\autoref{tabRegions}, \autoref{figBC}).
+%One difference between major and minor SARs is that only major SARs receive stock assessments.
+The \fishName{} data collection program includes fishery-dependent and
+-independent data from \firstYr{} to \thisYr{}.
+This includes annual time series of
+commercial catch data,
+biological samples
+(providing information on proportion-at-age and weight-at-age), and
+spawn index data conducted using a combination of surface and SCUBA surveys.
+In some areas, industry- and/or First Nations-operated in-season soundings
+programs are also conducted, and this information is used by
+resource managers, First Nations, and stakeholders
+to locate fish and identify areas of high and low \fishName{} biomass
+to plan harvesting activities.
+In-season acoustic soundings are not used by stock assessment
+to inform the estimation of spawning biomass.
+
+The following is a description of data collected for \fishName{} in \thisYr{}
+in the \regionName{} \regionType{} SAR (\autoref{figRegion}).
+Data collected outside the SAR boundary are not included in this summary, and
+are not used for the purposes of stock assessment.
+Although we summarise data at the scale of the SAR for stock assessments,
+we summarise data at finer spatial scales in this report:
+Locations are nested within Sections,
+Sections are nested within Statistical Areas, and
+Statistical Areas are nested within SARs (\autoref{tabSpatialGroup}).
+\iftoggle{spatialGroup}{For the \regionName{} \regionType{} SAR,
+we use another level of spatial aggregation
+which we refer to as a `Group'.}{\unskip}
+Note that we refer to `year' instead of `herring season' in this report;
+therefore \thisYr{} refers to the \Sexpr{thisSeason} \fishName{} season.
 
 % Data collection programs section
 \section{Data collection programs}
@@ -206,7 +239,7 @@ In some cases we make minor edits for clarity and brevity,
 but we do not change the intent or substance of responses.
 
 % Bring in custom text
-\inputsp{\Sexpr{noquote(docPath)}FirstNationsObservations.tex}
+% \inputsp{\Sexpr{noquote(docPath)}FirstNationsObservations.tex}
 
 % General observations section
 \section{General observations}
@@ -237,7 +270,6 @@ These observations provide additional context to this data report.
 \begin{longtable}{\iftoggle{spatialGroup}{lrrl}{lrr}}
 \caption{Statistical Areas\iftoggle{spatialGroup}{, Sections, and Groups}{ and Sections} for \fishName{} in the \regionName{} \regionType{} stock assessment region (SAR).
 \iftoggle{specialRegion}{\specialRegion{}}{\unskip}
-\sectionsJS{}
 \Sexpr{spawnIndexGroupLegend}}\\
 \toprule
 \Sexpr{noquote(namesSpatialGroup)}\\

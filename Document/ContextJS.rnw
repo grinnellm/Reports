@@ -1,5 +1,0 @@
-The Pacific herring data collection program includes fishery-dependent and -independent data from \firstYr{} to \thisYr{}.
-Some figures and tables display data from the entire time series, while others focus on the most recent year, \thisYr{}.
-
-The following is a description of data collected for \fishName{} in the \regionName{} \regionType{} SAR in \thisYr{} (\autoref{figRegion}).
-Note that we refer to `year' instead of `herring season' in this report; therefore \thisYr{} refers to the \Sexpr{thisSeason} herring season.

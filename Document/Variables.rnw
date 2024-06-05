@@ -10,7 +10,6 @@
 \newcommand{\histYrs}{\Sexpr{histYrs}}
 \newcommand{\histRat}{\Sexpr{histRat}}
 \newcommand{\fixYrs}{\Sexpr{fixYrs}}
-\newcommand{\sectionsJS}{\Sexpr{sectionsJS}}
 
 % Note if there is only a subset of sections
 \newcommand{\isSubset}{\Sexpr{ifelse(all(is.na(sectionSub)), "", paste("Note that this report contains data collected in a subset of the SAR; included sections are ", PasteNicely(sectionSub), ".", sep=""))}}
