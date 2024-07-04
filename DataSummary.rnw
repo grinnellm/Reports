@@ -41,7 +41,7 @@
 require( knitr, quietly=TRUE )  # Dynamic documents
 # Select region(s)/folder(s): major (HG, PRD, CC, SoG, WCVI); minor (A27, A2W);
 # special (A10, JS); or all (All)
-if( !exists('regName') )  regName <- "CC"
+if( !exists('regName') )  regName <- "SoG"
 # Set the path to the R output, including a trailing separator
 rPath <- file.path( "..", "DataSummaries", regName, .Platform$file.sep )
 # Load the R image
@@ -78,7 +78,7 @@ docPath <- file.path( "RegionalText", max(yrRange), regName,
 stock assessment regions (SARs), and
 data are collected and summarized on this scale
 (\autoref{tabRegions}, \autoref{figBC}).
-%One difference between major and minor SARs is that only major SARs receive stock assessments.
+Note that formal stock assessments are only done for major SARs.
 The \fishName{} data collection program includes fishery-dependent and
 -independent data from \firstYr{} to \thisYr{}.
 This includes annual time series of
@@ -479,8 +479,8 @@ in the \regionName{} \regionType{} stock assessment region (SAR).
 \centering
 \caption{Observed proportion-at-age for \fishName{}
 from \Sexpr{firstYrTab} to \thisYr{} in the \regionName{} \regionType{}
-stock assessment region (SAR). 
-\plusGroup{}} 
+stock assessment region (SAR).
+\plusGroup{}}
 \begin{tabular}\Sexpr{ageTableAlign}
 \toprule
 & \multicolumn{\Sexpr{length(ageRange)}}{c}{Proportion-at-age}\\
