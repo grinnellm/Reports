@@ -12,8 +12,7 @@
 # Date edited:  Feb 12, 2018
 #
 # Overview:
-# Make summary reports (i.e., PDF) for each region: data summaries, or model
-# summaries.
+# Make data summary reports (i.e., PDF) for each region.
 #
 # Requirements:
 # Everything that is also required in the respective *.rnw file.
