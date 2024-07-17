@@ -78,7 +78,7 @@ to facilitate interpretation.}
 due to privacy concerns (#1).}
 \newcommand{\noSOK}{Data from the spawn-on-kelp (SOK) fishery are not included.}
 \newcommand{\spawnIndexTechReport}{See the
-\href{https://github.com/grinnellm/SpawnIndex/blob/master/tr/Draft.pdf}{draft spawn index technical report}
+\href{https://science-catalogue.canada.ca/record=b4121678~S6}{spawn index technical report}
 for calculations to convert SOK harvest to spawning biomass.}
 \newcommand{\missingSpawn}[1]{Missing spawn index values indicate
 incomplete surveys (#1).}
