@@ -174,9 +174,8 @@ show differences in length-at-age between the two sampling protocols, and
 differences by Statistical Area, respectively.}{\unskip}
 \iftoggle{biosamples}{The locations in which the biological samples were
 collected are presented in \autoref{figBioLocations}.}{\unskip}
-\iftoggle{weightCatch}{Biological samples collected using seine gear shows that
-there is considerable variability in fish weight by year and sample type
-(\autoref{figWeightCatch}).}{\unskip}
+\iftoggle{weightCatch}{\autoref{figWeightCatch} shows the distribution of 
+fish weight by year and sample type.}{\unskip}
 Included herein are biological summaries of observed
 proportion-, number-, weight-, and length-at-age
 (\autoref{figProportionAged}, \autoref{tabPropAgedYearTab}, and
