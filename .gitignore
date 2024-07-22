@@ -30,6 +30,7 @@
 *.synctex.gz
 
 # Temporary files (for this year)
+DataSummary-concordance.tex
 DataSummary.pdf
 DataSummary-knitr.pdf
 ModelSummary*.pdf
@@ -40,10 +41,10 @@ TempImages
 DataSummary-knitr.rnw
 
 # Omit this year until PDFs are final
-2024/
-
-## Temp files ###
-DataSummary-concordance.tex
+2025/
 
 # Area 10 (special)
 DataSummary.A10.*.pdf
+
+# Temporary files
+Observations/
