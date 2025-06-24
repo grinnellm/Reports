@@ -41,7 +41,7 @@
 require( knitr, quietly=TRUE )  # Dynamic documents
 # Select region(s)/folder(s): major (HG, PRD, CC, SoG, WCVI); minor (A27, A2W);
 # special (A10, JS); or all (All)
-if( !exists('regName') )  regName <- "SoG"
+if( !exists('regName') )  regName <- "WCVI"
 # Set the path to the R output, including a trailing separator
 rPath <- file.path( "..", "DataSummaries", regName, .Platform$file.sep )
 # Load the R image
@@ -158,20 +158,27 @@ activities is shown in \autoref{figShowCatchIC}.}{\unskip}
 In \thisYr{}, \Sexpr{nSampThisYr} \fishName{} biological samples were
 collected and processed for the \regionName{} \regionType{} SAR
 (\autoref{tabBioNum}, \autoref{tabBioTypeNum}).
-\iftoggle{numPropWtAge}{Differences between biological data collected
+\iftoggle{numPropWtAge}{The nearshore sampling program is a
+multi-year pilot study using cast nets
+(\autoref{figNearMap}, \autoref{figNearNumSamp}, and \autoref{figNearNumFish}).
+Differences between biological data collected
 from two sampling protocols regarding the number-, proportion-, weight-, and
 length-at-age for \fishName{} in \thisYr{} in the \regionName{} \regionType{}
 SAR are shown in \autoref{tabDeltaNumAgeYr}, \autoref{tabDeltaPropAgeYr},
 \autoref{tabDeltaWtAgeYr}, and \autoref{tabDeltaLenAgeYr}, respectively.
-The nearshore sampling program is a multi-year pilot study (using cast nets),
-therefore only biological data from the seine samples
-were used for the purposes of stock assessment.
 Summaries of data collected by the nearshore sampling program are shown in
 \autoref{tabNearNum}, \autoref{tabNearProp}, \autoref{tabNearWt}, and
 \autoref{tabNearLen}.
-In addition, \autoref{figLengthAgeSample} and \autoref{figLengthAgeSampleSA}
-show differences in length-at-age between the two sampling protocols, and
-differences by Statistical Area, respectively.}{\unskip}
+We compare length-, weight, and proportion-at-age
+as well as length-weight relationships
+for nearshore and seine test samples in 
+\autoref{figNearLengthAge}, \autoref{figNearWeightAge},
+\autoref{figNearPropAge}, and \autoref{figNearLengthWeight}, respectively.
+% In addition, \autoref{figLengthAgeSample} and \autoref{figLengthAgeSampleSA}
+% show differences in length-at-age between the two sampling protocols, and
+% differences by Statistical Area, respectively.
+Note that only biological data from the seine samples
+are used for the purposes of stock assessment.}{\unskip}
 \iftoggle{biosamples}{The locations in which the biological samples were
 collected are presented in \autoref{figBioLocations}.}{\unskip}
 \iftoggle{weightCatch}{\autoref{figWeightCatch} shows the distribution of 
@@ -722,29 +729,79 @@ in the \regionName{} \regionType{} stock assessment region (SAR).
 \iftoggle{numPropWtAge}{
 \begin{figure}[ht]
 \centering
-\includegraphics[width=\linewidth]{LengthAgeSample.png}
-\caption{Length-at-age in millimetres (mm) of \fishName{} from
-\Sexpr{paste(range(yrsNearshore), collapse=" to ")}
-in the \regionName{} \regionType{} stock assessment region (SAR) by sample type. 
-\boxplot{}
-\seineSamples{}
-\legendNear{}
-\plusGroup{}}
-\label{figLengthAgeSample}
+\includegraphics[width=\linewidth]{NearMap.png}
+\caption{Location of \fishName{} biological samples
+in the \regionName{} \regionType{} stock assessment region (SAR) by
+period, sample type, and month.
+\legendNear{}}
+\label{figNearMap}
 \end{figure}
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=\linewidth]{LengthAgeSampleSA.png}
-\caption{Length-at-age in millimetres (mm) of \fishName{} from
-\Sexpr{paste(range(yrsNearshore), collapse=" to ")}
-in the \regionName{} \regionType{} stock assessment region (SAR)
-by sample type and statistical area (SA). 
+\includegraphics[width=\linewidth]{NearNumSamp.png}
+\caption{Number of \fishName{} samples
+in the \regionName{} \regionType{} stock assessment region (SAR) by
+sample type, statistical area, and gear type.
+\legendNear{}}
+\label{figNearNumSamp}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{NearNumFish.png}
+\caption{Number of \fishName{} in biological samples
+in the \regionName{} \regionType{} stock assessment region (SAR) by
+sample type, statistical area, and gear type.
+\legendNear{}}
+\label{figNearNumFish}
+\end{figure}
+}{\unskip}
+
+\iftoggle{numPropWtAge}{
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{NearLengthAge.png}
+\caption{Length-at-age in millimetres (mm) of \fishName{}
+in the \regionName{} \regionType{} stock assessment region (SAR) by
+period, statistical area, and sample type.
 \boxplot{}
-\seineSamples{}
 \legendNear{}
 \plusGroup{}}
-\label{figLengthAgeSampleSA}
+\label{figNearLengthAge}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{NearWeightAge.png}
+\caption{Weight-at-age in grams (g) of \fishName{}
+in the \regionName{} \regionType{} stock assessment region (SAR) by
+period, statistical area, and sample type.
+\boxplot{}
+\legendNear{}
+\plusGroup{}}
+\label{figNearWeightAge}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{NearPropAge.png}
+\caption{Proportion-at-age of \fishName{}
+in the \regionName{} \regionType{} stock assessment region (SAR) by
+statistical area and sample type.
+\legendNear{}
+\plusGroup{}}
+\label{figNearPropAge}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{NearLengthWeight.png}
+\caption{Length-weight relationship for \fishName{}
+in the \regionName{} \regionType{} stock assessment region (SAR) by
+period, statistical area, and sample type.
+\legendNear{}}
+\label{figNearLengthWeight}
 \end{figure}
 }{\unskip}
 
