@@ -17,6 +17,8 @@
 % Initialize switches; set to TRUE/FALSE in R based on conditions in the region
 \newtoggle{major}  % Is it a major SAR?
 \Sexpr{tfMajor}
+\newtoggle{do_genetics}  % Do we have genetics data?
+\Sexpr{tfGenetics}
 \newtoggle{biosamples}  % Show biosample locations
 \Sexpr{tfBiosamples}
 \newtoggle{weightCatch}  % Show weight by catch type

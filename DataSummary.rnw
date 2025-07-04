@@ -41,7 +41,7 @@
 require( knitr, quietly=TRUE )  # Dynamic documents
 # Select region(s)/folder(s): major (HG, PRD, CC, SoG, WCVI); minor (A27, A2W);
 # special (A10, JS); or all (All)
-if( !exists('regName') )  regName <- "WCVI"
+if( !exists('regName') )  regName <- "SoG"
 # Set the path to the R output, including a trailing separator
 rPath <- file.path( "..", "DataSummaries", regName, .Platform$file.sep )
 # Load the R image
@@ -195,6 +195,9 @@ respectively).}{\unskip}
 given age (\autoref{figWeightAgeGroup}, \autoref{tabWeightAgeGroupN}).}{\unskip}
 \seineSamples{}
 \repSamples{}
+
+% Genetics sampling, if required
+\Sexpr{ifelse(do_genetics, knit_child('Document/Genetics.rnw'), "")}
 
 % Spawn survey data section
 \section{Spawn survey data}
@@ -819,6 +822,20 @@ Sample sizes are given in \autoref{tabWeightAgeGroupN}.
 \plusGroup{}
 \Sexpr{spawnIndexGroupLegend}}
 \label{figWeightAgeGroup}
+\end{figure}
+}{\unskip}
+
+\iftoggle{do_genetics}{
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{GeneticsMap.png}
+\caption{Nearshore genetics sampling in the \regionName{} \regionType{} SAR.
+Note that timing indicates the collection date:
+`Early' is January and February,
+`Mid' is March and April, and
+`Late' is May, June, and July.
+See \autoref{figRegion} for legend.}
+\label{figGeneticsMap}
 \end{figure}
 }{\unskip}
 

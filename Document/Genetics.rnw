@@ -1,0 +1,15 @@
+\subsection{Nearshore genetics project}
+
+DFO initiated a nearshore genetics project in 2022 to
+better understand the spatial and temporal structure
+of \fishName{} stocks in British Columbia.
+We do this by collecting genetic and biological data
+from actively spawning \fishName{} (\scienceName{}).
+Then we collect biological data (e.g., length, weight, age, sex) and
+genetic data from the fish.
+Finally, we analyse the biological and genetic data
+to better understand Pacific Herring.
+Genetic samples were collected in the \regionName{} \regionType{} SAR
+in \Sexpr{PasteNicely(unique(genetics$Year))} (\autoref{figGeneticsMap}).
+Results from the nearshore genetics project will be presented
+in a separate document when they are available.
