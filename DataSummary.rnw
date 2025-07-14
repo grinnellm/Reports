@@ -834,6 +834,8 @@ Note that timing indicates the collection date:
 `Early' is January and February,
 `Mid' is March and April, and
 `Late' is May, June, and July.
+In addition,
+note that genetic samples from 2025 are not yet available.
 See \autoref{figRegion} for legend.}
 \label{figGeneticsMap}
 \end{figure}
