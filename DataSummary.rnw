@@ -1000,9 +1000,10 @@ in the \regionName{} \regionType{} stock assessment region (SAR).
 \label{figSpawnPercentGrid}
 \end{figure}
 
+% Start on page 1 to omit the first page (empty)
 \begin{figure}[ht]
 \centering
-\animategraphics[width=\linewidth]{1}{\Sexpr{rPath}SpawnIndexAnimation}{0}{}
+\animategraphics[width=\linewidth]{1}{\Sexpr{rPath}SpawnIndexAnimation}{1}{}
 \caption{Animation of \fishName{} spawn index in metric tonnes (t) by Location
 from \Sexpr{min(yrRange)} to \thisYr{}
 in the \regionName{} \regionType{} stock assessment region
