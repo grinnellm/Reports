@@ -244,8 +244,10 @@ from \Sexpr{min(yrRange)} to \thisYr{} (\autoref{figSpawnIndexAnimation}).
 The following observations were contributed by
 representatives of First Nations communities.
 These observations provide context and perspectives to this data report.
-In some cases we make minor edits for clarity and brevity,
+In some cases we make edits for clarity and brevity,
 but we do not change the intent or substance of responses.
+Note: if your observations are missing, submit them
+\href{https://forms.gle/Stsj5BCKALSkzWKi7}{here}.
 
 % Bring in custom text
 \inputsp{\Sexpr{noquote(docPath)}FirstNationsObservations.tex}
