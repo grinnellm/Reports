@@ -903,7 +903,8 @@ from \Sexpr{min(yrRange)} to \thisYr{}
 in the \regionName{} \regionType{} stock assessment region (SAR). 
 %\trendLine{}
 \spawnTypes{}
-\qPeriods{}}
+\qPeriods{}
+See \autoref{figSpawnTypeProp} for the spawn survey method.}
 \label{figSpawnIndexType}
 \end{figure}
 
