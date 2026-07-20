@@ -41,7 +41,7 @@
 require( knitr, quietly=TRUE )  # Dynamic documents
 # Select region(s)/folder(s): major (HG, PRD, CC, SoG, WCVI); minor (A27, A2W);
 # special (A10, JS); or all (All)
-if( !exists('regName') )  regName <- "SoG"
+if( !exists('regName') )  regName <- "WCVI"
 # Set the path to the R output, including a trailing separator
 rPath <- file.path( "..", "DataSummaries", regName, .Platform$file.sep )
 # Load the R image
@@ -934,23 +934,6 @@ in the \regionName{} \regionType{} stock assessment region (SAR).
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=\linewidth]{SpawnIndexPercent.png}
-\caption{Time series of spawn index in thousands of metric tonnes
-($\text{t} \times 10^{3}$) for \fishName{}
-from \Sexpr{min(yrRange)} to \thisYr{}
-in the \regionName{} \regionType{} stock assessment region (SAR; panel a),
-as well as percent contributed by \Sexpr{spawnIndexGroupName$b},
-and Section (b, \& c, respectively). 
-%\trendLine{}
-\qPeriods{}
-\spawnSurfDive{}
-\spawnIndex{}
-\Sexpr{spawnIndexGroupLegend}}
-\label{figSpawnIndexPercent}
-\end{figure}
-
-\begin{figure}[ht]
-\centering
 \includegraphics[width=\linewidth]{SpawnIndexChange.png}
 \caption{Time series of spawn index in thousands of metric tonnes
 ($\text{t} \times 10^{3}$) for \fishName{}
@@ -963,6 +946,21 @@ percent change (b).
 \spawnIndex{}
 \spawnSurfDive{}}
 \label{figSpawnIndexChange}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{SpawnIndexPercent.png}
+\caption{Time series of spawn index in thousands of metric tonnes
+($\text{t} \times 10^{3}$) for \fishName{}
+from \Sexpr{min(yrRange)} to \thisYr{}
+in the \regionName{} \regionType{} stock assessment region (SAR; panel a),
+as well as percent contributed by \Sexpr{spawnIndexGroupName$b},
+and Section (b, \& c, respectively). 
+%\trendLine{}
+See \autoref{figSpawnIndexChange} for information.
+\Sexpr{spawnIndexGroupLegend}}
+\label{figSpawnIndexPercent}
 \end{figure}
 
 \iftoggle{spawnDepth}{
